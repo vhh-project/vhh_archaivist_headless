@@ -1,0 +1,29 @@
+schema baseline {
+    document baseline {
+        field language type string {
+            indexing: set_language | attribute | summary
+        }
+        field id type string {
+            indexing: attribute | summary
+        }
+        field parent_doc type string {
+            indexing: attribute | summary
+        }
+        field page type int {
+            indexing: attribute | summary
+        }
+        field body type string {
+            indexing: index | summary
+            index: enable-bm25
+            summary: dynamic
+        }
+    }
+    fieldset default {
+        fields: body
+    }
+    rank-profile default {
+        first-phase {
+            expression: bm25(body)
+        }
+    }
+}

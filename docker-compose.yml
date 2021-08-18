@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  baseline:
+    # image: "vespaengine/vespa"
+    build: baseline_vespa_app/.
+    ports:
+      - "8080:8080"
+    volumes:
+      - $VESPA_BASELINE:/baseline
+    healthcheck:
+      test: curl --fail http://localhost:8080/ApplicationStatus || exit 1
+      interval: 30s
+      retries: 3
+      start_period: 3m
+  word2word:
+    build: word2word_api/.
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: curl --fail http://localhost:5000/supported-languages || exit 1 
+      interval: 30s
+      retries: 3
+      start_period: 3m
