@@ -4,20 +4,37 @@ services:
     # image: "vespaengine/vespa"
     build: baseline_vespa_app/.
     ports:
-      - "8080:8080"
-    volumes:
-      - $VESPA_BASELINE:/baseline
+      - "8080"
     healthcheck:
       test: curl --fail http://localhost:8080/ApplicationStatus || exit 1
       interval: 30s
       retries: 3
       start_period: 3m
+    volumes:
+      - vespa_var:/opt/vespa/var
+      - vespa_logs:/opt/vespa/logs
   word2word:
     build: word2word_api/.
     ports:
-      - "5000:5000"
+      - "5000"
     healthcheck:
       test: curl --fail http://localhost:5000/supported-languages || exit 1 
       interval: 30s
       retries: 3
       start_period: 3m
+  vespa-api:
+    build: vespa-api/.
+    ports:
+      - "2346:5001"
+    mem_limit: 2560m
+    healthcheck:
+      test: curl --fail http://localhost:5001/status || exit 1 
+      interval: 30s
+      retries: 3
+      start_period: 3m
+    volumes:
+      - vespa_api_data:/output
+volumes:
+  vespa_var:
+  vespa_logs:
+  vespa_api_data:

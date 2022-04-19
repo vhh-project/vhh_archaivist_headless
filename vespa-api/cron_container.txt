@@ -1,0 +1,2 @@
+0 4 * * *do /usr/local/bin/python /code/snippet_cleanup.py > /code/cleanup_log.txt
+# empty line for cron validity
