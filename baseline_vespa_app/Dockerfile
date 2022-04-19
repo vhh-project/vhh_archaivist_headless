@@ -1,6 +1,6 @@
-FROM vespaengine/vespa
+FROM vespaengine/vespa:7.546.44
 
-COPY launch-vespa.sh .
-COPY wait-for-config-server.sh .
-RUN chmod +x /launch-vespa.sh /wait-for-config-server.sh
-ENTRYPOINT ["/launch-vespa.sh"]
+WORKDIR /baseline
+COPY . .
+RUN chmod +x launch-vespa.sh wait-for-config-server.sh
+ENTRYPOINT ["/baseline/launch-vespa.sh"]
