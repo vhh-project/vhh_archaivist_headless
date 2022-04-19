@@ -32,66 +32,78 @@ def main():
     for (path, name) in progressBar(files, prefix="Importing", suffix="Completed", total=len(files)):
         path_parts = path.split(os.sep)
         collection = path_parts[1] if len(path_parts) > 2 else ''
-        doc_dir = f'{config.metadata_path}/{name}'
-        if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
-            copyfile(path, f'{config.metadata_path}/{name}.pdf')
-
-        if not os.path.isdir(doc_dir):
-            os.mkdir(doc_dir)
-
-        try:
-            for page_no, page_layout in enumerate(extract_pages(path)):
-                try:
-                    image_path = f'{doc_dir}/{page_no}{config.convert_suffix}'
-                    thumb_path = f'{doc_dir}/{page_no}_thumb{config.convert_suffix}'
-                    json_path = f'{doc_dir}/{page_no}.json'
-
-                    image = convert_from_path(path, first_page=page_no+1, last_page=page_no+1)[0]
-                    if not os.path.isfile(image_path):
-                        image.save(image_path, config.convert_type)
-                    else:
-                        # Page already processed - Skip!
-                        continue
-
-                    thumb = image.copy()
-                    if not os.path.isfile(thumb_path):
-                        thumb.thumbnail((max(1500, page_layout.width), max(1500, page_layout.height)))
-                        thumb.save(thumb_path, config.convert_type)
-
-                    text = page_layout.groups[0].get_text() if page_layout.groups else ''
-                    page_id = f'{name}_{page_no}'
-                    boxes = {}
-                    extract_page_word_boxes(page_layout, boxes)
-                    try:
-                        stems = {stem: body['terms']
-                                 for stem, body in stemmer.map_stems_to_words(boxes.keys(), detect(text)).items()}
-                    except LangDetectException:
-                        stems = {}
-                    page_data = {
-                        'boxes': boxes,
-                        'stems': stems,
-                        'dimensions': {
-                            'scale': image.width / page_layout.width,
-                            'thumbScale': thumb.width / page_layout.width,
-                            'origWidth': page_layout.width,
-                            'origHeight': page_layout.height
-                        }
-                    }
-
-                    with open(json_path, 'w') as file:
-                        json.dump(page_data, file)
-                    vespa_util.feed(page_id, name, page_no, collection, text)
-                except Exception as e:
-                    print(f'\033[KFailed to import file: {name} | page: {page_no} - Cleaning up file artifacts!')
-                    __safe_remove(thumb_path)
-                    __safe_remove(image_path)
-                    __safe_remove(json_path)
-                    __log_warning(e, file_name=name, page=page_no)
-        except Exception as e:
-            print(f'\033[KFailed to import file: {name}')
-            __log_warning(e, file_name=name)
+        import_file(collection=collection, name=name, path=path)
 
     __write_warnings()
+
+
+def import_file(file=None, full_name=None, collection='', name=None, path=None):
+    # TODO test and rework
+    if file:
+        name = full_name.rsplit('.')[0]
+        path = f'{config.metadata_path}/{full_name}'
+
+    doc_dir = f'{config.metadata_path}/{name}'
+    if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
+        if file:
+            file.save(path, full_name)
+        else:
+            copyfile(path, f'{config.metadata_path}/{name}.pdf')
+
+    if not os.path.isdir(doc_dir):
+        os.mkdir(doc_dir)
+
+    try:
+        for page_no, page_layout in enumerate(extract_pages(path)):
+            try:
+                image_path = f'{doc_dir}/{page_no}{config.convert_suffix}'
+                thumb_path = f'{doc_dir}/{page_no}_thumb{config.convert_suffix}'
+                json_path = f'{doc_dir}/{page_no}.json'
+
+                image = convert_from_path(path, first_page=page_no + 1, last_page=page_no + 1)[0]
+                if not os.path.isfile(image_path):
+                    image.save(image_path, config.convert_type)
+                else:
+                    # Page already processed - Skip!
+                    continue
+
+                thumb = image.copy()
+                if not os.path.isfile(thumb_path):
+                    thumb.thumbnail((max(1500, page_layout.width), max(1500, page_layout.height)))
+                    thumb.save(thumb_path, config.convert_type)
+
+                text = page_layout.groups[0].get_text() if page_layout.groups else ''
+                page_id = f'{name}_{page_no}'
+                boxes = {}
+                extract_page_word_boxes(page_layout, boxes)
+                try:
+                    stems = {stem: body['terms']
+                             for stem, body in stemmer.map_stems_to_words(boxes.keys(), detect(text)).items()}
+                except LangDetectException:
+                    stems = {}
+                page_data = {
+                    'boxes': boxes,
+                    'stems': stems,
+                    'dimensions': {
+                        'scale': image.width / page_layout.width,
+                        'thumbScale': thumb.width / page_layout.width,
+                        'origWidth': page_layout.width,
+                        'origHeight': page_layout.height
+                    }
+                }
+
+                with open(json_path, 'w') as file:
+                    json.dump(page_data, file)
+                vespa_util.feed(page_id, name, page_no, collection, text)
+            except Exception as e:
+                print(f'\033[KFailed to import file: {name} | page: {page_no} - Cleaning up file artifacts!')
+                __safe_remove(thumb_path)
+                __safe_remove(image_path)
+                __safe_remove(json_path)
+                __log_warning(e, file_name=name, page=page_no)
+    except Exception as e:
+        print(f'\033[KFailed to import file: {name}')
+        __log_warning(e, file_name=name)
 
 
 def __log_warning(e: Exception, file_name, page=-1):

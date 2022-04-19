@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 
 import config
 import bounding_boxes
+import pdf_import
 import stemmer
 import synonym_util
 import vespa_util
@@ -40,6 +41,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            # TODO get 'collection' formfield safely
+            pdf_import.import_file(file, full_name=filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return ''
 
