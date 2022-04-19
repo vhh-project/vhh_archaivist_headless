@@ -12,10 +12,14 @@ schema baseline {
         field page type int {
             indexing: attribute | summary
         }
+
+        field collection type string {
+            indexing: attribute | summary
+        }
+
         field body type string {
-            indexing: index | summary
+            indexing: index
             index: enable-bm25
-            summary: dynamic
         }
     }
     fieldset default {

@@ -7,4 +7,6 @@ public class Constants {
     public static final String [] METADATA_KEYS = {
             TRANSLATIONS
     };
+
+    public static final String LANGUAGE_FIELD = "language";
 }
