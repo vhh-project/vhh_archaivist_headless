@@ -19,5 +19,17 @@
         <nodes>
             <node distribution-key="0" hostalias="node1"></node>
         </nodes>
+        <tuning>
+            <resource-limits>
+                <disk>0.90</disk>
+            </resource-limits>
+        </tuning>
+        <engine>
+            <proton>
+                <resource-limits>
+                    <disk>0.95</disk>
+                </resource-limits>
+            </proton>
+        </engine>
     </content>
 </services>

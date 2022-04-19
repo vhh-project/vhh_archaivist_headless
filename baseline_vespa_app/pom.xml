@@ -7,7 +7,7 @@
     <version>1.0.1</version>
 
     <properties>
-        <vespa.version>7.331.24</vespa.version> <!-- Find latest version at search.maven.org/search?q=g:com.yahoo.vespa -->
+        <vespa.version>7.546.44</vespa.version> <!-- Find latest version at search.maven.org/search?q=g:com.yahoo.vespa -->
         <junit.version>4.13.1</junit.version>
     </properties>
 
