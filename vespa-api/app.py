@@ -45,7 +45,7 @@ def upload_file():
             try:
                 pdf_import.import_file(file=file, full_name=filename, collection=collection)
             except pdf_import.PdfImportError as e:
-                abort(400, str(e))
+                abort(e.code, e.message)
             return ''
         else:
             abort(400, 'Please provide a valid PDF file')

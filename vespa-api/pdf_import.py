@@ -19,7 +19,15 @@ warnings = []
 
 
 class PdfImportError(Exception):
-    pass
+    def __init__(self, code, message):
+        self.code = code
+        self.message = message
+
+    def __str__(self):
+        return self.code, self.message
+
+    def __repr__(self):
+        return self.code, self.message
 
 
 def main():
@@ -37,8 +45,6 @@ def main():
         path_parts = path.split(os.sep)
         collection = path_parts[1] if len(path_parts) > 2 else ''
         import_file(collection=collection, name=name, path=path)
-
-    __write_warnings()
 
 
 def import_file(file=None, full_name=None, collection='', name=None, path=None):
@@ -99,33 +105,21 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 with open(json_path, 'w') as file:
                     json.dump(page_data, file)
                 vespa_util.feed(page_id, name, page_no, collection, text)
+            except vespa_util.FeedException as e:
+                raise e
             except Exception as e:
                 print(f'\033[KFailed to import file: {name} | page: {page_no} - Cleaning up file artifacts!')
                 __safe_remove(thumb_path)
                 __safe_remove(image_path)
                 __safe_remove(json_path)
-                __log_warning(e, file_name=name, page=page_no)
-                raise PdfImportError(f'Failed to import file: {name} | page: {page_no} - {str(e)}')
+                raise PdfImportError(400, f'Failed to import file: {name} | page: {page_no} - {str(e)}')
+    except PdfImportError as e:
+        raise e
+    except vespa_util.FeedException as e:
+        raise PdfImportError(500, e)
     except Exception as e:
-        if isinstance(e, PdfImportError):
-            raise e
         print(f'\033[KFailed to import file: {name}')
-        __log_warning(e, file_name=name)
-        raise PdfImportError(f'Failed to import file: {name} - {str(e)}')
-
-
-def __log_warning(e: Exception, file_name, page=-1):
-    warning = {
-        'trace': ''.join(traceback.format_exception(None, e, e.__traceback__)),
-        'file_name': file_name,
-        'page': page
-    }
-    warnings.append(warning)
-
-
-def __write_warnings():
-    with open(f'{config.metadata_path}/{datetime.now():%Y-%m-%d-%H-%M-%S}.json', 'w') as file:
-        json.dump(warnings, file)
+        raise PdfImportError(400, f'Failed to import file: {name} - {str(e)}')
 
 
 def __safe_remove(path):
