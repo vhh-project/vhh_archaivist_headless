@@ -323,6 +323,7 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
 
     if response.status_code >= 400:
         print(response.status_code, response.json, end="\n")
+        raise Exception(response)
 
 
 def health_check():

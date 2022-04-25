@@ -18,6 +18,10 @@ from datetime import datetime
 warnings = []
 
 
+class PdfImportError(Exception):
+    pass
+
+
 def main():
     wait_for_vespa()
 
@@ -40,13 +44,13 @@ def main():
 def import_file(file=None, full_name=None, collection='', name=None, path=None):
     # TODO test and rework
     if file:
-        name = full_name.rsplit('.')[0]
+        name = '.'.join(full_name.rsplit('.')[:-1])
         path = f'{config.metadata_path}/{full_name}'
 
     doc_dir = f'{config.metadata_path}/{name}'
     if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
         if file:
-            file.save(path, full_name)
+            file.save(path)
         else:
             copyfile(path, f'{config.metadata_path}/{name}.pdf')
 
@@ -101,9 +105,13 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 __safe_remove(image_path)
                 __safe_remove(json_path)
                 __log_warning(e, file_name=name, page=page_no)
+                raise PdfImportError(f'Failed to import file: {name} | page: {page_no} - {str(e)}')
     except Exception as e:
+        if isinstance(e, PdfImportError):
+            raise e
         print(f'\033[KFailed to import file: {name}')
         __log_warning(e, file_name=name)
+        raise PdfImportError(f'Failed to import file: {name} - {str(e)}')
 
 
 def __log_warning(e: Exception, file_name, page=-1):

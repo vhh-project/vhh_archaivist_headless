@@ -26,7 +26,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/document', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -41,10 +41,14 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            # TODO get 'collection' formfield safely
-            pdf_import.import_file(file, full_name=filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            collection = request.form['collection'] if 'collection' in request.form else ''
+            try:
+                pdf_import.import_file(file=file, full_name=filename, collection=collection)
+            except pdf_import.PdfImportError as e:
+                abort(400, str(e))
             return ''
+        else:
+            abort(400, 'Please provide a valid PDF file')
 
 
 @app.route('/search/', methods=['GET'])
