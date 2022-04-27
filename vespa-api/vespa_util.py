@@ -100,6 +100,7 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
         query_metadata['translations'][i]['stemMap'] = multilang_stem_map
         query_metadata['translations'][i]['flatTerms'] = multilang_terms
     try:
+        __build_query_snippets(result)
         return result.hits, result.json['root']['query-metadata'], \
                get_bounding_box_data(result.hits), result.number_documents_retrieved
     except KeyError as e:
@@ -134,12 +135,31 @@ def query_doc_page(doc, page):
             "presentation.format": renderer
         })
 
+        # TODO determine relevant boxes
         return result.hits[0], meta
     except (FileNotFoundError, IndexError):
         raise FileNotFoundError
 
 
-def build_query_snippets(hit, stems, synonyms):
+def __build_query_snippets(result):
+    hits = result.hits
+    translations = result.json['root']['query-metadata']
+    bounding_boxes = get_bounding_box_data(hits)
+    stems = {}
+    synonyms = []
+    for translation in translations:
+        stems = stems | translation['stems']
+        synonyms = synonyms + translation['synonyms']
+
+    languages = set([language for stem, value in stems.items() for language in value['languages']])
+    for hit in hits:
+        hit_lang = hit['fields']['language']
+        hit_stems = [stem for stem, value in stems.items()
+                         if stem != '' and (hit_lang not in languages or hit_lang in value['languages'])]
+        hit['snippets'] = build_hit_snippets(hit, hit_stems, synonyms)
+
+
+def build_hit_snippets(hit, stems, synonyms):
     """
     Build query snippets of a specific document page containing search query items or any matching synonyms
 
@@ -160,7 +180,26 @@ def build_query_snippets(hit, stems, synonyms):
     except KeyError:
         snippet_data[doc] = {}
         snippet_data[doc][page] = {'names': hit_snippets_names, 'boxes': hit_snippets_boxes}
+    # TODO also return relevant boxes/terms with __mark_relevant_boxes call
     return snippet_data
+
+
+def __mark_relevant_boxes(terms, synonyms, box_data, surrounding_box=None):
+    boxes = box_data['boxes']
+    dimensions = box_data['dimensions']
+    if surrounding_box is not None:
+        flat_relative_boxes = bounding_boxes \
+            .flatten_snippet_bounding_boxes(boxes, surrounding_box)
+        width = surrounding_box[1] - surrounding_box[0]
+        height = surrounding_box[3] - surrounding_box[2]
+    else:
+        flat_relative_boxes = bounding_boxes \
+            .flatten_bounding_boxes(boxes, dimensions['origWidth'], dimensions['origHeight'])
+        width = dimensions['origWidth']
+        height = dimensions['origHeight']
+    synonym_positions = find_relevant_synonym_positions([box['word'] for box in flat_relative_boxes],
+                                                                   synonyms, box_data['stems'])
+    # TODO mark relevant boxes based on relevant terms and synonym position
 
 
 def __collect_multilang_query_terms(translations):

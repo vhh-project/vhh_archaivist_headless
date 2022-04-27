@@ -101,7 +101,7 @@ def build_snippets():
                      (hit_lang not in languages or hit_lang in value['languages'])]
     data['synonyms'] = __stem_filter_synonyms(data['synonyms'], data['stem-filters'])
 
-    query_snippets = vespa_util.build_query_snippets(data['hit'], data['stems'], data['synonyms'])
+    query_snippets = vespa_util.build_hit_snippets(data['hit'], data['stems'], data['synonyms'])
     return query_snippets
 
 
