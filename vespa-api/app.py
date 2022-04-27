@@ -43,7 +43,12 @@ def upload_file():
             filename = secure_filename(file.filename)
             collection = request.form['collection'] if 'collection' in request.form else ''
             try:
-                pdf_import.import_file(file=file, full_name=filename, collection=collection)
+                name, pages = pdf_import.import_file(file=file, full_name=filename, collection=collection)
+                return {
+                    "document_name": name,
+                    "page_count": len(pages),
+                    "page_paths": pages
+                }
             except pdf_import.PdfImportError as e:
                 abort(e.code, e.message)
             return ''

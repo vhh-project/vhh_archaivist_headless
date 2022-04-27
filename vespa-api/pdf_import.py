@@ -48,7 +48,6 @@ def main():
 
 
 def import_file(file=None, full_name=None, collection='', name=None, path=None):
-    # TODO test and rework
     if file:
         name = '.'.join(full_name.rsplit('.')[:-1])
         path = f'{config.metadata_path}/{full_name}'
@@ -64,6 +63,7 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
         os.mkdir(doc_dir)
 
     try:
+        pages = []
         for page_no, page_layout in enumerate(extract_pages(path)):
             try:
                 image_path = f'{doc_dir}/{page_no}{config.convert_suffix}'
@@ -104,7 +104,7 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
 
                 with open(json_path, 'w') as file:
                     json.dump(page_data, file)
-                vespa_util.feed(page_id, name, page_no, collection, text)
+                pages.append(vespa_util.feed(page_id, name, page_no, collection, text))
             except vespa_util.FeedException as e:
                 raise e
             except Exception as e:
@@ -113,6 +113,7 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 __safe_remove(image_path)
                 __safe_remove(json_path)
                 raise PdfImportError(400, f'Failed to import file: {name} | page: {page_no} - {str(e)}')
+        return name, pages
     except PdfImportError as e:
         raise e
     except vespa_util.FeedException as e:

@@ -30,6 +30,7 @@ order_directions = ['desc', 'asc']
 class VespaTimeoutException(Exception):
     pass
 
+
 class FeedException(Exception):
     pass
 
@@ -327,6 +328,7 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
     if response.status_code >= 400:
         print(response.status_code, response.json, end="\n")
         raise FeedException(response)
+    return response.json
 
 
 def health_check():
