@@ -147,7 +147,7 @@ def __build_query_snippets(result):
     bounding_boxes = get_bounding_box_data(hits)
     stems = {}
     synonyms = []
-    for translation in translations:
+    for translation in translations['translations']:
         stems = stems | translation['stems']
         synonyms = synonyms + translation['synonyms']
 
@@ -176,11 +176,15 @@ def build_hit_snippets(hit, stems, synonyms):
     relevant_terms = relevant_stem_terms + relevant_synonym_terms
     hit_snippets_names, hit_snippets_boxes, box_data = image_processing.build_snippets(doc, page, relevant_terms)
     try:
-        snippet_data[doc][page] = {'names': hit_snippets_names, 'boxes': hit_snippets_boxes}
+        snippet_data[doc][page] = {'names': hit_snippets_names, 'bounds': hit_snippets_boxes}
     except KeyError:
         snippet_data[doc] = {}
-        snippet_data[doc][page] = {'names': hit_snippets_names, 'boxes': hit_snippets_boxes}
-    # TODO also return relevant boxes/terms with __mark_relevant_boxes call
+        snippet_data[doc][page] = {'names': hit_snippets_names, 'bounds': hit_snippets_boxes}
+    for doc in snippet_data:
+        for page in snippet_data[doc]:
+            snippet_data[doc][page]['boxes'] = []
+            for bound in snippet_data[doc][page]['bounds']:
+                snippet_data[doc][page]['boxes'].append(__mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, bound))
     return snippet_data
 
 
@@ -199,7 +203,10 @@ def __mark_relevant_boxes(terms, synonyms, box_data, surrounding_box=None):
         height = dimensions['origHeight']
     synonym_positions = find_relevant_synonym_positions([box['word'] for box in flat_relative_boxes],
                                                                    synonyms, box_data['stems'])
-    # TODO mark relevant boxes based on relevant terms and synonym position
+    for i, box in enumerate(flat_relative_boxes):
+        box['relevant'] = box['word'] in terms or i in synonym_positions
+
+    return flat_relative_boxes
 
 
 def __collect_multilang_query_terms(translations):
