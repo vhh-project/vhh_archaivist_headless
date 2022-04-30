@@ -168,23 +168,17 @@ def build_hit_snippets(hit, stems, synonyms):
     :param synonyms: data structure with synonyms matching the query
     :return: dict containing file paths to snippet images and bounding box data
     """
-    snippet_data = {}
     doc = hit['fields']['parent_doc']
     page = hit['fields']['page']
     relevant_stem_terms = __get_relevant_stem_terms(doc, page, stems)
     relevant_synonym_terms = __get_relevant_synonym_terms(doc, page, synonyms)
     relevant_terms = relevant_stem_terms + relevant_synonym_terms
     hit_snippets_names, hit_snippets_boxes, box_data = image_processing.build_snippets(doc, page, relevant_terms)
-    try:
-        snippet_data[doc][page] = {'names': hit_snippets_names, 'bounds': hit_snippets_boxes}
-    except KeyError:
-        snippet_data[doc] = {}
-        snippet_data[doc][page] = {'names': hit_snippets_names, 'bounds': hit_snippets_boxes}
-    for doc in snippet_data:
-        for page in snippet_data[doc]:
-            snippet_data[doc][page]['boxes'] = []
-            for bound in snippet_data[doc][page]['bounds']:
-                snippet_data[doc][page]['boxes'].append(__mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, bound))
+    snippet_data = [{'image_path': '/snippet/' + snippet[0], 'bounds': snippet[1]}
+                    for snippet in list(zip(hit_snippets_names, hit_snippets_boxes))]
+    for snippet in snippet_data:
+        snippet['boxes'] = __mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, snippet['bounds'])
+    
     return snippet_data
 
 
