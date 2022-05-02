@@ -46,6 +46,7 @@ def upload_file():
                 name, pages = pdf_import.import_file(file=file, full_name=filename, collection=collection)
                 return {
                     "document_name": name,
+                    "download_path": f'/document/{name}/download',
                     "page_count": len(pages),
                     "page_paths": pages
                 }
@@ -83,7 +84,6 @@ def search():
     return {
         "hits": hits,
         "queryMetadata": query_metadata,
-        "boundingBoxes": bounding_boxes,
         "total": total
     }
 
