@@ -4,7 +4,7 @@ services:
     # image: "vespaengine/vespa"
     build: baseline_vespa_app/.
     ports:
-      - "8080"
+      - "8080:8080"
     healthcheck:
       test: curl --fail http://localhost:8080/ApplicationStatus || exit 1
       interval: 30s
@@ -25,7 +25,7 @@ services:
   vespa-api:
     build: vespa-api/.
     ports:
-      - "2346:5001"
+      - "5001:5001"
     mem_limit: 2560m
     healthcheck:
       test: curl --fail http://localhost:5001/status || exit 1 
