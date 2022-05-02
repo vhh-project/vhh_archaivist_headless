@@ -174,8 +174,15 @@ def build_hit_snippets(hit, stems, synonyms):
     relevant_synonym_terms = __get_relevant_synonym_terms(doc, page, synonyms)
     relevant_terms = relevant_stem_terms + relevant_synonym_terms
     hit_snippets_names, hit_snippets_boxes, box_data = image_processing.build_snippets(doc, page, relevant_terms)
-    snippet_data = [{'image_path': '/snippet/' + snippet[0], 'bounds': snippet[1]}
-                    for snippet in list(zip(hit_snippets_names, hit_snippets_boxes))]
+    snippet_data = [
+        {
+            'image_path': '/snippet/' + snippet[0],
+            'bounds': snippet[1],
+            'width': snippet[1][1] - snippet[1][0],
+            'height': snippet[1][3] - snippet[1][2]
+        } for snippet in list(zip(hit_snippets_names, hit_snippets_boxes))
+    ]
+
     for snippet in snippet_data:
         snippet['boxes'] = __mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, snippet['bounds'])
     
