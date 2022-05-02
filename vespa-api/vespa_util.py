@@ -47,19 +47,9 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
     :param order_by: sort results alphabetically (alpha) or by ranking (default)
     :param direction: sort direction: asc | desc (default)
     :param stem_filter: JSON string of data structure describing language specific stems to be filtered
-    :return:
+    :return: result page of vespa hits enhanced with runtime-generated snippets of the original image
     """
-    try:
-        query_list = json.loads(query)
-    except json.JSONDecodeError:
-        query_list = [query]
-
-    phrases = ''
-
-    for i, phrase in enumerate(query_list):
-        phrases += f'default contains "{phrase}"'
-        if i < len(query_list) - 1:
-            phrases += ' and '
+    phrases = __build_query_phrases(query)
 
     language_and = ''
     if language:
@@ -91,6 +81,17 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
         print(''.join(traceback.format_exception(None, e, e.__traceback__)))
         raise VespaTimeoutException(e)
 
+    __extend_query_metadata(result)
+    try:
+        __build_query_snippets(result)
+        return result.hits, result.json['root']['query-metadata'], \
+               __get_bounding_box_data(result.hits), result.number_documents_retrieved
+    except KeyError as e:
+        print(''.join(traceback.format_exception(None, e, e.__traceback__)))
+        raise VespaTimeoutException(e)
+
+
+def __extend_query_metadata(result):
     query_metadata = result.json['root']['query-metadata']
     for i, phrase_translations in enumerate(query_metadata['translations']):
         multilang_terms = __collect_multilang_query_terms(phrase_translations)
@@ -99,16 +100,24 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
         query_metadata['translations'][i]['stems'] = multilang_stems
         query_metadata['translations'][i]['stemMap'] = multilang_stem_map
         query_metadata['translations'][i]['flatTerms'] = multilang_terms
+
+
+def __build_query_phrases(query):
     try:
-        __build_query_snippets(result)
-        return result.hits, result.json['root']['query-metadata'], \
-               get_bounding_box_data(result.hits), result.number_documents_retrieved
-    except KeyError as e:
-        print(''.join(traceback.format_exception(None, e, e.__traceback__)))
-        raise VespaTimeoutException(e)
+        query_list = json.loads(query)
+    except json.JSONDecodeError:
+        query_list = [query]
+
+    phrases = ''
+
+    for i, phrase in enumerate(query_list):
+        phrases += f'default contains "{phrase}"'
+        if i < len(query_list) - 1:
+            phrases += ' and '
+    return phrases
 
 
-def get_bounding_box_data(hits):
+def __get_bounding_box_data(hits):
     bounding_boxes = {}
     for hit in hits:
         doc = hit['fields']['parent_doc']
@@ -122,10 +131,20 @@ def get_bounding_box_data(hits):
     return bounding_boxes
 
 
-def query_doc_page(doc, page):
+def query_doc_page(doc, page, query):
+    """
+        Launch a query on a specific document page from the vespa search index
+
+        :param doc: document name/id
+        :param page: page number inside document
+        :param query: JSON string query list or single query string (mandatory)
+        :return: relevant vespa hit + query metadata + annotated bounding box information
+    """
+    phrases = __build_query_phrases(query)
+
     try:
         meta = __load_meta(doc, page)
-        yql = f'select * from sources * where parent_doc matches \"{doc}\" and page matches \"{page}\";'
+        yql = f'select * from sources * where {phrases} and parent_doc matches \"{doc}\" and page matches \"{page}\";'
 
         result = app.query(body={
             "traceLevel": traceLevel,
@@ -135,8 +154,33 @@ def query_doc_page(doc, page):
             "presentation.format": renderer
         })
 
-        # TODO determine relevant boxes
-        return result.hits[0], meta
+        __extend_query_metadata(result)
+        hit = result.hits[0]
+        translations = result.json['root']['query-metadata']
+        stems = {}
+        synonyms = []
+        box_data = {}
+        for translation in translations['translations']:
+            stems = stems | translation['stems']
+            synonyms = synonyms + translation['synonyms']
+
+        languages = set([language for stem, value in stems.items() for language in value['languages']])
+        hit_lang = hit['fields']['language']
+        hit_stems = [stem for stem, value in stems.items()
+                     if stem != '' and (hit_lang not in languages or hit_lang in value['languages'])]
+        relevant_stem_terms = list(__get_relevant_terms(hit_stems, meta['stems']).keys())
+        box_data = {
+            'bounding_data': {
+                'boxes': __mark_relevant_boxes(relevant_stem_terms, synonyms, meta),
+                'height': meta['dimensions']['origHeight'],
+                'width': meta['dimensions']['origWidth'],
+                'image_path': f'/document/{doc}/page/{page}/image',
+                'image_scale': meta['dimensions']['scale'],
+            },
+            'download_path': f'/document/{doc}/download',
+        }
+
+        return result.hits[0], result.json['root']['query-metadata'], box_data
     except (FileNotFoundError, IndexError):
         raise FileNotFoundError
 
@@ -144,7 +188,6 @@ def query_doc_page(doc, page):
 def __build_query_snippets(result):
     hits = result.hits
     translations = result.json['root']['query-metadata']
-    bounding_boxes = get_bounding_box_data(hits)
     stems = {}
     synonyms = []
     for translation in translations['translations']:
@@ -156,10 +199,10 @@ def __build_query_snippets(result):
         hit_lang = hit['fields']['language']
         hit_stems = [stem for stem, value in stems.items()
                          if stem != '' and (hit_lang not in languages or hit_lang in value['languages'])]
-        hit['snippets'] = build_hit_snippets(hit, hit_stems, synonyms)
+        hit['snippets'] = __build_hit_snippets(hit, hit_stems, synonyms)
 
 
-def build_hit_snippets(hit, stems, synonyms):
+def __build_hit_snippets(hit, stems, synonyms):
     """
     Build query snippets of a specific document page containing search query items or any matching synonyms
 
@@ -179,12 +222,14 @@ def build_hit_snippets(hit, stems, synonyms):
             'image_path': '/snippet/' + snippet[0],
             'bounds': snippet[1],
             'width': snippet[1][1] - snippet[1][0],
-            'height': snippet[1][3] - snippet[1][2]
+            'height': snippet[1][3] - snippet[1][2],
+            'image_scale': box_data['dimensions']['scale']
         } for snippet in list(zip(hit_snippets_names, hit_snippets_boxes))
     ]
 
     for snippet in snippet_data:
         snippet['boxes'] = __mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, snippet['bounds'])
+        del snippet['bounds']
     
     return snippet_data
 
@@ -202,8 +247,8 @@ def __mark_relevant_boxes(terms, synonyms, box_data, surrounding_box=None):
             .flatten_bounding_boxes(boxes, dimensions['origWidth'], dimensions['origHeight'])
         width = dimensions['origWidth']
         height = dimensions['origHeight']
-    synonym_positions = find_relevant_synonym_positions([box['word'] for box in flat_relative_boxes],
-                                                                   synonyms, box_data['stems'])
+    synonym_positions = __find_relevant_synonym_positions([box['word'] for box in flat_relative_boxes],
+                                                          synonyms, box_data['stems'])
     for i, box in enumerate(flat_relative_boxes):
         box['relevant'] = box['word'] in terms or i in synonym_positions
 
@@ -239,10 +284,10 @@ def __collect_multilang_query_stem_map(translations):
 
 def __get_relevant_stem_terms(doc, page, stems):
     metadata = __load_meta(doc, page)
-    return list(get_relevant_terms(stems, metadata['stems']).keys())
+    return list(__get_relevant_terms(stems, metadata['stems']).keys())
 
 
-def get_relevant_terms(query_stems, page_stems):
+def __get_relevant_terms(query_stems, page_stems):
     page_stems = __extend_multipart_stems(page_stems)
     relevant_terms_map = {}
     for stem in query_stems:
@@ -264,10 +309,10 @@ def __extend_multipart_stems(stems: dict):
 
 def __get_relevant_synonym_terms(doc, page, synonyms):
     metadata = __load_meta(doc, page)
-    return find_relevant_synonym_terms(metadata['boxes'], metadata['stems'], synonyms)
+    return __find_relevant_synonym_terms(metadata['boxes'], metadata['stems'], synonyms)
 
 
-def find_relevant_synonym_terms(boxes, page_stems, synonyms):
+def __find_relevant_synonym_terms(boxes, page_stems, synonyms):
     """
     Sorts words contained in provided box data and finds full synonym matches in sorted text and stem mappings
 
@@ -299,7 +344,7 @@ def find_relevant_synonym_terms(boxes, page_stems, synonyms):
     return relevant_synonyms
 
 
-def find_relevant_synonym_positions(words, synonyms, stems):
+def __find_relevant_synonym_positions(words, synonyms, stems):
     """
         Sorts words contained in provided box data and finds index positions of full synonym matches in sorted text
 

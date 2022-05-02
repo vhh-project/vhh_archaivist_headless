@@ -83,26 +83,9 @@ def search():
 
     return {
         "hits": hits,
-        "queryMetadata": query_metadata,
+        "query_metadata": query_metadata,
         "total": total
     }
-
-
-@app.route('/snippets/', methods=['POST'])
-def build_snippets():
-    data = request.get_json()
-
-    # Remove translation artifacts
-    data['stems'].pop('', None)
-    languages = set([language for stem, value in data['stems'].items() for language in value['languages']])
-    hit_lang = data['hit']['fields']['language']
-    data['stems'] = [stem for stem, value in data['stems'].items()
-                     if stem not in data['stem-filters'] and
-                     (hit_lang not in languages or hit_lang in value['languages'])]
-    data['synonyms'] = __stem_filter_synonyms(data['synonyms'], data['stem-filters'])
-
-    query_snippets = vespa_util.build_hit_snippets(data['hit'], data['stems'], data['synonyms'])
-    return query_snippets
 
 
 @app.route('/snippet/<snippet_id>')
@@ -116,13 +99,14 @@ def status():
 
 
 @app.route('/document/<doc_name>/page/<page_number>')
-def get_page_data(doc_name, page_number):
+def search_page(doc_name, page_number):
+    query = request.args.get('query', default='', type=str)
     try:
-        result, bounding_data = vespa_util.query_doc_page(doc_name, page_number)
+        result, query_metadata, bounding_data = vespa_util.query_doc_page(doc_name, page_number, query)
         return {
-            'item': result,
-            'boundingData': bounding_data
-        }
+            'hit': result,
+            'query_metadata': query_metadata,
+        } | bounding_data
     except FileNotFoundError:
         return '', 204
 
