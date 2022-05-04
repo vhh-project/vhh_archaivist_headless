@@ -1,17 +1,14 @@
 # Baseline Application (vespa index)
 
 ## Contents
-- [Usage](#usage)
-    - [Default schema](#default-schema)
-    - [Feeding (text only)](#feeding-text-only)
-    - [Querying](#querying)
-      - [Request](#request)
-      - [Response](#response)
-      - [Synonyms](#synonyms)
-  - [Vespa Intermediate API](#vespa-intermediate-api)
+- [Default schema](#default-schema)
+- [Feeding (text only)](#feeding-text-only)
+- [Querying](#querying)
+    - [Request](#request)
+    - [Response](#response)
+    - [Synonyms](#synonyms)
     
-
-## Usage
+***
 
 In the following sections we will show some exemplary ways for feeding documents and sending queries to this application. For a more comprehensive introduction to all possibilities please visit the vespa documentation: 
 - [Quick Start](https://docs.vespa.ai/en/vespa-quick-start.html)
