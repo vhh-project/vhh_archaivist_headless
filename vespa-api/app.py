@@ -5,10 +5,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 import config
-import bounding_boxes
 import pdf_import
-import stemmer
-import synonym_util
 import vespa_util
 
 app = Flask(__name__)
@@ -57,7 +54,7 @@ def upload_file():
             abort(400, 'Please provide a valid PDF file')
 
 
-@app.route('/search/', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search():
     query = request.args.get('query', default='', type=str)
     page = request.args.get('page', 0, type=int)
@@ -119,15 +116,6 @@ def show_document_page_image(doc_name, page_number):
 @app.route('/document/<doc_name>/download')
 def download_document_file(doc_name):
     return send_from_directory(config.metadata_path, doc_name + '.pdf', as_attachment=True)
-
-
-def __stem_filter_synonyms(synonyms, stem_filters):
-    filtered_synonyms = []
-    for synonym in synonyms:
-        mainTerm = synonym['mainTerm'] if synonym['mainTerm'] not in stem_filters else ''
-        terms = [term for term in synonym['terms'] if term not in stem_filters]
-        filtered_synonyms.append({'mainTerm': mainTerm, 'terms': terms})
-    return filtered_synonyms
 
 
 if __name__ == '__main__':
