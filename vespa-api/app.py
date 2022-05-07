@@ -105,7 +105,7 @@ def search_page(doc_name, page_number):
             'query_metadata': query_metadata,
         } | bounding_data
     except FileNotFoundError:
-        return '', 204
+        abort(404, 'Document page could not be found!')
 
 
 @app.route('/document/<doc_name>/page/<page_number>/image')
