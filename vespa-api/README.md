@@ -13,7 +13,10 @@ This request can take a while for longer documents. PDF rendering and PDF-to-ima
 
 ## Request
 Content Type: `multipart/form-data`  
-Example request: `curl -F file=@/path/to/ocr/document.pdf http://hostname:5001/upload`
+Example request:  
+```
+curl -F "file=@/path/to/ocr/document.pdf" -F "collection=Example Collection Name" http://hostname:5001/document
+```
 
 ## Response
 ### Success
