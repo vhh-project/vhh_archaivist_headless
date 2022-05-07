@@ -174,7 +174,7 @@ Download source PDF with `<name>` ('parent_doc' in vespa baseline index schema)
 ## Response
 ### Success 
 ```HTTP
-HTTP/1.1 200 OK
+200 OK
 Content-Disposition: attachment; 
 Content-Type: application/pdf
 ```
@@ -188,7 +188,7 @@ Fetch full page image with `<name>` ('parent_doc' in index schema) and `<number>
 ## Response
 ### Success 
 ```HTTP
-HTTP/1.1 200 OK
+200 OK
 Content-Disposition: inline
 Content-Type: image/jpeg
 ```
@@ -201,7 +201,7 @@ Fetch snippet image via `<id>`. Request path most likely retrieved ready to use 
 ## Response
 ### Success 
 ```HTTP
-HTTP/1.1 200 OK
+200 OK
 Content-Disposition: inline
 Content-Type: image/jpeg
 ```
