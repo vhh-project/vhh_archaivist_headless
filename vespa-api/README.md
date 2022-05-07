@@ -6,7 +6,10 @@ This request processes each PDF page individually:
     - Extract text including positions on page
     - Convert page to image
     - Store positional information (bounding boxes) and image in server file system
-    - Feed text and other schema attributes (see schema **TODO**) to vespa index
+    - Feed text and other schema attributes (see [schema](../baseline_vespa_app/src/main/application/schemas/baseline.sd)) to vespa index
+
+### Disclaimer 
+This request can take a while for longer documents. PDF rendering and PDF-to-image conversion can cause a lot of momentary memory usage peaks. In order to keep memory usage as light as possible, each PDF page is processed sequentially. Hence, we decided to increase the default worker timeout in gunicorn from 30 seconds to 120 seconds. The GUNICORN_TIMEOUT parameter can be tweaked via the [Dockerfile](Dockerfile) if needed.
 
 ## Request
 Content Type: `multipart/form-data`  
@@ -51,6 +54,10 @@ The response provides the uploaded document name (i.e. original name of the uplo
 - Non-PDF file provided
 - PDF library failed to render file
 
+`413 Request Entity Too Large`
+- File exceeds 20MB size 
+    - `MAX_CONTENT_LENGTH` can be configured at the top of [app.py](app.py)
+
 `500 Internal Server Error`  
 - Vespa index is blocking feed operation due to disk limits
 # GET /search
@@ -77,17 +84,35 @@ Start multi-stage search process:
     - Determine sort direction when sorting alphabetically
 
 ## Response
+
 ### Success
-`200 OK`
-The response is served in JSON format. The top level looks like this:
+`200 OK`  
+
+Example response: [search.json](examples/search.json)
+
+The response is served in JSON format. The top level has the vespa hits (`hits`), translation results in `query_metadata` and the `total` number of relevant items. 
+
+#### hits <a id="query_hits"/>
+Hits contains an array of relevant items from the vespa index fashioned after the [default JSON result format](https://docs.vespa.ai/en/reference/default-result-format.html). More specifially it contains data close to the **root.children** array in the default format (see [example JSON](https://docs.vespa.ai/en/query-api.html#result-examples) also). Additionally to the default data from the index, we extend each hit with the `snippets` array data structure. One snippet item could look as follows:
 ```json
 {
-    'hits': ...,  // enhanced relevant page hits from vespa index 
-    'query_metadata': ...,  // contains query-specific translation metadata
-    'total': ...  // total number of relevant document pages
+    "boxes": [
+        {
+            "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2
+            "relevant": true, // boolean - is term relevant to query?
+            "word": "characteristicts"
+        },
+        .
+        .
+        .
+    ],
+    "height": 204,
+    "width": 1256,
+    "image_path": "/snippet/tmpu3nbuhb7", // API path for image source
+    "image_scale": 2.7778662420382165 // ratio between source PDF and scaled-down image
 }
 ```
-TODO
+The boxes contains all term bounding boxes of the original document, that are inside the snippet's confines and the relevant flag indicates wether or not the boxes should be highlighted as relevant to the query.
 
 ### Failure
 `504 Timeout`  
@@ -95,21 +120,91 @@ Indicates that the vespa index timed out during the forwarded request.
 Can happen for complex queries (hint: tweak the `timeout` variable in [test](vespa_util.py)) or when the vespa index (i.e. baseline application) is unreachable.
 
 # GET /document/\<name\>/page/\<number\>
-Launch search at baseline vespa index (Filter single page)  
-TODO
+Launch search at baseline vespa index (Filter single page).
+This endpoint represents a way to retrieve the full page metadata with relevant term bounding boxes marked.
+
+## Request
+Example: `curl hostname:5001/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/page/18?query=war%20dogs`
+### Path parameters
+- `<name>` (string) - The document name ('parent_doc' in baseline index schema)
+- `<page>` (int) - The specific document page
+### Query parameters
+`query` Required
+-  string (e.g. `'war zone'`) - applies a logical OR operator on all terms in query
+- array of strings (e.g. `['war', 'zone]`) - applies logical AND to each array item additionally to logical OR inside each string 
+
+## Response
+### Success
+Example response: [document_search.json](examples/document_search.json)
+
+```json
+{
+    "bounding_data": {
+        "boxes": [
+            {
+                "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2
+                "relevant": true, // boolean - is term relevant to query?
+                "word": "characteristicts"
+            },
+            .
+            .
+            .
+        ],
+        "height": 1333,
+        "width": 1900,
+        "image_path": "/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/page/18/image", // API path for image source
+        "image_scale": 	2.7778947368421054, // ratio between source PDF and scaled-down image
+    },
+    "download_path": "/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/download", // API path for PDF source
+    "hit": {...}, // default vespa hit information
+    "query_metadata": {...} // word2word translation metadata
+}
+```
+
+### Failure
+`404 Not Found`  
+Document as a whole or specific page number not found in vespa index or bounding box file structure
 
 # GET /document/\<name\>/download
-Download source PDF  
-TODO
+Download source PDF with `<name>` ('parent_doc' in vespa baseline index schema)
+
+## Response
+### Success 
+```HTTP
+HTTP/1.1 200 OK
+Content-Disposition: attachment; 
+Content-Type: application/pdf
+```
+### Failure 
+`404 Not Found`  
+Document not found in file system
 
 # GET /document/\<name\>/page/\<number\>/image
-Fetch full page image  
-TODO
+Fetch full page image with `<name>` ('parent_doc' in index schema) and `<number>` ('page' in index schema)
+
+## Response
+### Success 
+```HTTP
+HTTP/1.1 200 OK
+Content-Disposition: inline
+Content-Type: image/jpeg
+```
+### Failure 
+`404 Not Found`  
+Document as a whole or specific page number not found in file system
 
 # GET /snippet/\<id\>
-Fetch snippet image  
-TODO
+Fetch snippet image via `<id>`. Request path most likely retrieved ready to use from `image_path` field in each [query response JSON](#query_hits) hit.
+## Response
+### Success 
+```HTTP
+HTTP/1.1 200 OK
+Content-Disposition: inline
+Content-Type: image/jpeg
+```
+### Failure 
+`404 Not Found`  
+Document as a whole or specific page number not found in file system
 
 # GET /status
-General status check for API  
-TODO
+General status check for API
