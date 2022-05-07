@@ -1,0 +1,8780 @@
+{
+    "bounding_data": {
+      "boxes": [
+        {
+          "box": [
+            7,
+            28.999997292,
+            1310.2,
+            1324.2
+          ],
+          "relevant": false,
+          "word": "wt"
+        },
+        {
+          "box": [
+            542,
+            568.000009112,
+            1225.8,
+            1236.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            575,
+            611.6666685814,
+            1223.4,
+            1236.4
+          ],
+          "relevant": false,
+          "word": "9/1968"
+        },
+        {
+          "box": [
+            543,
+            556.45461545,
+            1209,
+            1219
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            567,
+            611.99999801,
+            1208.8,
+            1219.8
+          ],
+          "relevant": false,
+          "word": "heimut"
+        },
+        {
+          "box": [
+            619,
+            676.919494542,
+            1206.4,
+            1219.4
+          ],
+          "relevant": false,
+          "word": "salfinger"
+        },
+        {
+          "box": [
+            688,
+            708.9999955,
+            1208.8,
+            1219.8
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            715,
+            763.99999225,
+            1208.8,
+            1219.8
+          ],
+          "relevant": false,
+          "word": "schüler"
+        },
+        {
+          "box": [
+            771,
+            791.9999971499999,
+            1208.8,
+            1219.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            799,
+            839.999998732,
+            1208.8,
+            1219.8
+          ],
+          "relevant": false,
+          "word": "dritten"
+        },
+        {
+          "box": [
+            849,
+            881.9999878,
+            1206.4,
+            1219.4
+          ],
+          "relevant": false,
+          "word": "gym-"
+        },
+        {
+          "box": [
+            542,
+            620.9689278840001,
+            1191.8,
+            1202.8
+          ],
+          "relevant": false,
+          "word": "naslalklasse"
+        },
+        {
+          "box": [
+            542,
+            577.00000845,
+            1174.8,
+            1185.8
+          ],
+          "relevant": false,
+          "word": "josef"
+        },
+        {
+          "box": [
+            587,
+            642.06478219,
+            1174.8,
+            1185.8
+          ],
+          "relevant": false,
+          "word": "schmied"
+        },
+        {
+          "box": [
+            658,
+            720.9999758739999,
+            1174.8,
+            1185.8
+          ],
+          "relevant": false,
+          "word": "gedanken"
+        },
+        {
+          "box": [
+            733,
+            751.999997656,
+            1175.4,
+            1183.4
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            763,
+            882.000004552,
+            1174.8,
+            1185.8
+          ],
+          "relevant": false,
+          "word": "verantwortlichkeit"
+        },
+        {
+          "box": [
+            542,
+            562.9999971499999,
+            1158,
+            1168
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            570,
+            613.9999879439999,
+            1157.8,
+            1168.8
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            621,
+            639.000002889,
+            1157.8,
+            1168.8
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            646,
+            664.999997918,
+            1157.8,
+            1168.8
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            673,
+            772.9999611520001,
+            1154.2,
+            1168.2
+          ],
+          "relevant": false,
+          "word": "geschlechtliche"
+        },
+        {
+          "box": [
+            780,
+            850.00002646,
+            1155.4,
+            1168.4
+          ],
+          "relevant": false,
+          "word": "aufklärung"
+        },
+        {
+          "box": [
+            859,
+            881.0000026,
+            1159,
+            1169
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            543,
+            606.1033184600001,
+            1138.4,
+            1151.4
+          ],
+          "relevant": false,
+          "word": "erziehung"
+        },
+        {
+          "box": [
+            543,
+            568.0000059399999,
+            1124,
+            1134
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            578,
+            620.4615420800001,
+            1121.6,
+            1133.6
+          ],
+          "relevant": false,
+          "word": "101968"
+        },
+        {
+          "box": [
+            543,
+            570.94834,
+            1107,
+            1117
+          ],
+          "relevant": false,
+          "word": "univ"
+        },
+        {
+          "box": [
+            574.83315926,
+            605.11518565,
+            1107,
+            1117
+          ],
+          "relevant": false,
+          "word": "-prof"
+        },
+        {
+          "box": [
+            622,
+            636.2460659,
+            1107,
+            1117
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            652,
+            707.0000130679999,
+            1105.8,
+            1116.8
+          ],
+          "relevant": false,
+          "word": "albrecht"
+        },
+        {
+          "box": [
+            723,
+            763.2047866,
+            1105.8,
+            1116.8
+          ],
+          "relevant": false,
+          "word": "weber"
+        },
+        {
+          "box": [
+            780,
+            845.00000184,
+            1107,
+            1117
+          ],
+          "relevant": false,
+          "word": "gedanken"
+        },
+        {
+          "box": [
+            862,
+            881.999999872,
+            1107.4,
+            1115.4
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            1453,
+            1519.99998502,
+            1113,
+            1128
+          ],
+          "relevant": false,
+          "word": "gebracht"
+        },
+        {
+          "box": [
+            1529,
+            1544.8320905599999,
+            1116.4,
+            1129.4
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1558,
+            1583.999999285,
+            1115.4,
+            1128.4
+          ],
+          "relevant": false,
+          "word": "auf"
+        },
+        {
+          "box": [
+            1593,
+            1624.00000128,
+            1115.6,
+            1127.6
+          ],
+          "relevant": false,
+          "word": "dem"
+        },
+        {
+          "box": [
+            1633,
+            1698.999977512,
+            1115.6,
+            1127.6
+          ],
+          "relevant": false,
+          "word": "gehäuse"
+        },
+        {
+          "box": [
+            1708,
+            1770.0000143920001,
+            1115.6,
+            1127.6
+          ],
+          "relevant": false,
+          "word": "befindet"
+        },
+        {
+          "box": [
+            1778,
+            1809.000011406,
+            1115.4,
+            1128.4
+          ],
+          "relevant": false,
+          "word": "sich"
+        },
+        {
+          "box": [
+            543,
+            596.00001084,
+            1090,
+            1100
+          ],
+          "relevant": false,
+          "word": "didaktik"
+        },
+        {
+          "box": [
+            604,
+            625.0000076,
+            1090,
+            1100
+          ],
+          "relevant": false,
+          "word": "des"
+        },
+        {
+          "box": [
+            633,
+            681.000015,
+            1090,
+            1100
+          ],
+          "relevant": false,
+          "word": "dramas"
+        },
+        {
+          "box": [
+            689,
+            702.9999977,
+            1090,
+            1100
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            710,
+            716.000001164,
+            1090.2,
+            1099.2
+          ],
+          "relevant": false,
+          "word": "8"
+        },
+        {
+          "box": [
+            1453,
+            1483.99999357,
+            1099.4,
+            1112.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            727,
+            746.000005552,
+            1088.8,
+            1099.8
+          ],
+          "relevant": false,
+          "word": "bis"
+        },
+        {
+          "box": [
+            753,
+            765.00000344,
+            1089,
+            1099
+          ],
+          "relevant": false,
+          "word": "10"
+        },
+        {
+          "box": [
+            1496,
+            1598.304456245,
+            1096,
+            1111
+          ],
+          "relevant": false,
+          "word": "fresnel-linse"
+        },
+        {
+          "box": [
+            1614,
+            1631.0000031630002,
+            1098.4,
+            1111.4
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            1643,
+            1708.999977512,
+            1098.6,
+            1110.6
+          ],
+          "relevant": false,
+          "word": "gehäuse"
+        },
+        {
+          "box": [
+            1720,
+            1743.000006256,
+            1098.6,
+            1110.6
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            777,
+            836.9982141200001,
+            1086.4,
+            1099.4
+          ],
+          "relevant": false,
+          "word": "schuljahr"
+        },
+        {
+          "box": [
+            1755,
+            1808.99997861,
+            1095,
+            1110
+          ],
+          "relevant": false,
+          "word": "projek-"
+        },
+        {
+          "box": [
+            543,
+            570.94834,
+            1073,
+            1083
+          ],
+          "relevant": false,
+          "word": "univ"
+        },
+        {
+          "box": [
+            574.83315926,
+            605.11518565,
+            1073,
+            1083
+          ],
+          "relevant": false,
+          "word": "-prof"
+        },
+        {
+          "box": [
+            620,
+            634.3974045599999,
+            1073,
+            1083
+          ],
+          "relevant": true,
+          "word": "or"
+        },
+        {
+          "box": [
+            649,
+            688.9999900299999,
+            1071.8,
+            1082.8
+          ],
+          "relevant": false,
+          "word": "rudolt"
+        },
+        {
+          "box": [
+            701,
+            747.1527982,
+            1072,
+            1082
+          ],
+          "relevant": false,
+          "word": "gönner"
+        },
+        {
+          "box": [
+            763,
+            813.00000203,
+            1072,
+            1082
+          ],
+          "relevant": false,
+          "word": "roboter"
+        },
+        {
+          "box": [
+            824,
+            837.9999977,
+            1073,
+            1083
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            850,
+            881.9999999800001,
+            1073,
+            1083
+          ],
+          "relevant": false,
+          "word": "klas-"
+        },
+        {
+          "box": [
+            1453,
+            1537.160960317,
+            1075.4,
+            1093.4
+          ],
+          "relevant": false,
+          "word": "tionslampe"
+        },
+        {
+          "box": [
+            1558,
+            1694.2653910450001,
+            1079,
+            1094
+          ],
+          "relevant": false,
+          "word": "wärmeschutzfilter"
+        },
+        {
+          "box": [
+            1718,
+            1810.000021025,
+            1078,
+            1093
+          ],
+          "relevant": false,
+          "word": "sicherungs-"
+        },
+        {
+          "box": [
+            1454,
+            1495.000008544,
+            1060.8,
+            1076.8
+          ],
+          "relevant": false,
+          "word": "knopf"
+        },
+        {
+          "box": [
+            1505,
+            1524.9999946520002,
+            1065.6,
+            1077.6
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            543,
+            612.0724031249999,
+            1054.8,
+            1065.8
+          ],
+          "relevant": false,
+          "word": "senzimmer"
+        },
+        {
+          "box": [
+            1535,
+            1682.335485776,
+            1060.8,
+            1076.8
+          ],
+          "relevant": false,
+          "word": "überhitzungsschutz"
+        },
+        {
+          "box": [
+            1697,
+            1728.99999257,
+            1063.4,
+            1076.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            1738,
+            1810.000024304,
+            1064.4,
+            1077.4
+          ],
+          "relevant": false,
+          "word": "automati-"
+        },
+        {
+          "box": [
+            1453,
+            1488.000006976,
+            1048.8,
+            1059.8
+          ],
+          "relevant": false,
+          "word": "sche"
+        },
+        {
+          "box": [
+            1502,
+            1638.29832104,
+            1043.8,
+            1059.8
+          ],
+          "relevant": false,
+          "word": "stromabschaltung"
+        },
+        {
+          "box": [
+            1657,
+            1680.9999977749999,
+            1046.4,
+            1059.4
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            525,
+            587.91268214,
+            1036,
+            1046
+          ],
+          "relevant": false,
+          "word": "foroforum"
+        },
+        {
+          "box": [
+            1695,
+            1767.245209344,
+            1045.2,
+            1059.2
+          ],
+          "relevant": false,
+          "word": "ventliator"
+        },
+        {
+          "box": [
+            1787,
+            1807.999998752,
+            1047.6,
+            1059.6
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            602,
+            657.9445811600001,
+            1034.6,
+            1046.6
+          ],
+          "relevant": false,
+          "word": "bieleteld"
+        },
+        {
+          "box": [
+            671,
+            697.000009112,
+            1035.8,
+            1046.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            706,
+            738.9999981453999,
+            1032.4,
+            1045.4
+          ],
+          "relevant": false,
+          "word": "8/1968"
+        },
+        {
+          "box": [
+            1454,
+            1599.000036314,
+            1029.2,
+            1043.2
+          ],
+          "relevant": false,
+          "word": "sicherheitsschalter"
+        },
+        {
+          "box": [
+            1615,
+            1642.000006072,
+            1029.4,
+            1042.4
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1658,
+            1688.99999357,
+            1029.4,
+            1042.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            1705,
+            1808.999978155,
+            1027,
+            1042
+          ],
+          "relevant": false,
+          "word": "auflagestütze"
+        },
+        {
+          "box": [
+            547.938700689,
+            618.0000281810001,
+            1016.4,
+            1029.4
+          ],
+          "relevant": false,
+          "word": "gigantisch"
+        },
+        {
+          "box": [
+            625,
+            648.000006964,
+            1018.8,
+            1029.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            655,
+            722.0000196,
+            1019,
+            1029
+          ],
+          "relevant": false,
+          "word": "wunderbar"
+        },
+        {
+          "box": [
+            1453,
+            1472.9999946520002,
+            1013.6,
+            1025.6
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            1490,
+            1517.000002736,
+            1013.6,
+            1025.6
+          ],
+          "relevant": false,
+          "word": "den"
+        },
+        {
+          "box": [
+            1535,
+            1652.23247808,
+            1008.8,
+            1024.8
+          ],
+          "relevant": false,
+          "word": "projektionskopf"
+        },
+        {
+          "box": [
+            1675,
+            1702.0000039119998,
+            1012.6,
+            1024.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1720,
+            1761.9999932800001,
+            1013.6,
+            1025.6
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1777,
+            1809.000011758,
+            1013.4,
+            1026.4
+          ],
+          "relevant": false,
+          "word": "wird"
+        },
+        {
+          "box": [
+            544,
+            569.0000059399999,
+            1002,
+            1012
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            579,
+            621.7142837783999,
+            999.6,
+            1011.6
+          ],
+          "relevant": false,
+          "word": "10/1968"
+        },
+        {
+          "box": [
+            239,
+            265.000009112,
+            985.8,
+            996.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            1453,
+            1494.9999932800001,
+            995.6,
+            1007.6
+          ],
+          "relevant": false,
+          "word": "durch"
+        },
+        {
+          "box": [
+            1507,
+            1547.0000054719999,
+            995.2,
+            1009.2
+          ],
+          "relevant": false,
+          "word": "einen"
+        },
+        {
+          "box": [
+            1559,
+            1708.000010208,
+            991.8,
+            1007.8
+          ],
+          "relevant": false,
+          "word": "kipp-stufenschalter"
+        },
+        {
+          "box": [
+            1719,
+            1732.000001688,
+            995.6,
+            1007.6
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            141,
+            179.94230141999998,
+            984.8,
+            995.8
+          ],
+          "relevant": false,
+          "word": "action"
+        },
+        {
+          "box": [
+            193,
+            225.084518336,
+            983.4,
+            996.4
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            1743,
+            1808.999989365,
+            993,
+            1008
+          ],
+          "relevant": false,
+          "word": "tätigkeit"
+        },
+        {
+          "box": [
+            275,
+            312.5833319092,
+            982.2,
+            996.2
+          ],
+          "relevant": false,
+          "word": "5/1968"
+        },
+        {
+          "box": [
+            543,
+            600.00000384,
+            983.6,
+            995.6
+          ],
+          "relevant": false,
+          "word": "gottfried"
+        },
+        {
+          "box": [
+            611,
+            648.0560522000001,
+            985,
+            995
+          ],
+          "relevant": false,
+          "word": "kraus"
+        },
+        {
+          "box": [
+            661,
+            730.99998894,
+            981.2,
+            995.2
+          ],
+          "relevant": false,
+          "word": "salzburger"
+        },
+        {
+          "box": [
+            741,
+            819.055383308,
+            981.2,
+            995.2
+          ],
+          "relevant": false,
+          "word": "dramaturgie"
+        },
+        {
+          "box": [
+            1453,
+            1505.47514584,
+            975,
+            990
+          ],
+          "relevant": false,
+          "word": "gesetzt"
+        },
+        {
+          "box": [
+            1521,
+            1544.9999955,
+            978.4,
+            991.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1554,
+            1648.999996896,
+            974.8,
+            990.8
+          ],
+          "relevant": false,
+          "word": "kippschalter"
+        },
+        {
+          "box": [
+            1659,
+            1689.0000071279999,
+            978.6,
+            990.6
+          ],
+          "relevant": false,
+          "word": "sind"
+        },
+        {
+          "box": [
+            1700,
+            1723.0000018950002,
+            978.4,
+            991.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1733,
+            1760.999993879,
+            978.4,
+            991.4
+          ],
+          "relevant": false,
+          "word": "drei"
+        },
+        {
+          "box": [
+            1771,
+            1808.999985655,
+            976,
+            991
+          ],
+          "relevant": false,
+          "word": "sym-"
+        },
+        {
+          "box": [
+            158,
+            268.9200743,
+            965.2,
+            979.2
+          ],
+          "relevant": false,
+          "word": "prominentenstrip"
+        },
+        {
+          "box": [
+            282,
+            326.99999800999996,
+            968.8,
+            979.8
+          ],
+          "relevant": false,
+          "word": "helmut"
+        },
+        {
+          "box": [
+            335,
+            358.75340560999996,
+            968.8,
+            979.8
+          ],
+          "relevant": false,
+          "word": "zilk"
+        },
+        {
+          "box": [
+            544,
+            569.99999444,
+            968,
+            978
+          ],
+          "relevant": false,
+          "word": "haft"
+        },
+        {
+          "box": [
+            579,
+            622.6428577104,
+            964.4,
+            977.4
+          ],
+          "relevant": false,
+          "word": "11/1968"
+        },
+        {
+          "box": [
+            1453,
+            1492.9999956880001,
+            961.6,
+            973.6
+          ],
+          "relevant": false,
+          "word": "bolen"
+        },
+        {
+          "box": [
+            158,
+            183.99999444,
+            951,
+            961
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            193,
+            240.5999983368,
+            948.4,
+            961.4
+          ],
+          "relevant": false,
+          "word": "8/9/1958"
+        },
+        {
+          "box": [
+            544,
+            594.999993044,
+            949.8,
+            960.8
+          ],
+          "relevant": false,
+          "word": "manfred"
+        },
+        {
+          "box": [
+            603,
+            657.02564212,
+            951,
+            961
+          ],
+          "relevant": false,
+          "word": "kahlweit"
+        },
+        {
+          "box": [
+            668,
+            710.99998756,
+            951,
+            961
+          ],
+          "relevant": false,
+          "word": "lieben"
+        },
+        {
+          "box": [
+            717,
+            736.999995015,
+            949.8,
+            960.8
+          ],
+          "relevant": false,
+          "word": "sie"
+        },
+        {
+          "box": [
+            744,
+            835.074274984,
+            949.8,
+            960.8
+          ],
+          "relevant": false,
+          "word": "kammermusik"
+        },
+        {
+          "box": [
+            1502,
+            1621.266129152,
+            957.8,
+            973.8
+          ],
+          "relevant": false,
+          "word": "gekennzeichnet"
+        },
+        {
+          "box": [
+            1635,
+            1707.245209344,
+            959.2,
+            973.2
+          ],
+          "relevant": false,
+          "word": "ventilator"
+        },
+        {
+          "box": [
+            1722,
+            1766.999995712,
+            960.2,
+            974.2
+          ],
+          "relevant": false,
+          "word": "kleine"
+        },
+        {
+          "box": [
+            1772,
+            1808.999998126,
+            961.4,
+            974.4
+          ],
+          "relevant": false,
+          "word": "lam-"
+        },
+        {
+          "box": [
+            1453,
+            1471.0000018239998,
+            941.6,
+            953.6
+          ],
+          "relevant": false,
+          "word": "pe"
+        },
+        {
+          "box": [
+            159,
+            268.95556013000004,
+            931.4,
+            944.4
+          ],
+          "relevant": false,
+          "word": "prominentenstrip"
+        },
+        {
+          "box": [
+            283,
+            339.999992335,
+            933.8,
+            944.8
+          ],
+          "relevant": false,
+          "word": "gottfried"
+        },
+        {
+          "box": [
+            349,
+            371.999996656,
+            934.2,
+            943.2
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            383,
+            421.248066428,
+            933.8,
+            944.8
+          ],
+          "relevant": false,
+          "word": "einem"
+        },
+        {
+          "box": [
+            1508,
+            1615.3319072000002,
+            940.8,
+            956.8
+          ],
+          "relevant": false,
+          "word": "sparschaltung"
+        },
+        {
+          "box": [
+            1632,
+            1675.0000108200002,
+            941,
+            956
+          ],
+          "relevant": false,
+          "word": "große"
+        },
+        {
+          "box": [
+            1687,
+            1737.00001687,
+            941,
+            956
+          ],
+          "relevant": false,
+          "word": "lampe"
+        },
+        {
+          "box": [
+            1774,
+            1809.0000040000002,
+            944.4,
+            957.4
+          ],
+          "relevant": false,
+          "word": "voll-"
+        },
+        {
+          "box": [
+            527,
+            562.740204908,
+            928.6,
+            940.6
+          ],
+          "relevant": false,
+          "word": "fat"
+        },
+        {
+          "box": [
+            580,
+            611.9999931460001,
+            930.8,
+            941.8
+          ],
+          "relevant": false,
+          "word": "film"
+        },
+        {
+          "box": [
+            617,
+            629.999998352,
+            928.6,
+            940.6
+          ],
+          "relevant": false,
+          "word": "4"
+        },
+        {
+          "box": [
+            634,
+            731.142045,
+            930.8,
+            941.8
+          ],
+          "relevant": false,
+          "word": "ton-magazin"
+        },
+        {
+          "box": [
+            751,
+            808.138009876,
+            929.6,
+            941.6
+          ],
+          "relevant": false,
+          "word": "münchen"
+        },
+        {
+          "box": [
+            829,
+            854.99999444,
+            932,
+            942
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            867,
+            883.000000185,
+            928.4,
+            941.4
+          ],
+          "relevant": false,
+          "word": "10/"
+        },
+        {
+          "box": [
+            1453,
+            1525.303645,
+            924,
+            939
+          ],
+          "relevant": false,
+          "word": "schaltung"
+        },
+        {
+          "box": [
+            1542,
+            1569.0000039119998,
+            927.6,
+            939.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1581,
+            1621.999998442,
+            926.4,
+            939.4
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1633,
+            1665.000011758,
+            926.4,
+            939.4
+          ],
+          "relevant": false,
+          "word": "wird"
+        },
+        {
+          "box": [
+            1677,
+            1699.000002624,
+            927.6,
+            939.6
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1710,
+            1747.999988676,
+            927.6,
+            939.6
+          ],
+          "relevant": false,
+          "word": "einer"
+        },
+        {
+          "box": [
+            1759,
+            1784.000004016,
+            927.6,
+            939.6
+          ],
+          "relevant": false,
+          "word": "800"
+        },
+        {
+          "box": [
+            1788,
+            1808.999994276,
+            927.6,
+            939.6
+          ],
+          "relevant": false,
+          "word": "w-"
+        },
+        {
+          "box": [
+            141,
+            239.999999568,
+            915.6,
+            927.6
+          ],
+          "relevant": false,
+          "word": "audio-visual"
+        },
+        {
+          "box": [
+            247,
+            291.12656474600004,
+            916.8,
+            927.8
+          ],
+          "relevant": false,
+          "word": "media"
+        },
+        {
+          "box": [
+            302,
+            348.15383021599996,
+            914.4,
+            927.4
+          ],
+          "relevant": false,
+          "word": "london"
+        },
+        {
+          "box": [
+            360,
+            386.000009112,
+            916.8,
+            927.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            393,
+            429.6666685814,
+            914.4,
+            927.4
+          ],
+          "relevant": false,
+          "word": "4/1968"
+        },
+        {
+          "box": [
+            543,
+            569.66667184,
+            914,
+            924
+          ],
+          "relevant": false,
+          "word": "1868"
+        },
+        {
+          "box": [
+            1452,
+            1477.000004016,
+            909.4,
+            922.4
+          ],
+          "relevant": false,
+          "word": "230"
+        },
+        {
+          "box": [
+            1481,
+            1605.000056576,
+            905.8,
+            921.8
+          ],
+          "relevant": false,
+          "word": "v-halogenlampe"
+        },
+        {
+          "box": [
+            1614,
+            1635.999997292,
+            909.4,
+            922.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1644,
+            1680.00000183,
+            909.4,
+            922.4
+          ],
+          "relevant": false,
+          "word": "zirka"
+        },
+        {
+          "box": [
+            1688,
+            1711.999992068,
+            909.4,
+            922.4
+          ],
+          "relevant": false,
+          "word": "4m"
+        },
+        {
+          "box": [
+            159,
+            170.464364362,
+            898.8,
+            909.8
+          ],
+          "relevant": false,
+          "word": "r"
+        },
+        {
+          "box": [
+            174.878621,
+            184.580458431,
+            898.8,
+            909.8
+          ],
+          "relevant": false,
+          "word": "t"
+        },
+        {
+          "box": [
+            188.994715069,
+            199.585755276,
+            898.8,
+            909.8
+          ],
+          "relevant": false,
+          "word": "b"
+        },
+        {
+          "box": [
+            215,
+            250.098588822,
+            899.8,
+            910.8
+          ],
+          "relevant": false,
+          "word": "lamb"
+        },
+        {
+          "box": [
+            266,
+            346.99997809800004,
+            897.4,
+            910.4
+          ],
+          "relevant": false,
+          "word": "programmed"
+        },
+        {
+          "box": [
+            358,
+            414.00001225,
+            896.2,
+            910.2
+          ],
+          "relevant": false,
+          "word": "leaming"
+        },
+        {
+          "box": [
+            425,
+            497.99998829000003,
+            900,
+            910
+          ],
+          "relevant": false,
+          "word": "procedures"
+        },
+        {
+          "box": [
+            544,
+            569.1827640399999,
+            897,
+            907
+          ],
+          "relevant": false,
+          "word": "prof"
+        },
+        {
+          "box": [
+            1722,
+            1775.000024688,
+            905.8,
+            921.8
+          ],
+          "relevant": false,
+          "word": "langem"
+        },
+        {
+          "box": [
+            1783,
+            1808.999994448,
+            910.6,
+            922.6
+          ],
+          "relevant": false,
+          "word": "an-"
+        },
+        {
+          "box": [
+            587,
+            618.9999981599999,
+            894.4,
+            907.4
+          ],
+          "relevant": false,
+          "word": "sepp"
+        },
+        {
+          "box": [
+            632,
+            670.940907005,
+            896.8,
+            907.8
+          ],
+          "relevant": false,
+          "word": "pickel"
+        },
+        {
+          "box": [
+            688,
+            814.99999741,
+            896.8,
+            907.8
+          ],
+          "relevant": false,
+          "word": "schul-schmalfilmen"
+        },
+        {
+          "box": [
+            828,
+            848.0000011,
+            898,
+            908
+          ],
+          "relevant": false,
+          "word": "auf"
+        },
+        {
+          "box": [
+            861,
+            880.99999935,
+            898,
+            908
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1453,
+            1542.000011815,
+            892.4,
+            905.4
+          ],
+          "relevant": false,
+          "word": "schlußkabel"
+        },
+        {
+          "box": [
+            1553,
+            1580.000006072,
+            892.4,
+            905.4
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1590,
+            1668.3870326400001,
+            891.2,
+            905.2
+          ],
+          "relevant": false,
+          "word": "roltenfolle"
+        },
+        {
+          "box": [
+            1683,
+            1719.9999973069998,
+            892.4,
+            905.4
+          ],
+          "relevant": false,
+          "word": "zirka"
+        },
+        {
+          "box": [
+            1729,
+            1746.0000024639999,
+            893.6,
+            905.6
+          ],
+          "relevant": false,
+          "word": "30"
+        },
+        {
+          "box": [
+            1751,
+            1763.99999792,
+            894,
+            904
+          ],
+          "relevant": false,
+          "word": "m"
+        },
+        {
+          "box": [
+            1774,
+            1804.51199935,
+            890,
+            905
+          ],
+          "relevant": false,
+          "word": "lang"
+        },
+        {
+          "box": [
+            158,
+            208.00002085,
+            879.4,
+            892.4
+          ],
+          "relevant": false,
+          "word": "applied"
+        },
+        {
+          "box": [
+            216,
+            228.99999835199998,
+            881.8,
+            892.8
+          ],
+          "relevant": false,
+          "word": "10"
+        },
+        {
+          "box": [
+            237,
+            278.00000806,
+            882.8,
+            893.8
+          ],
+          "relevant": false,
+          "word": "varled"
+        },
+        {
+          "box": [
+            287,
+            326.01665798799996,
+            882.8,
+            893.8
+          ],
+          "relevant": false,
+          "word": "media"
+        },
+        {
+          "box": [
+            544,
+            607.999991224,
+            876.4,
+            889.4
+          ],
+          "relevant": false,
+          "word": "phatokina"
+        },
+        {
+          "box": [
+            617,
+            641.00000688,
+            880,
+            890
+          ],
+          "relevant": false,
+          "word": "1988"
+        },
+        {
+          "box": [
+            159,
+            168.385998556,
+            864.8,
+            875.8
+          ],
+          "relevant": false,
+          "word": "n"
+        },
+        {
+          "box": [
+            179,
+            212.99999421,
+            862.4,
+            875.4
+          ],
+          "relevant": false,
+          "word": "lloyd"
+        },
+        {
+          "box": [
+            221,
+            275.898473048,
+            864.6,
+            876.6
+          ],
+          "relevant": false,
+          "word": "williams"
+        },
+        {
+          "box": [
+            288,
+            362.01839059200006,
+            864.6,
+            876.6
+          ],
+          "relevant": false,
+          "word": "radiovision"
+        },
+        {
+          "box": [
+            545,
+            563.9999928799999,
+            861.8,
+            872.8
+          ],
+          "relevant": false,
+          "word": "kai"
+        },
+        {
+          "box": [
+            573,
+            602.95030712,
+            863,
+            873
+          ],
+          "relevant": false,
+          "word": "petrl"
+        },
+        {
+          "box": [
+            615,
+            636,
+            863,
+            873
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1453,
+            1513.2881336639998,
+            871.8,
+            887.8
+          ],
+          "relevant": false,
+          "word": "geliefert"
+        },
+        {
+          "box": [
+            644,
+            715.000014423,
+            859.4,
+            872.4
+          ],
+          "relevant": false,
+          "word": "entstehung"
+        },
+        {
+          "box": [
+            723,
+            755.000002749,
+            861.8,
+            872.8
+          ],
+          "relevant": false,
+          "word": "einer"
+        },
+        {
+          "box": [
+            762,
+            837.9169996200001,
+            859.2,
+            873.2
+          ],
+          "relevant": false,
+          "word": "schallplatte"
+        },
+        {
+          "box": [
+            159,
+            165.498,
+            848,
+            858
+          ],
+          "relevant": false,
+          "word": "d"
+        },
+        {
+          "box": [
+            179,
+            202.000003104,
+            848.4,
+            856.4
+          ],
+          "relevant": false,
+          "word": "van"
+        },
+        {
+          "box": [
+            209,
+            242.06352995,
+            847.8,
+            858.8
+          ],
+          "relevant": false,
+          "word": "abbö"
+        },
+        {
+          "box": [
+            254,
+            330.00002432,
+            848.8,
+            859.8
+          ],
+          "relevant": false,
+          "word": "motor-skilis"
+        },
+        {
+          "box": [
+            339,
+            350.000002134,
+            848.8,
+            859.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            358,
+            419.17646204799996,
+            845.4,
+            858.4
+          ],
+          "relevant": false,
+          "word": "language"
+        },
+        {
+          "box": [
+            544,
+            569.99999444,
+            846,
+            856
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            580,
+            622.7142866696,
+            842.4,
+            855.4
+          ],
+          "relevant": false,
+          "word": "11/1968"
+        },
+        {
+          "box": [
+            1469,
+            1576.3319072,
+            846,
+            861
+          ],
+          "relevant": false,
+          "word": "abmessungen"
+        },
+        {
+          "box": [
+            1604,
+            1634.9999931799998,
+            847,
+            862
+          ],
+          "relevant": false,
+          "word": "44x"
+        },
+        {
+          "box": [
+            1640,
+            1691.0000137279999,
+            850.6,
+            862.6
+          ],
+          "relevant": false,
+          "word": "34x27"
+        },
+        {
+          "box": [
+            1696,
+            1718.00000529,
+            851,
+            861
+          ],
+          "relevant": false,
+          "word": "cm"
+        },
+        {
+          "box": [
+            142,
+            163.99999568,
+            831,
+            841
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            176,
+            227.99999642,
+            831,
+            841
+          ],
+          "relevant": false,
+          "word": "elektron"
+        },
+        {
+          "box": [
+            239,
+            319.912463511,
+            830.8,
+            841.8
+          ],
+          "relevant": false,
+          "word": "international"
+        },
+        {
+          "box": [
+            336,
+            406.144657596,
+            828.4,
+            841.4
+          ],
+          "relevant": false,
+          "word": "linz/donau"
+        },
+        {
+          "box": [
+            422,
+            447.99999626,
+            831,
+            841
+          ],
+          "relevant": false,
+          "word": "heit"
+        },
+        {
+          "box": [
+            458,
+            499.00000814,
+            828.4,
+            841.4
+          ],
+          "relevant": false,
+          "word": "19-21/"
+        },
+        {
+          "box": [
+            544,
+            648.9999785250001,
+            825.4,
+            838.4
+          ],
+          "relevant": false,
+          "word": "schnittprobleme"
+        },
+        {
+          "box": [
+            658,
+            679.99999568,
+            829,
+            839
+          ],
+          "relevant": false,
+          "word": "des"
+        },
+        {
+          "box": [
+            688,
+            721.141783972,
+            827.8,
+            838.8
+          ],
+          "relevant": false,
+          "word": "films"
+        },
+        {
+          "box": [
+            1469,
+            1531.211816576,
+            832.4,
+            845.4
+          ],
+          "relevant": false,
+          "word": "gewicht"
+        },
+        {
+          "box": [
+            1604,
+            1612.85714116,
+            830.2,
+            844.2
+          ],
+          "relevant": false,
+          "word": "9"
+        },
+        {
+          "box": [
+            1617.28571174,
+            1634.99999406,
+            830.2,
+            844.2
+          ],
+          "relevant": false,
+          "word": "70"
+        },
+        {
+          "box": [
+            1641,
+            1656.99999984,
+            829,
+            844
+          ],
+          "relevant": false,
+          "word": "kg"
+        },
+        {
+          "box": [
+            1666,
+            1689.0000018950002,
+            832.4,
+            845.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1697,
+            1785.99997568,
+            832.2,
+            846.2
+          ],
+          "relevant": false,
+          "word": "roltenfolien"
+        },
+        {
+          "box": [
+            158,
+            184.666665168,
+            812.8,
+            823.8
+          ],
+          "relevant": false,
+          "word": "1968"
+        },
+        {
+          "box": [
+            544,
+            617.9999993480001,
+            810.8,
+            821.8
+          ],
+          "relevant": false,
+          "word": "stereofonie"
+        },
+        {
+          "box": [
+            627,
+            641.000005085,
+            810.8,
+            821.8
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            651,
+            710.157518,
+            811,
+            821
+          ],
+          "relevant": false,
+          "word": "rundfunk"
+        },
+        {
+          "box": [
+            1469,
+            1546.230981632,
+            810.8,
+            826.8
+          ],
+          "relevant": false,
+          "word": "glasplatte"
+        },
+        {
+          "box": [
+            1606,
+            1635.000002512,
+            815.6,
+            827.6
+          ],
+          "relevant": false,
+          "word": "25x"
+        },
+        {
+          "box": [
+            1641,
+            1683.00000462,
+            815.6,
+            827.6
+          ],
+          "relevant": false,
+          "word": "25cm"
+        },
+        {
+          "box": [
+            159,
+            180.000006,
+            795.6,
+            807.6
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            188,
+            299.000037064,
+            793.2,
+            807.2
+          ],
+          "relevant": false,
+          "word": "mini-schallplatte"
+        },
+        {
+          "box": [
+            307,
+            321.999996,
+            796.8,
+            807.8
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            329,
+            344.19999694399996,
+            796.8,
+            807.8
+          ],
+          "relevant": false,
+          "word": "da"
+        },
+        {
+          "box": [
+            528,
+            576.00000537,
+            792,
+            802
+          ],
+          "relevant": false,
+          "word": "kamera"
+        },
+        {
+          "box": [
+            584,
+            607.000006964,
+            791.8,
+            802.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            614,
+            657.082172606,
+            791.8,
+            802.8
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            668,
+            725.137989311,
+            789.4,
+            802.4
+          ],
+          "relevant": false,
+          "word": "münchen"
+        },
+        {
+          "box": [
+            736,
+            761.99999444,
+            792,
+            802
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            769,
+            805.6666652176,
+            789.6,
+            801.6
+          ],
+          "relevant": false,
+          "word": "3/1968"
+        },
+        {
+          "box": [
+            159,
+            199.999998732,
+            778.8,
+            789.8
+          ],
+          "relevant": false,
+          "word": "kleine"
+        },
+        {
+          "box": [
+            209,
+            289.98880388300006,
+            777.4,
+            790.4
+          ],
+          "relevant": false,
+          "word": "stereopraxis"
+        },
+        {
+          "box": [
+            544,
+            563.79010528,
+            775,
+            785
+          ],
+          "relevant": false,
+          "word": "hs"
+        },
+        {
+          "box": [
+            575,
+            585.31439724,
+            775,
+            785
+          ],
+          "relevant": false,
+          "word": "g"
+        },
+        {
+          "box": [
+            594,
+            633.088357374,
+            774.8,
+            785.8
+          ],
+          "relevant": false,
+          "word": "wiese"
+        },
+        {
+          "box": [
+            647.970148876,
+            676.9999974159999,
+            772.6,
+            784.6
+          ],
+          "relevant": false,
+          "word": "fest"
+        },
+        {
+          "box": [
+            683,
+            702.99999935,
+            775,
+            785
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            709,
+            751.999997712,
+            771.2,
+            785.2
+          ],
+          "relevant": false,
+          "word": "jungen"
+        },
+        {
+          "box": [
+            759,
+            799.982893798,
+            774.8,
+            785.8
+          ],
+          "relevant": false,
+          "word": "filmer"
+        },
+        {
+          "box": [
+            1452,
+            1537.999979664,
+            776.6,
+            788.6
+          ],
+          "relevant": false,
+          "word": "testbericht"
+        },
+        {
+          "box": [
+            159,
+            272.01788276999997,
+            759.4,
+            772.4
+          ],
+          "relevant": false,
+          "word": "hifi-fachsprache"
+        },
+        {
+          "box": [
+            544,
+            570.99999379,
+            756.8,
+            767.8
+          ],
+          "relevant": false,
+          "word": "otto"
+        },
+        {
+          "box": [
+            579,
+            626.014065912,
+            756.8,
+            767.8
+          ],
+          "relevant": false,
+          "word": "kranter"
+        },
+        {
+          "box": [
+            637,
+            659.99999464,
+            758,
+            768
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            667,
+            709.99999,
+            758,
+            768
+          ],
+          "relevant": false,
+          "word": "flimon"
+        },
+        {
+          "box": [
+            717,
+            728.000002134,
+            756.8,
+            767.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            735,
+            755.9999971499999,
+            758,
+            768
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            762,
+            804.1655067,
+            758,
+            768
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            159,
+            220.999991984,
+            741.2,
+            755.2
+          ],
+          "relevant": false,
+          "word": "vergleich"
+        },
+        {
+          "box": [
+            232,
+            306.999984257,
+            744.8,
+            755.8
+          ],
+          "relevant": false,
+          "word": "technischer"
+        },
+        {
+          "box": [
+            318,
+            353.999991,
+            746,
+            756
+          ],
+          "relevant": false,
+          "word": "daten"
+        },
+        {
+          "box": [
+            366,
+            388.00000374,
+            745.2,
+            754.2
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            399,
+            494.966315822,
+            742.4,
+            755.4
+          ],
+          "relevant": false,
+          "word": "plattenspielern"
+        },
+        {
+          "box": [
+            1470,
+            1492.9999965,
+            750.4,
+            763.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1509,
+            1641.0000057999998,
+            750.4,
+            763.4
+          ],
+          "relevant": false,
+          "word": "kurz-fokus-linse"
+        },
+        {
+          "box": [
+            1655,
+            1672.0000031630002,
+            751.4,
+            764.4
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            545,
+            571.000009112,
+            739.8,
+            750.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            1688,
+            1808.000046352,
+            747.6,
+            764.6
+          ],
+          "relevant": false,
+          "word": "projektionskopf"
+        },
+        {
+          "box": [
+            160,
+            179.99999935,
+            728,
+            738
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            190,
+            225.00000111999998,
+            728,
+            738
+          ],
+          "relevant": false,
+          "word": "raum"
+        },
+        {
+          "box": [
+            235,
+            265.999997952,
+            727.8,
+            738.8
+          ],
+          "relevant": false,
+          "word": "ohne"
+        },
+        {
+          "box": [
+            275,
+            314.01666888,
+            729,
+            739
+          ],
+          "relevant": false,
+          "word": "schall"
+        },
+        {
+          "box": [
+            464,
+            465.999999926,
+            735,
+            740
+          ],
+          "relevant": false,
+          "word": "n"
+        },
+        {
+          "box": [
+            582,
+            618.6666685814,
+            737.4,
+            750.4
+          ],
+          "relevant": false,
+          "word": "4/1868"
+        },
+        {
+          "box": [
+            1452,
+            1532.0000287199998,
+            730,
+            745
+          ],
+          "relevant": false,
+          "word": "ermöglicht"
+        },
+        {
+          "box": [
+            1544,
+            1566.0000025040001,
+            733.6,
+            745.6
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            545,
+            595.999998005,
+            722.8,
+            733.8
+          ],
+          "relevant": false,
+          "word": "wilhelm"
+        },
+        {
+          "box": [
+            607,
+            663.101877964,
+            722.8,
+            733.8
+          ],
+          "relevant": false,
+          "word": "maschke"
+        },
+        {
+          "box": [
+            677,
+            696.9999965000001,
+            722.8,
+            733.8
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            769,
+            788.999995015,
+            722.8,
+            733.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1578,
+            1653.999995136,
+            729.8,
+            745.8
+          ],
+          "relevant": false,
+          "word": "projektion"
+        },
+        {
+          "box": [
+            1667,
+            1706.9999959999998,
+            734.6,
+            746.6
+          ],
+          "relevant": false,
+          "word": "eines"
+        },
+        {
+          "box": [
+            1718,
+            1771.0000064,
+            732,
+            747
+          ],
+          "relevant": false,
+          "word": "großen"
+        },
+        {
+          "box": [
+            1784,
+            1808.000002,
+            735.4,
+            748.4
+          ],
+          "relevant": false,
+          "word": "bil-"
+        },
+        {
+          "box": [
+            143,
+            165.99999464,
+            711,
+            721
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            177,
+            254.999996178,
+            707.4,
+            720.4
+          ],
+          "relevant": false,
+          "word": "sprachlabor"
+        },
+        {
+          "box": [
+            267,
+            289.000004268,
+            710.8,
+            721.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            300,
+            320.99999715,
+            710.8,
+            721.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            332,
+            421.00001059400006,
+            710.8,
+            721.8
+          ],
+          "relevant": false,
+          "word": "audio-visuelle"
+        },
+        {
+          "box": [
+            431,
+            494.901133098,
+            710.8,
+            721.8
+          ],
+          "relevant": false,
+          "word": "unterricht"
+        },
+        {
+          "box": [
+            707,
+            758.999990497,
+            720.4,
+            733.4
+          ],
+          "relevant": false,
+          "word": "stellung"
+        },
+        {
+          "box": [
+            799,
+            883.999977272,
+            720.2,
+            734.2
+          ],
+          "relevant": false,
+          "word": "photographie"
+        },
+        {
+          "box": [
+            1490,
+            1523.0000037559998,
+            716.6,
+            728.6
+          ],
+          "relevant": false,
+          "word": "über"
+        },
+        {
+          "box": [
+            1534,
+            1575.0000094,
+            716.6,
+            728.6
+          ],
+          "relevant": false,
+          "word": "kurze"
+        },
+        {
+          "box": [
+            1587,
+            1641.4590062900002,
+            716.4,
+            729.4
+          ],
+          "relevant": false,
+          "word": "distanz"
+        },
+        {
+          "box": [
+            1657,
+            1685.000000896,
+            717.6,
+            729.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1696,
+            1739.0000031240002,
+            717.4,
+            730.4
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1748,
+            1808.000020938,
+            718.4,
+            731.4
+          ],
+          "relevant": false,
+          "word": "erreicht"
+        },
+        {
+          "box": [
+            545,
+            559.9999942950001,
+            705.8,
+            716.8
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            567,
+            668.000025828,
+            703.4,
+            716.4
+          ],
+          "relevant": false,
+          "word": "bildungsauftrag"
+        },
+        {
+          "box": [
+            676,
+            695.99999935,
+            706,
+            716
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            704,
+            766.00001332,
+            706,
+            716
+          ],
+          "relevant": false,
+          "word": "modernen"
+        },
+        {
+          "box": [
+            774,
+            816.165500586,
+            705.8,
+            716.8
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            1452,
+            1477.9999995839999,
+            715.6,
+            727.6
+          ],
+          "relevant": false,
+          "word": "des"
+        },
+        {
+          "box": [
+            160,
+            252.989583456,
+            690.2,
+            704.2
+          ],
+          "relevant": false,
+          "word": "frankfurt/main"
+        },
+        {
+          "box": [
+            268,
+            294.000009112,
+            693.8,
+            704.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            303,
+            339.6666685814,
+            691.4,
+            704.4
+          ],
+          "relevant": false,
+          "word": "3/1968"
+        },
+        {
+          "box": [
+            545,
+            586.9999931000001,
+            689,
+            699
+          ],
+          "relevant": false,
+          "word": "walter"
+        },
+        {
+          "box": [
+            599,
+            638.08834904,
+            689,
+            699
+          ],
+          "relevant": false,
+          "word": "frenzi"
+        },
+        {
+          "box": [
+            809,
+            829.9999971499999,
+            688.8,
+            699.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1452,
+            1473.999991832,
+            698.4,
+            711.4
+          ],
+          "relevant": false,
+          "word": "bei"
+        },
+        {
+          "box": [
+            1488,
+            1514.000003445,
+            698.4,
+            711.4
+          ],
+          "relevant": false,
+          "word": "2m"
+        },
+        {
+          "box": [
+            1529,
+            1673.9999691839998,
+            694.6,
+            711.6
+          ],
+          "relevant": false,
+          "word": "projektlonsabstand"
+        },
+        {
+          "box": [
+            1689,
+            1720.99999257,
+            700.4,
+            713.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            1736,
+            1808.0000286719999,
+            697.8,
+            713.8
+          ],
+          "relevant": false,
+          "word": "bildgröße"
+        },
+        {
+          "box": [
+            160,
+            238.999993024,
+            675.6,
+            687.6
+          ],
+          "relevant": false,
+          "word": "klaus-dieter"
+        },
+        {
+          "box": [
+            247,
+            285.109291759,
+            676.8,
+            687.8
+          ],
+          "relevant": false,
+          "word": "urban"
+        },
+        {
+          "box": [
+            298,
+            321.99999518,
+            677,
+            687
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            329,
+            408.000010505,
+            674.4,
+            687.4
+          ],
+          "relevant": false,
+          "word": "sprachlabor"
+        },
+        {
+          "box": [
+            435,
+            455.99999715,
+            677,
+            687
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            464,
+            500.00000756000003,
+            677,
+            687
+          ],
+          "relevant": false,
+          "word": "ober-"
+        },
+        {
+          "box": [
+            653,
+            774.000005412,
+            685.4,
+            698.4
+          ],
+          "relevant": false,
+          "word": "schulphotographie"
+        },
+        {
+          "box": [
+            786,
+            796.9999996260001,
+            688.8,
+            699.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            841,
+            884.00001332,
+            688.8,
+            699.8
+          ],
+          "relevant": false,
+          "word": "grund-"
+        },
+        {
+          "box": [
+            416,
+            427.00000195999996,
+            677,
+            687
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            1452,
+            1478.00000442,
+            682.2,
+            691.2
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            1493,
+            1501.28571772,
+            679.2,
+            693.2
+          ],
+          "relevant": false,
+          "word": "1"
+        },
+        {
+          "box": [
+            1505.42857658,
+            1522.00001202,
+            679.2,
+            693.2
+          ],
+          "relevant": false,
+          "word": "20"
+        },
+        {
+          "box": [
+            1529,
+            1540.99999808,
+            683.2,
+            692.2
+          ],
+          "relevant": false,
+          "word": "m"
+        },
+        {
+          "box": [
+            1556,
+            1583.000002736,
+            682.6,
+            694.6
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1598,
+            1619.999991832,
+            682.4,
+            695.4
+          ],
+          "relevant": false,
+          "word": "bei"
+        },
+        {
+          "box": [
+            545,
+            586.0511263799999,
+            670.8,
+            681.8
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            1634,
+            1642.28571772,
+            680.2,
+            694.2
+          ],
+          "relevant": false,
+          "word": "2"
+        },
+        {
+          "box": [
+            1646.42857658,
+            1663.00001202,
+            680.2,
+            694.2
+          ],
+          "relevant": false,
+          "word": "60"
+        },
+        {
+          "box": [
+            1670,
+            1681.99999808,
+            684.4,
+            692.4
+          ],
+          "relevant": false,
+          "word": "m"
+        },
+        {
+          "box": [
+            1698,
+            1807.999949136,
+            679.8,
+            695.8
+          ],
+          "relevant": false,
+          "word": "projektlonsab-"
+        },
+        {
+          "box": [
+            160,
+            190.13574200000002,
+            659,
+            669
+          ],
+          "relevant": false,
+          "word": "stufe"
+        },
+        {
+          "box": [
+            1452,
+            1492.999991422,
+            663.4,
+            676.4
+          ],
+          "relevant": false,
+          "word": "stand"
+        },
+        {
+          "box": [
+            1508,
+            1539.99999257,
+            664.4,
+            677.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            1556,
+            1604.99999624,
+            664.4,
+            677.4
+          ],
+          "relevant": false,
+          "word": "solche"
+        },
+        {
+          "box": [
+            1620,
+            1646.9999973360002,
+            666.2,
+            675.2
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            1663,
+            1671.285714106,
+            663,
+            678
+          ],
+          "relevant": false,
+          "word": "1"
+        },
+        {
+          "box": [
+            1675.428571159,
+            1691.9999993709998,
+            663,
+            678
+          ],
+          "relevant": false,
+          "word": "50"
+        },
+        {
+          "box": [
+            1701,
+            1713.74617449,
+            667.2,
+            676.2
+          ],
+          "relevant": false,
+          "word": "m"
+        },
+        {
+          "box": [
+            1735,
+            1760.99999344,
+            666.6,
+            678.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1777,
+            1808.0000087560002,
+            667.6,
+            679.6
+          ],
+          "relevant": false,
+          "word": "pro-"
+        },
+        {
+          "box": [
+            160,
+            199.99999618,
+            642,
+            652
+          ],
+          "relevant": false,
+          "word": "helma"
+        },
+        {
+          "box": [
+            212,
+            231.03349866,
+            641.8,
+            652.8
+          ],
+          "relevant": false,
+          "word": "ott"
+        },
+        {
+          "box": [
+            247,
+            327.0000145,
+            643,
+            653
+          ],
+          "relevant": false,
+          "word": "lebensechts"
+        },
+        {
+          "box": [
+            339,
+            411.000004098,
+            641.8,
+            652.8
+          ],
+          "relevant": false,
+          "word": "situationen"
+        },
+        {
+          "box": [
+            546,
+            604.000012672,
+            651.2,
+            665.2
+          ],
+          "relevant": false,
+          "word": "siegfried"
+        },
+        {
+          "box": [
+            617,
+            681.1349403309999,
+            654.8,
+            665.8
+          ],
+          "relevant": false,
+          "word": "machhaus"
+        },
+        {
+          "box": [
+            698,
+            796.999981496,
+            651.4,
+            664.4
+          ],
+          "relevant": false,
+          "word": "kunsterziehung"
+        },
+        {
+          "box": [
+            809,
+            832.000006964,
+            654.8,
+            665.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            845,
+            885.000003604,
+            654.8,
+            665.8
+          ],
+          "relevant": false,
+          "word": "schul"
+        },
+        {
+          "box": [
+            423,
+            437.99999633,
+            641.8,
+            652.8
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            450,
+            498.999978495,
+            639.4,
+            652.4
+          ],
+          "relevant": false,
+          "word": "sprach-"
+        },
+        {
+          "box": [
+            1667,
+            1698.9999928040002,
+            648.4,
+            661.4
+          ],
+          "relevant": false,
+          "word": "bis"
+        },
+        {
+          "box": [
+            545,
+            630.026011668,
+            634.4,
+            647.4
+          ],
+          "relevant": false,
+          "word": "photographie"
+        },
+        {
+          "box": [
+            1066,
+            1302.999981056,
+            637.6,
+            669.6
+          ],
+          "relevant": false,
+          "word": "overhead-"
+        },
+        {
+          "box": [
+            1452,
+            1544.9999769600001,
+            642.6,
+            659.6
+          ],
+          "relevant": false,
+          "word": "jektionskopf"
+        },
+        {
+          "box": [
+            1554,
+            1571.9999950000001,
+            647.4,
+            660.4
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1581,
+            1665.0000018,
+            647.4,
+            660.4
+          ],
+          "relevant": false,
+          "word": "schwenkbar"
+        },
+        {
+          "box": [
+            1708,
+            1744.9999973069998,
+            649.4,
+            662.4
+          ],
+          "relevant": false,
+          "word": "zirka"
+        },
+        {
+          "box": [
+            1750,
+            1766.0000019919999,
+            649.4,
+            662.4
+          ],
+          "relevant": false,
+          "word": "15"
+        },
+        {
+          "box": [
+            1771,
+            1807.000004482,
+            650.4,
+            663.4
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            160,
+            193.596979273,
+            624.8,
+            635.8
+          ],
+          "relevant": false,
+          "word": "labor"
+        },
+        {
+          "box": [
+            1452,
+            1494.999986736,
+            629.2,
+            643.2
+          ],
+          "relevant": false,
+          "word": "sowie"
+        },
+        {
+          "box": [
+            1502,
+            1560.9999998,
+            630.6,
+            642.6
+          ],
+          "relevant": false,
+          "word": "drehbar"
+        },
+        {
+          "box": [
+            1570,
+            1590.999996316,
+            630.4,
+            643.4
+          ],
+          "relevant": false,
+          "word": "bis"
+        },
+        {
+          "box": [
+            1599,
+            1624.000004016,
+            630.4,
+            643.4
+          ],
+          "relevant": false,
+          "word": "360"
+        },
+        {
+          "box": [
+            1633,
+            1668.553775023,
+            630.4,
+            643.4
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            545,
+            576.9999981599999,
+            617.4,
+            630.4
+          ],
+          "relevant": false,
+          "word": "sepp"
+        },
+        {
+          "box": [
+            586,
+            624.940907005,
+            619.8,
+            630.8
+          ],
+          "relevant": false,
+          "word": "pickel"
+        },
+        {
+          "box": [
+            637,
+            679.99999,
+            619.8,
+            630.8
+          ],
+          "relevant": false,
+          "word": "filmen"
+        },
+        {
+          "box": [
+            688,
+            700.000001926,
+            619.8,
+            630.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            708,
+            728.9999971499999,
+            619.8,
+            630.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            736,
+            779.082172606,
+            619.8,
+            630.8
+          ],
+          "relevant": false,
+          "word": "schule"
+        },
+        {
+          "box": [
+            143,
+            164.99999321,
+            608,
+            618
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            174,
+            285.03301812200004,
+            605.4,
+            618.4
+          ],
+          "relevant": false,
+          "word": "förderungsdienst"
+        },
+        {
+          "box": [
+            297,
+            329.084509224,
+            606.6,
+            618.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            342,
+            368.000009112,
+            607.8,
+            618.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            375,
+            411.6666652176,
+            605.6,
+            617.6
+          ],
+          "relevant": false,
+          "word": "1/1968"
+        },
+        {
+          "box": [
+            529,
+            565.150921653,
+            600.8,
+            611.8
+          ],
+          "relevant": false,
+          "word": "ufkz"
+        },
+        {
+          "box": [
+            577,
+            678.000021716,
+            600.8,
+            611.8
+          ],
+          "relevant": false,
+          "word": "osterreichische"
+        },
+        {
+          "box": [
+            686,
+            717.999992541,
+            600.8,
+            611.8
+          ],
+          "relevant": false,
+          "word": "film-"
+        },
+        {
+          "box": [
+            758,
+            838.0733381370001,
+            598.4,
+            611.4
+          ],
+          "relevant": false,
+          "word": "kino-zeitung"
+        },
+        {
+          "box": [
+            850,
+            881.1932736159999,
+            600.6,
+            612.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            1469,
+            1492.9999955,
+            604.4,
+            617.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1504,
+            1592.00000632,
+            602,
+            617
+          ],
+          "relevant": false,
+          "word": "temperatur"
+        },
+        {
+          "box": [
+            1604,
+            1627.0000019600002,
+            605.6,
+            617.6
+          ],
+          "relevant": false,
+          "word": "auf"
+        },
+        {
+          "box": [
+            1639,
+            1662.99999922,
+            605.6,
+            617.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1675,
+            1771.99999456,
+            602.8,
+            618.8
+          ],
+          "relevant": false,
+          "word": "arbeitsplatte"
+        },
+        {
+          "box": [
+            1784,
+            1807.9999977749999,
+            607.4,
+            620.4
+          ],
+          "relevant": false,
+          "word": "be-"
+        },
+        {
+          "box": [
+            160,
+            184.53236968000002,
+            587.4,
+            600.4
+          ],
+          "relevant": false,
+          "word": "dipl"
+        },
+        {
+          "box": [
+            188.49287999999999,
+            213.03949612,
+            587.4,
+            600.4
+          ],
+          "relevant": false,
+          "word": "-ing"
+        },
+        {
+          "box": [
+            226,
+            233.76402007,
+            591,
+            601
+          ],
+          "relevant": false,
+          "word": "e"
+        },
+        {
+          "box": [
+            246,
+            307.034667551,
+            588.4,
+            601.4
+          ],
+          "relevant": false,
+          "word": "kreuziger"
+        },
+        {
+          "box": [
+            320,
+            359.000014977,
+            590.8,
+            601.8
+          ],
+          "relevant": false,
+          "word": "sehen"
+        },
+        {
+          "box": [
+            368,
+            391.00000195999996,
+            591,
+            601
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            727,
+            749.000004268,
+            600.8,
+            611.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            379,
+            379.999999963,
+            582.4,
+            585.4
+          ],
+          "relevant": false,
+          "word": "n"
+        },
+        {
+          "box": [
+            399,
+            436.20192553000004,
+            589.8,
+            600.8
+          ],
+          "relevant": false,
+          "word": "hören"
+        },
+        {
+          "box": [
+            547,
+            561.2460659,
+            584,
+            594
+          ],
+          "relevant": false,
+          "word": "nr"
+        },
+        {
+          "box": [
+            575,
+            631.6666696258001,
+            580.4,
+            593.4
+          ],
+          "relevant": false,
+          "word": "1168/1868"
+        },
+        {
+          "box": [
+            1067,
+            1267.99999744,
+            583.6,
+            615.6
+          ],
+          "relevant": false,
+          "word": "projektor"
+        },
+        {
+          "box": [
+            1452,
+            1487.120675562,
+            584.2,
+            598.2
+          ],
+          "relevant": false,
+          "word": "trägt"
+        },
+        {
+          "box": [
+            1504,
+            1512.000001552,
+            587.6,
+            599.6
+          ],
+          "relevant": false,
+          "word": "5"
+        },
+        {
+          "box": [
+            1521,
+            1546.5849740639999,
+            587.6,
+            599.6
+          ],
+          "relevant": false,
+          "word": "min"
+        },
+        {
+          "box": [
+            1591,
+            1607.5714354400002,
+            586.2,
+            600.2
+          ],
+          "relevant": false,
+          "word": "21"
+        },
+        {
+          "box": [
+            1611.7142943,
+            1620.00001202,
+            586.2,
+            600.2
+          ],
+          "relevant": false,
+          "word": "5"
+        },
+        {
+          "box": [
+            1633,
+            1668.5537728,
+            588.6,
+            600.6
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            1687,
+            1708.999996395,
+            588.4,
+            601.4
+          ],
+          "relevant": false,
+          "word": "bei"
+        },
+        {
+          "box": [
+            1722,
+            1739.0000024639999,
+            589.6,
+            601.6
+          ],
+          "relevant": false,
+          "word": "10"
+        },
+        {
+          "box": [
+            1752,
+            1777.5849740639999,
+            590.6,
+            602.6
+          ],
+          "relevant": false,
+          "word": "min"
+        },
+        {
+          "box": [
+            160,
+            186.00000911200001,
+            572.8,
+            583.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            196,
+            238.7142866696,
+            570.4,
+            583.4
+          ],
+          "relevant": false,
+          "word": "10/1868"
+        },
+        {
+          "box": [
+            683,
+            704,
+            567,
+            577
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            871,
+            884.9999977,
+            568,
+            578
+          ],
+          "relevant": false,
+          "word": "im"
+        },
+        {
+          "box": [
+            1452,
+            1468.5714354400002,
+            568.2,
+            582.2
+          ],
+          "relevant": false,
+          "word": "21"
+        },
+        {
+          "box": [
+            1472.7142943,
+            1481.00001202,
+            568.2,
+            582.2
+          ],
+          "relevant": false,
+          "word": "6"
+        },
+        {
+          "box": [
+            1495,
+            1526.9983955199998,
+            570.6,
+            582.6
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            1549,
+            1570.999991832,
+            570.2,
+            584.2
+          ],
+          "relevant": false,
+          "word": "bei"
+        },
+        {
+          "box": [
+            1585,
+            1601.999995792,
+            570.4,
+            583.4
+          ],
+          "relevant": false,
+          "word": "20"
+        },
+        {
+          "box": [
+            1616,
+            1641.5849740639999,
+            571.6,
+            583.6
+          ],
+          "relevant": false,
+          "word": "min"
+        },
+        {
+          "box": [
+            1689,
+            1705.5714354400002,
+            570.2,
+            584.2
+          ],
+          "relevant": false,
+          "word": "24"
+        },
+        {
+          "box": [
+            1709.7142943,
+            1718.00001202,
+            570.2,
+            584.2
+          ],
+          "relevant": false,
+          "word": "5"
+        },
+        {
+          "box": [
+            1733,
+            1768.5537728,
+            571.2,
+            585.2
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            1788,
+            1809.000000086,
+            573.4,
+            586.4
+          ],
+          "relevant": false,
+          "word": "bel"
+        },
+        {
+          "box": [
+            160,
+            184.53236968000002,
+            553.4,
+            566.4
+          ],
+          "relevant": false,
+          "word": "dipl"
+        },
+        {
+          "box": [
+            188.49287999999999,
+            213.03949612,
+            553.4,
+            566.4
+          ],
+          "relevant": false,
+          "word": "-ing"
+        },
+        {
+          "box": [
+            249,
+            310.034667551,
+            554.4,
+            567.4
+          ],
+          "relevant": false,
+          "word": "kreuziger"
+        },
+        {
+          "box": [
+            324,
+            389.00001879800004,
+            556.8,
+            567.8
+          ],
+          "relevant": false,
+          "word": "unterricht"
+        },
+        {
+          "box": [
+            398,
+            419.99999568000004,
+            557.4,
+            565.4
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            546,
+            591.0000143999999,
+            567,
+            577
+          ],
+          "relevant": false,
+          "word": "gustav"
+        },
+        {
+          "box": [
+            602,
+            668.1095456,
+            567,
+            577
+          ],
+          "relevant": false,
+          "word": "ganschow"
+        },
+        {
+          "box": [
+            430,
+            477.99998632,
+            553.8,
+            564.8
+          ],
+          "relevant": false,
+          "word": "morgen"
+        },
+        {
+          "box": [
+            489,
+            498.999999438,
+            556.8,
+            567.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            715,
+            859.0000058559999,
+            563.2,
+            577.2
+          ],
+          "relevant": false,
+          "word": "neugrupplerungswelle"
+        },
+        {
+          "box": [
+            658,
+            684.1495929600001,
+            550,
+            560
+          ],
+          "relevant": false,
+          "word": "film"
+        },
+        {
+          "box": [
+            1615,
+            1638.9999955,
+            553.4,
+            566.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1759,
+            1775.99999488,
+            556.6,
+            568.6
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            160,
+            210.99998797,
+            539,
+            549
+          ],
+          "relevant": false,
+          "word": "schulen"
+        },
+        {
+          "box": [
+            223,
+            244.99999567999998,
+            539.4,
+            547.4
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            546,
+            647.0000269080001,
+            548.8,
+            559.8
+          ],
+          "relevant": false,
+          "word": "amerikanischen"
+        },
+        {
+          "box": [
+            257,
+            304.997930305,
+            536.4,
+            549.4
+          ],
+          "relevant": false,
+          "word": "gestern"
+        },
+        {
+          "box": [
+            453,
+            454.999999832,
+            542,
+            552
+          ],
+          "relevant": false,
+          "word": "1"
+        },
+        {
+          "box": [
+            1067,
+            1421.000094464,
+            543.6,
+            575.6
+          ],
+          "relevant": false,
+          "word": "kindermann"
+        },
+        {
+          "box": [
+            1451,
+            1468.0000024639999,
+            552.6,
+            564.6
+          ],
+          "relevant": false,
+          "word": "30"
+        },
+        {
+          "box": [
+            1477,
+            1502.584964398,
+            552.2,
+            566.2
+          ],
+          "relevant": false,
+          "word": "min"
+        },
+        {
+          "box": [
+            1539,
+            1556.0000024639999,
+            553.6,
+            565.6
+          ],
+          "relevant": false,
+          "word": "30"
+        },
+        {
+          "box": [
+            1565,
+            1600.553775023,
+            553.4,
+            566.4
+          ],
+          "relevant": false,
+          "word": "grad"
+        },
+        {
+          "box": [
+            1647,
+            1748.999989026,
+            554.4,
+            567.4
+          ],
+          "relevant": false,
+          "word": "wärmeabfuhr"
+        },
+        {
+          "box": [
+            1784,
+            1807.99999922,
+            556.6,
+            568.6
+          ],
+          "relevant": false,
+          "word": "be-"
+        },
+        {
+          "box": [
+            546,
+            560.2460659,
+            531.8,
+            542.8
+          ],
+          "relevant": false,
+          "word": "nr"
+        },
+        {
+          "box": [
+            1452,
+            1512.000002436,
+            535.6,
+            547.6
+          ],
+          "relevant": false,
+          "word": "sonders"
+        },
+        {
+          "box": [
+            1522,
+            1599.000004,
+            536.6,
+            548.6
+          ],
+          "relevant": false,
+          "word": "vortellhaft"
+        },
+        {
+          "box": [
+            1609,
+            1653.37609696,
+            532.8,
+            548.8
+          ],
+          "relevant": false,
+          "word": "gelöst"
+        },
+        {
+          "box": [
+            1666,
+            1689.999994,
+            537.6,
+            549.6
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1701,
+            1809.000050176,
+            534.8,
+            550.8
+          ],
+          "relevant": false,
+          "word": "sparschaltung"
+        },
+        {
+          "box": [
+            143,
+            164,
+            522,
+            532
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            173,
+            219.09330207999997,
+            518.2,
+            532.2
+          ],
+          "relevant": false,
+          "word": "jugend"
+        },
+        {
+          "box": [
+            231,
+            262.193273616,
+            520.6,
+            532.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            275,
+            300.99999444,
+            523,
+            533
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            309,
+            351.7142866696,
+            519.4,
+            532.4
+          ],
+          "relevant": false,
+          "word": "10/1968"
+        },
+        {
+          "box": [
+            575,
+            630.7222224776,
+            528.2,
+            542.2
+          ],
+          "relevant": false,
+          "word": "1171/1968"
+        },
+        {
+          "box": [
+            546,
+            571.1827640399999,
+            515,
+            525
+          ],
+          "relevant": false,
+          "word": "prof"
+        },
+        {
+          "box": [
+            584,
+            597.45461545,
+            515,
+            525
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            609,
+            653.9999858880001,
+            512.4,
+            525.4
+          ],
+          "relevant": false,
+          "word": "ludwig"
+        },
+        {
+          "box": [
+            663,
+            703.13888054,
+            514.8,
+            525.8
+          ],
+          "relevant": false,
+          "word": "gesek"
+        },
+        {
+          "box": [
+            714,
+            833.00004025,
+            512.4,
+            525.4
+          ],
+          "relevant": false,
+          "word": "filmvergangenheit"
+        },
+        {
+          "box": [
+            858,
+            885.000004031,
+            515.8,
+            526.8
+          ],
+          "relevant": false,
+          "word": "vor-"
+        },
+        {
+          "box": [
+            1451,
+            1472.00000162,
+            517.4,
+            530.4
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            1481,
+            1504.00000092,
+            518.4,
+            531.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1575,
+            1618.99999296,
+            516,
+            531
+          ],
+          "relevant": false,
+          "word": "bringt"
+        },
+        {
+          "box": [
+            1628,
+            1707.999981425,
+            519.4,
+            532.4
+          ],
+          "relevant": false,
+          "word": "besondere"
+        },
+        {
+          "box": [
+            1718,
+            1775.30097338,
+            520.2,
+            534.2
+          ],
+          "relevant": false,
+          "word": "vorteile"
+        },
+        {
+          "box": [
+            161,
+            194.00000781,
+            504.8,
+            515.8
+          ],
+          "relevant": false,
+          "word": "erika"
+        },
+        {
+          "box": [
+            202,
+            253.000011546,
+            504.8,
+            515.8
+          ],
+          "relevant": false,
+          "word": "weinzier"
+        },
+        {
+          "box": [
+            281,
+            287.00000172,
+            506,
+            516
+          ],
+          "relevant": false,
+          "word": "0"
+        },
+        {
+          "box": [
+            296,
+            330.9999944,
+            506,
+            516
+          ],
+          "relevant": false,
+          "word": "jahre"
+        },
+        {
+          "box": [
+            1515,
+            1564.00001103,
+            516,
+            531
+          ],
+          "relevant": false,
+          "word": "lampe"
+        },
+        {
+          "box": [
+            340,
+            395.06476274000005,
+            502.4,
+            515.4
+          ],
+          "relevant": false,
+          "word": "republik"
+        },
+        {
+          "box": [
+            207,
+            233.99999568,
+            488,
+            498
+          ],
+          "relevant": false,
+          "word": "finde"
+        },
+        {
+          "box": [
+            354,
+            364.999999626,
+            487.8,
+            498.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            546,
+            617.00001444,
+            495.6,
+            507.6
+          ],
+          "relevant": false,
+          "word": "aussetzung"
+        },
+        {
+          "box": [
+            627,
+            644.000000589,
+            497.8,
+            508.8
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            654,
+            727.028554632,
+            497.8,
+            508.8
+          ],
+          "relevant": false,
+          "word": "filmzukunft"
+        },
+        {
+          "box": [
+            1067,
+            1159.00001321,
+            497,
+            512
+          ],
+          "relevant": false,
+          "word": "allgemeines"
+        },
+        {
+          "box": [
+            161,
+            196.00000845,
+            486.8,
+            497.8
+          ],
+          "relevant": false,
+          "word": "josef"
+        },
+        {
+          "box": [
+            264,
+            342.999986,
+            485.4,
+            498.4
+          ],
+          "relevant": false,
+          "word": "kulturpolltik"
+        },
+        {
+          "box": [
+            376,
+            442.99999984000004,
+            488,
+            498
+          ],
+          "relevant": false,
+          "word": "osterreich"
+        },
+        {
+          "box": [
+            1469,
+            1496.0000039119998,
+            492.6,
+            504.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1508,
+            1549.9999932800001,
+            493.6,
+            505.6
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1561,
+            1609.99999624,
+            493.4,
+            506.4
+          ],
+          "relevant": false,
+          "word": "besitzt"
+        },
+        {
+          "box": [
+            1622,
+            1652.99999357,
+            493.4,
+            506.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            1664,
+            1717.9999810479999,
+            494.4,
+            507.4
+          ],
+          "relevant": false,
+          "word": "weiche"
+        },
+        {
+          "box": [
+            1729,
+            1807.0000180959998,
+            495.4,
+            508.4
+          ],
+          "relevant": false,
+          "word": "scharfein-"
+        },
+        {
+          "box": [
+            529,
+            559.219208888,
+            477.8,
+            488.8
+          ],
+          "relevant": false,
+          "word": "omz"
+        },
+        {
+          "box": [
+            571,
+            672.0000277,
+            478.8,
+            489.8
+          ],
+          "relevant": false,
+          "word": "usterreichische"
+        },
+        {
+          "box": [
+            680,
+            780.89567252,
+            477.6,
+            489.6
+          ],
+          "relevant": false,
+          "word": "musikzeitschrift"
+        },
+        {
+          "box": [
+            793,
+            824.1932736159999,
+            477.6,
+            489.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            836,
+            861.0000059399999,
+            480,
+            490
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            160,
+            186.999993944,
+            469.8,
+            480.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            869,
+            886.0000001288,
+            476.4,
+            489.4
+          ],
+          "relevant": false,
+          "word": "107"
+        },
+        {
+          "box": [
+            1084,
+            1110.000001495,
+            478.4,
+            491.4
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1122,
+            1271.0000001776,
+            475.8,
+            491.8
+          ],
+          "relevant": false,
+          "word": "oqverhead-projektor"
+        },
+        {
+          "box": [
+            1283,
+            1300.999996,
+            479.2,
+            493.2
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1312,
+            1333.999991832,
+            479.4,
+            492.4
+          ],
+          "relevant": false,
+          "word": "eln"
+        },
+        {
+          "box": [
+            1346,
+            1388.0000007830001,
+            479.4,
+            492.4
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1400,
+            1423.0000018950002,
+            479.4,
+            492.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            194,
+            236.7142866696,
+            467.4,
+            480.4
+          ],
+          "relevant": false,
+          "word": "11/1988"
+        },
+        {
+          "box": [
+            1452,
+            1509.999984384,
+            471.8,
+            487.8
+          ],
+          "relevant": false,
+          "word": "stellung"
+        },
+        {
+          "box": [
+            1521,
+            1544.0000018950002,
+            476.4,
+            489.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1553,
+            1591.9999914349999,
+            473,
+            488
+          ],
+          "relevant": false,
+          "word": "guter"
+        },
+        {
+          "box": [
+            1603,
+            1664.415277,
+            474,
+            489
+          ],
+          "relevant": false,
+          "word": "führung"
+        },
+        {
+          "box": [
+            162,
+            176.2460659,
+            453,
+            463
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            189,
+            224.00000845,
+            452.8,
+            463.8
+          ],
+          "relevant": false,
+          "word": "josef"
+        },
+        {
+          "box": [
+            234,
+            274.9800651,
+            454,
+            464
+          ],
+          "relevant": false,
+          "word": "finder"
+        },
+        {
+          "box": [
+            290,
+            369.00001184,
+            451.6,
+            463.6
+          ],
+          "relevant": false,
+          "word": "kulturpolitik"
+        },
+        {
+          "box": [
+            380,
+            390.999999626,
+            452.8,
+            463.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            401,
+            467.999980168,
+            452.8,
+            463.8
+          ],
+          "relevant": false,
+          "word": "usterreich"
+        },
+        {
+          "box": [
+            546,
+            571.77778352,
+            462,
+            472
+          ],
+          "relevant": false,
+          "word": "1968"
+        },
+        {
+          "box": [
+            1306,
+            1331.000002,
+            462.6,
+            474.6
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            484.450080464,
+            488.999997488,
+            451.6,
+            463.6
+          ],
+          "relevant": false,
+          "word": "i"
+        },
+        {
+          "box": [
+            1067,
+            1169.0000344999999,
+            458,
+            473
+          ],
+          "relevant": false,
+          "word": "unbegrenzten"
+        },
+        {
+          "box": [
+            1184,
+            1287.302168784,
+            458.8,
+            474.8
+          ],
+          "relevant": false,
+          "word": "möglichkeiten"
+        },
+        {
+          "box": [
+            1345,
+            1422.00000724,
+            459,
+            474
+          ],
+          "relevant": false,
+          "word": "projektion"
+        },
+        {
+          "box": [
+            1468,
+            1493.999999285,
+            449.4,
+            462.4
+          ],
+          "relevant": false,
+          "word": "auf"
+        },
+        {
+          "box": [
+            161,
+            185.999993942,
+            435.8,
+            446.8
+          ],
+          "relevant": false,
+          "word": "karl"
+        },
+        {
+          "box": [
+            195,
+            244.043503014,
+            435.8,
+            446.8
+          ],
+          "relevant": false,
+          "word": "bäuorle"
+        },
+        {
+          "box": [
+            255,
+            278.99999518,
+            437,
+            447
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            286,
+            356.000015371,
+            436.8,
+            447.8
+          ],
+          "relevant": false,
+          "word": "bekenntnis"
+        },
+        {
+          "box": [
+            364,
+            382.999997656,
+            437.4,
+            445.4
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            391,
+            500.00000892,
+            437,
+            447
+          ],
+          "relevant": false,
+          "word": "osterreichischen"
+        },
+        {
+          "box": [
+            547,
+            561.2460659,
+            444,
+            454
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            576,
+            611.0000057880001,
+            443.8,
+            454.8
+          ],
+          "relevant": false,
+          "word": "franz"
+        },
+        {
+          "box": [
+            621,
+            693.0397109510001,
+            441.4,
+            454.4
+          ],
+          "relevant": false,
+          "word": "grasbergor"
+        },
+        {
+          "box": [
+            708,
+            730.000005,
+            445,
+            455
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            740,
+            847.0000131200001,
+            443.6,
+            455.6
+          ],
+          "relevant": false,
+          "word": "österreichischen"
+        },
+        {
+          "box": [
+            858,
+            885.9999962879999,
+            444.8,
+            455.8
+          ],
+          "relevant": false,
+          "word": "bun-"
+        },
+        {
+          "box": [
+            1067,
+            1119.0000209300001,
+            441,
+            456
+          ],
+          "relevant": false,
+          "word": "genügt"
+        },
+        {
+          "box": [
+            1129,
+            1180.000017341,
+            444.4,
+            457.4
+          ],
+          "relevant": false,
+          "word": "bereits"
+        },
+        {
+          "box": [
+            1190,
+            1211.999991832,
+            444.4,
+            457.4
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            1222,
+            1329.0000293320002,
+            445.6,
+            457.6
+          ],
+          "relevant": false,
+          "word": "verdämmerter"
+        },
+        {
+          "box": [
+            1339,
+            1380.6577185639999,
+            445.6,
+            457.6
+          ],
+          "relevant": false,
+          "word": "raum"
+        },
+        {
+          "box": [
+            1397,
+            1422.99999344,
+            445.6,
+            457.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1511,
+            1543.0000035799999,
+            450.6,
+            462.6
+          ],
+          "relevant": false,
+          "word": "dem"
+        },
+        {
+          "box": [
+            1561,
+            1627.0000018599999,
+            450.4,
+            463.4
+          ],
+          "relevant": false,
+          "word": "gehäuse"
+        },
+        {
+          "box": [
+            1645,
+            1707.00001795,
+            451.4,
+            464.4
+          ],
+          "relevant": false,
+          "word": "befindet"
+        },
+        {
+          "box": [
+            1724,
+            1754.00000731,
+            452.4,
+            465.4
+          ],
+          "relevant": false,
+          "word": "sich"
+        },
+        {
+          "box": [
+            1776,
+            1807.99999257,
+            453.4,
+            466.4
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            548,
+            611.191794029,
+            424.4,
+            437.4
+          ],
+          "relevant": false,
+          "word": "deshymne"
+        },
+        {
+          "box": [
+            1067,
+            1136.999995625,
+            424,
+            439
+          ],
+          "relevant": false,
+          "word": "projektor"
+        },
+        {
+          "box": [
+            1148,
+            1190.99999984,
+            427.2,
+            441.2
+          ],
+          "relevant": false,
+          "word": "liefert"
+        },
+        {
+          "box": [
+            1201,
+            1243.999987312,
+            428.6,
+            440.6
+          ],
+          "relevant": false,
+          "word": "helles"
+        },
+        {
+          "box": [
+            1256,
+            1282.000003376,
+            428.6,
+            440.6
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1294,
+            1339.000010965,
+            427.4,
+            440.4
+          ],
+          "relevant": false,
+          "word": "klares"
+        },
+        {
+          "box": [
+            1351,
+            1378.4262108120001,
+            427.4,
+            440.4
+          ],
+          "relevant": false,
+          "word": "bild"
+        },
+        {
+          "box": [
+            1393,
+            1422.000002174,
+            427.4,
+            440.4
+          ],
+          "relevant": false,
+          "word": "alle"
+        },
+        {
+          "box": [
+            1452,
+            1552.39223106,
+            431,
+            446
+          ],
+          "relevant": false,
+          "word": "fresnel-linse"
+        },
+        {
+          "box": [
+            1574,
+            1597.00000092,
+            433.4,
+            446.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1612,
+            1635.00000092,
+            433.4,
+            446.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1651,
+            1750.9999980556001,
+            430.6,
+            447.6
+          ],
+          "relevant": false,
+          "word": "gleichmäßige"
+        },
+        {
+          "box": [
+            1767,
+            1809.99999984,
+            436.6,
+            448.6
+          ],
+          "relevant": false,
+          "word": "licht-"
+        },
+        {
+          "box": [
+            160,
+            201.0511495,
+            419,
+            429
+          ],
+          "relevant": false,
+          "word": "nation"
+        },
+        {
+          "box": [
+            160,
+            187.00000128,
+            402,
+            412
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            548,
+            573.000004106,
+            409.8,
+            420.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            1067,
+            1137.424616405,
+            409.4,
+            422.4
+          ],
+          "relevant": false,
+          "word": "probleme"
+        },
+        {
+          "box": [
+            1153,
+            1176.00000092,
+            410.4,
+            423.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1187,
+            1221.999988452,
+            410.4,
+            423.4
+          ],
+          "relevant": false,
+          "word": "belm"
+        },
+        {
+          "box": [
+            1394,
+            1422.999992192,
+            411.6,
+            423.6
+          ],
+          "relevant": false,
+          "word": "auf-"
+        },
+        {
+          "box": [
+            1451,
+            1526.000030075,
+            413,
+            428
+          ],
+          "relevant": false,
+          "word": "verteilung"
+        },
+        {
+          "box": [
+            1540,
+            1574.000007508,
+            416.6,
+            428.6
+          ],
+          "relevant": false,
+          "word": "über"
+        },
+        {
+          "box": [
+            1587,
+            1610.00000092,
+            416.4,
+            429.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1624,
+            1669.000011472,
+            413.4,
+            426.4
+          ],
+          "relevant": false,
+          "word": "ganze"
+        },
+        {
+          "box": [
+            1683,
+            1732.9999971119998,
+            417.4,
+            430.4
+          ],
+          "relevant": false,
+          "word": "fläche"
+        },
+        {
+          "box": [
+            196,
+            238.7142866696,
+            398.2,
+            412.2
+          ],
+          "relevant": false,
+          "word": "12/1968"
+        },
+        {
+          "box": [
+            583,
+            621.5000010472,
+            406.2,
+            420.2
+          ],
+          "relevant": false,
+          "word": "11/198"
+        },
+        {
+          "box": [
+            1234,
+            1384.0000604,
+            406.8,
+            422.8
+          ],
+          "relevant": false,
+          "word": "overhead-projektor"
+        },
+        {
+          "box": [
+            1746,
+            1806.999976128,
+            414.8,
+            430.8
+          ],
+          "relevant": false,
+          "word": "gewähr-"
+        },
+        {
+          "box": [
+            161,
+            186.18276404000002,
+            385,
+            395
+          ],
+          "relevant": false,
+          "word": "prof"
+        },
+        {
+          "box": [
+            202,
+            258.00001216,
+            385,
+            395
+          ],
+          "relevant": false,
+          "word": "hermann"
+        },
+        {
+          "box": [
+            548,
+            575.524882,
+            392.8,
+            403.8
+          ],
+          "relevant": false,
+          "word": "univ"
+        },
+        {
+          "box": [
+            579.350840598,
+            609.1740502450001,
+            392.8,
+            403.8
+          ],
+          "relevant": false,
+          "word": "-prof"
+        },
+        {
+          "box": [
+            621,
+            635.2460659,
+            393,
+            403
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            646,
+            699.000001516,
+            392.8,
+            403.8
+          ],
+          "relevant": false,
+          "word": "theodor"
+        },
+        {
+          "box": [
+            707,
+            753.03085344,
+            393,
+            403
+          ],
+          "relevant": false,
+          "word": "adorno"
+        },
+        {
+          "box": [
+            269,
+            313.98291226000003,
+            382.4,
+            395.4
+          ],
+          "relevant": false,
+          "word": "schöpf"
+        },
+        {
+          "box": [
+            329,
+            376.00001735,
+            384.8,
+            395.8
+          ],
+          "relevant": false,
+          "word": "phoebe"
+        },
+        {
+          "box": [
+            408,
+            425.99999416599996,
+            384.8,
+            395.8
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            438,
+            500.999974202,
+            384.8,
+            395.8
+          ],
+          "relevant": false,
+          "word": "mädchem-"
+        },
+        {
+          "box": [
+            765,
+            814.999977131,
+            390.4,
+            403.4
+          ],
+          "relevant": false,
+          "word": "analyse"
+        },
+        {
+          "box": [
+            823,
+            845.0000026,
+            394,
+            404
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            854,
+            882.27782144,
+            391.6,
+            403.6
+          ],
+          "relevant": false,
+          "word": "berg"
+        },
+        {
+          "box": [
+            1067,
+            1125.434307764,
+            391.2,
+            405.2
+          ],
+          "relevant": false,
+          "word": "tauchen"
+        },
+        {
+          "box": [
+            1144,
+            1191.999994042,
+            393.4,
+            406.4
+          ],
+          "relevant": false,
+          "word": "fassen"
+        },
+        {
+          "box": [
+            1205,
+            1234.999987752,
+            393.2,
+            407.2
+          ],
+          "relevant": false,
+          "word": "sich"
+        },
+        {
+          "box": [
+            1249,
+            1272.0000072,
+            394,
+            404
+          ],
+          "relevant": false,
+          "word": "nur"
+        },
+        {
+          "box": [
+            1285,
+            1307.0000025040001,
+            394.6,
+            406.6
+          ],
+          "relevant": false,
+          "word": "bel"
+        },
+        {
+          "box": [
+            1320,
+            1422.99998016,
+            389.8,
+            405.8
+          ],
+          "relevant": false,
+          "word": "gleichzeitiger"
+        },
+        {
+          "box": [
+            1452,
+            1495.38269494,
+            398.4,
+            411.4
+          ],
+          "relevant": false,
+          "word": "leistet"
+        },
+        {
+          "box": [
+            161,
+            220.10886647,
+            368,
+            378
+          ],
+          "relevant": false,
+          "word": "schicksal"
+        },
+        {
+          "box": [
+            548,
+            573.0000059399999,
+            376,
+            386
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            583,
+            625.7142837783999,
+            373.6,
+            385.6
+          ],
+          "relevant": false,
+          "word": "12/1968"
+        },
+        {
+          "box": [
+            1067,
+            1198.000027328,
+            372.8,
+            388.8
+          ],
+          "relevant": false,
+          "word": "berücksichtigung"
+        },
+        {
+          "box": [
+            1206,
+            1293.255824805,
+            374,
+            389
+          ],
+          "relevant": false,
+          "word": "technischer"
+        },
+        {
+          "box": [
+            1306,
+            1417.283352208,
+            372.8,
+            388.8
+          ],
+          "relevant": false,
+          "word": "pädagogischer"
+        },
+        {
+          "box": [
+            1469,
+            1494.99999344,
+            372.6,
+            384.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1507,
+            1655.999966,
+            369.8,
+            385.8
+          ],
+          "relevant": false,
+          "word": "overhead-projektor"
+        },
+        {
+          "box": [
+            1674.882612832,
+            1770.117344896,
+            371.8,
+            387.8
+          ],
+          "relevant": false,
+          "word": "kindermann"
+        },
+        {
+          "box": [
+            1790,
+            1807.9999950000001,
+            376.4,
+            389.4
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            161,
+            242.99999176600002,
+            349.8,
+            360.8
+          ],
+          "relevant": false,
+          "word": "traditionelle"
+        },
+        {
+          "box": [
+            255,
+            306.000001767,
+            350.8,
+            361.8
+          ],
+          "relevant": false,
+          "word": "modelle"
+        },
+        {
+          "box": [
+            318,
+            337.99999935,
+            351,
+            361
+          ],
+          "relevant": false,
+          "word": "dar"
+        },
+        {
+          "box": [
+            548,
+            572.3143907159999,
+            357.8,
+            368.8
+          ],
+          "relevant": false,
+          "word": "prof"
+        },
+        {
+          "box": [
+            587,
+            601.2460659,
+            359,
+            369
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            613,
+            640.9999989500001,
+            358.8,
+            369.8
+          ],
+          "relevant": false,
+          "word": "olto"
+        },
+        {
+          "box": [
+            650,
+            683.00000781,
+            358.8,
+            369.8
+          ],
+          "relevant": false,
+          "word": "erich"
+        },
+        {
+          "box": [
+            693,
+            743.99998204,
+            359,
+            369
+          ],
+          "relevant": false,
+          "word": "deutsch"
+        },
+        {
+          "box": [
+            758.290301977,
+            761.861271886,
+            354,
+            369
+          ],
+          "relevant": false,
+          "word": "f"
+        },
+        {
+          "box": [
+            783,
+            804.9999945,
+            358.8,
+            369.8
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            815,
+            886.00000586,
+            360,
+            370
+          ],
+          "relevant": false,
+          "word": "geschlehte"
+        },
+        {
+          "box": [
+            1067,
+            1159.999992085,
+            358.4,
+            371.4
+          ],
+          "relevant": false,
+          "word": "dldaktischer"
+        },
+        {
+          "box": [
+            1172,
+            1199.000002736,
+            359.6,
+            371.6
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1212,
+            1317.99997928,
+            359.4,
+            372.4
+          ],
+          "relevant": false,
+          "word": "ökonomischer"
+        },
+        {
+          "box": [
+            350,
+            440.999983529,
+            347.4,
+            360.4
+          ],
+          "relevant": false,
+          "word": "filmerziehung"
+        },
+        {
+          "box": [
+            474,
+            501.00000592000004,
+            351,
+            361
+          ],
+          "relevant": false,
+          "word": "ver-"
+        },
+        {
+          "box": [
+            1330,
+            1392.000001315,
+            356,
+            371
+          ],
+          "relevant": false,
+          "word": "aspekte"
+        },
+        {
+          "box": [
+            1404,
+            1422.999994325,
+            359.4,
+            372.4
+          ],
+          "relevant": false,
+          "word": "1ö-"
+        },
+        {
+          "box": [
+            1452,
+            1473.000004088,
+            355.2,
+            369.2
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            1486,
+            1570.999987216,
+            352.8,
+            368.8
+          ],
+          "relevant": false,
+          "word": "koffergerät"
+        },
+        {
+          "box": [
+            1583,
+            1610.000006072,
+            356.4,
+            369.4
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1623,
+            1658.99998688,
+            356.4,
+            369.4
+          ],
+          "relevant": false,
+          "word": "kann"
+        },
+        {
+          "box": [
+            1671,
+            1683.999999558,
+            357.4,
+            370.4
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            1696,
+            1769.9999911,
+            355,
+            370
+          ],
+          "relevant": false,
+          "word": "zerlegtem"
+        },
+        {
+          "box": [
+            1783,
+            1808.000002,
+            359.6,
+            371.6
+          ],
+          "relevant": false,
+          "word": "zu-"
+        },
+        {
+          "box": [
+            161,
+            189.999994496,
+            332.8,
+            343.8
+          ],
+          "relevant": false,
+          "word": "such"
+        },
+        {
+          "box": [
+            198,
+            230.000002749,
+            332.8,
+            343.8
+          ],
+          "relevant": false,
+          "word": "einer"
+        },
+        {
+          "box": [
+            546,
+            568.00000374,
+            340.8,
+            351.8
+          ],
+          "relevant": false,
+          "word": "des"
+        },
+        {
+          "box": [
+            576,
+            688.02565008,
+            342,
+            352
+          ],
+          "relevant": false,
+          "word": "weihnachtsliedes"
+        },
+        {
+          "box": [
+            1067,
+            1092.5873082399999,
+            342,
+            352
+          ],
+          "relevant": false,
+          "word": "sen"
+        },
+        {
+          "box": [
+            1451,
+            1491.999991422,
+            338.4,
+            351.4
+          ],
+          "relevant": false,
+          "word": "stand"
+        },
+        {
+          "box": [
+            1500,
+            1523.9999971500001,
+            335,
+            350
+          ],
+          "relevant": false,
+          "word": "gut"
+        },
+        {
+          "box": [
+            1532,
+            1598.0000170550002,
+            336,
+            351
+          ],
+          "relevant": false,
+          "word": "getragen"
+        },
+        {
+          "box": [
+            1607,
+            1661.388812348,
+            339.6,
+            351.6
+          ],
+          "relevant": false,
+          "word": "werden"
+        },
+        {
+          "box": [
+            1675,
+            1703.000000896,
+            340.6,
+            352.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1712,
+            1753.9999932800001,
+            341.6,
+            353.6
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1762,
+            1807.999991947,
+            342.4,
+            355.4
+          ],
+          "relevant": false,
+          "word": "schal-"
+        },
+        {
+          "box": [
+            237,
+            339.97593254000003,
+            331.4,
+            344.4
+          ],
+          "relevant": false,
+          "word": "neuorientierung"
+        },
+        {
+          "box": [
+            145,
+            223.99999864900002,
+            315.8,
+            326.8
+          ],
+          "relevant": false,
+          "word": "erziehung"
+        },
+        {
+          "box": [
+            236,
+            263.9999903,
+            317,
+            327
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            276,
+            362.30808478999995,
+            317,
+            327
+          ],
+          "relevant": false,
+          "word": "unterricht"
+        },
+        {
+          "box": [
+            377,
+            409.084509224,
+            314.6,
+            326.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            424,
+            449.99999444,
+            317,
+            327
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            529,
+            659.01075538,
+            321.8,
+            332.8
+          ],
+          "relevant": false,
+          "word": "photo-informationen"
+        },
+        {
+          "box": [
+            672,
+            764.989557672,
+            320.6,
+            332.6
+          ],
+          "relevant": false,
+          "word": "frankfurt/main"
+        },
+        {
+          "box": [
+            778,
+            803.99999444,
+            323,
+            333
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            812,
+            848.6666652176,
+            320.6,
+            332.6
+          ],
+          "relevant": false,
+          "word": "5/1968"
+        },
+        {
+          "box": [
+            1451,
+            1470.000002296,
+            321.8,
+            332.8
+          ],
+          "relevant": false,
+          "word": "tet"
+        },
+        {
+          "box": [
+            1524,
+            1560.00000261,
+            321.4,
+            334.4
+          ],
+          "relevant": false,
+          "word": "beim"
+        },
+        {
+          "box": [
+            1573,
+            1621.999991898,
+            322.4,
+            335.4
+          ],
+          "relevant": false,
+          "word": "öffnen"
+        },
+        {
+          "box": [
+            1635,
+            1652.0000024639999,
+            322.6,
+            334.6
+          ],
+          "relevant": false,
+          "word": "ab"
+        },
+        {
+          "box": [
+            1665,
+            1692.000006072,
+            322.4,
+            335.4
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1704,
+            1753.99999693,
+            323.4,
+            336.4
+          ],
+          "relevant": false,
+          "word": "besitzt"
+        },
+        {
+          "box": [
+            1766,
+            1806.000007918,
+            324.4,
+            337.4
+          ],
+          "relevant": false,
+          "word": "einen"
+        },
+        {
+          "box": [
+            461,
+            497.6666685814,
+            313.4,
+            326.4
+          ],
+          "relevant": false,
+          "word": "7/1968"
+        },
+        {
+          "box": [
+            1482,
+            1512.00000731,
+            321.4,
+            334.4
+          ],
+          "relevant": false,
+          "word": "sich"
+        },
+        {
+          "box": [
+            162,
+            175.45461544999998,
+            299,
+            309
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            192,
+            236.999985888,
+            296.4,
+            309.4
+          ],
+          "relevant": false,
+          "word": "ludwig"
+        },
+        {
+          "box": [
+            249,
+            302.855017524,
+            298.8,
+            309.8
+          ],
+          "relevant": false,
+          "word": "jedlicka"
+        },
+        {
+          "box": [
+            319,
+            343.00000867,
+            300,
+            310
+          ],
+          "relevant": false,
+          "word": "von"
+        },
+        {
+          "box": [
+            355,
+            375.99999715,
+            298.8,
+            309.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            547,
+            632.9999847720001,
+            302.4,
+            315.4
+          ],
+          "relevant": false,
+          "word": "photographie"
+        },
+        {
+          "box": [
+            644,
+            708.0901766119999,
+            304.8,
+            315.8
+          ],
+          "relevant": false,
+          "word": "elementar"
+        },
+        {
+          "box": [
+            723,
+            802.000016942,
+            304.8,
+            315.8
+          ],
+          "relevant": false,
+          "word": "grundlehren"
+        },
+        {
+          "box": [
+            813,
+            833.9999971499999,
+            305.8,
+            316.8
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            846,
+            885.999989634,
+            305.8,
+            316.8
+          ],
+          "relevant": false,
+          "word": "photo-"
+        },
+        {
+          "box": [
+            1066,
+            1153.000011189,
+            307.4,
+            320.4
+          ],
+          "relevant": false,
+          "word": "technische"
+        },
+        {
+          "box": [
+            1163,
+            1213.9999857120001,
+            308.4,
+            321.4
+          ],
+          "relevant": false,
+          "word": "details"
+        },
+        {
+          "box": [
+            388,
+            501.00003317200003,
+            296.4,
+            309.4
+          ],
+          "relevant": false,
+          "word": "doppelmonarchie"
+        },
+        {
+          "box": [
+            1451,
+            1587.2653910450001,
+            303,
+            318
+          ],
+          "relevant": false,
+          "word": "wärmeschutzfliter"
+        },
+        {
+          "box": [
+            1620,
+            1659.9999956880001,
+            305.6,
+            317.6
+          ],
+          "relevant": false,
+          "word": "einen"
+        },
+        {
+          "box": [
+            1689.761314525,
+            1802.488330555,
+            305,
+            320
+          ],
+          "relevant": false,
+          "word": "thermoschalter"
+        },
+        {
+          "box": [
+            161,
+            180.999999872,
+            281.2,
+            290.2
+          ],
+          "relevant": false,
+          "word": "zur"
+        },
+        {
+          "box": [
+            187,
+            290.96888614000005,
+            278.2,
+            292.2
+          ],
+          "relevant": false,
+          "word": "seipelsanierung"
+        },
+        {
+          "box": [
+            547,
+            613.965252088,
+            284.2,
+            298.2
+          ],
+          "relevant": false,
+          "word": "pädagogik"
+        },
+        {
+          "box": [
+            1084,
+            1109.99999344,
+            286.6,
+            298.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1115,
+            1262.306487125,
+            284,
+            299
+          ],
+          "relevant": false,
+          "word": "overhead-projektor"
+        },
+        {
+          "box": [
+            1272,
+            1309.00001214,
+            284,
+            299
+          ],
+          "relevant": false,
+          "word": "type"
+        },
+        {
+          "box": [
+            1318.809379805,
+            1412.8585285400002,
+            285,
+            300
+          ],
+          "relevant": false,
+          "word": "kindermann"
+        },
+        {
+          "box": [
+            1451,
+            1491.0000054719999,
+            286.2,
+            300.2
+          ],
+          "relevant": false,
+          "word": "einen"
+        },
+        {
+          "box": [
+            1504,
+            1605.000018132,
+            287.4,
+            300.4
+          ],
+          "relevant": false,
+          "word": "schutzdeckel"
+        },
+        {
+          "box": [
+            1618,
+            1637.9999946520002,
+            288.6,
+            300.6
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            1650,
+            1673.00000092,
+            288.4,
+            301.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1685,
+            1761.2890912,
+            285.8,
+            301.8
+          ],
+          "relevant": false,
+          "word": "glasplatte"
+        },
+        {
+          "box": [
+            1779,
+            1807.000000896,
+            290.6,
+            302.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            161,
+            186.99999444,
+            265,
+            275
+          ],
+          "relevant": false,
+          "word": "haft"
+        },
+        {
+          "box": [
+            195,
+            229.666673392,
+            261.4,
+            274.4
+          ],
+          "relevant": false,
+          "word": "8968"
+        },
+        {
+          "box": [
+            532,
+            609.97953536,
+            269,
+            279
+          ],
+          "relevant": false,
+          "word": "photoblätter"
+        },
+        {
+          "box": [
+            619,
+            692.070152194,
+            266.4,
+            279.4
+          ],
+          "relevant": false,
+          "word": "leverkusen"
+        },
+        {
+          "box": [
+            703,
+            729.000009112,
+            268.8,
+            279.8
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            734,
+            770.6666652176,
+            266.6,
+            278.6
+          ],
+          "relevant": false,
+          "word": "4/1968"
+        },
+        {
+          "box": [
+            1066,
+            1083.9999950000001,
+            269.4,
+            282.4
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1094,
+            1116.0000025040001,
+            269.6,
+            281.6
+          ],
+          "relevant": false,
+          "word": "ein"
+        },
+        {
+          "box": [
+            1127,
+            1153.00000004,
+            270,
+            280
+          ],
+          "relevant": false,
+          "word": "neu"
+        },
+        {
+          "box": [
+            1164,
+            1257.999991358,
+            269.4,
+            282.4
+          ],
+          "relevant": false,
+          "word": "entwickeltes"
+        },
+        {
+          "box": [
+            1269,
+            1354.999993584,
+            265.8,
+            281.8
+          ],
+          "relevant": false,
+          "word": "koffergerät"
+        },
+        {
+          "box": [
+            1365,
+            1387.999992564,
+            270.6,
+            282.6
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1398,
+            1421.99999922,
+            267.6,
+            279.6
+          ],
+          "relevant": false,
+          "word": "ge-"
+        },
+        {
+          "box": [
+            1452,
+            1514.00001612,
+            267,
+            282
+          ],
+          "relevant": false,
+          "word": "objektiv"
+        },
+        {
+          "box": [
+            1524,
+            1540.999996,
+            270.4,
+            283.4
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1551,
+            1608.371640744,
+            270.6,
+            282.6
+          ],
+          "relevant": false,
+          "word": "drehbar"
+        },
+        {
+          "box": [
+            1624,
+            1740.0000101199998,
+            269,
+            284
+          ],
+          "relevant": false,
+          "word": "hervorgehoben"
+        },
+        {
+          "box": [
+            1750,
+            1767.000004384,
+            274.2,
+            283.2
+          ],
+          "relevant": false,
+          "word": "zu"
+        },
+        {
+          "box": [
+            1776,
+            1809.999994296,
+            274.2,
+            283.2
+          ],
+          "relevant": false,
+          "word": "wer-"
+        },
+        {
+          "box": [
+            162,
+            176.2460659,
+            246.8,
+            257.8
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            189,
+            232.00000328000002,
+            248,
+            258
+          ],
+          "relevant": false,
+          "word": "renate"
+        },
+        {
+          "box": [
+            241,
+            295.957097598,
+            245.4,
+            258.4
+          ],
+          "relevant": false,
+          "word": "springer"
+        },
+        {
+          "box": [
+            309,
+            329.9999955,
+            247.8,
+            258.8
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            340,
+            428.9999965,
+            245.6,
+            257.6
+          ],
+          "relevant": false,
+          "word": "pädagogische"
+        },
+        {
+          "box": [
+            438,
+            500.99999784,
+            248,
+            258
+          ],
+          "relevant": false,
+          "word": "akademie"
+        },
+        {
+          "box": [
+            546,
+            594.999984704,
+            250.8,
+            261.8
+          ],
+          "relevant": false,
+          "word": "norbert"
+        },
+        {
+          "box": [
+            605,
+            652.0129448800001,
+            252,
+            262
+          ],
+          "relevant": false,
+          "word": "fischer"
+        },
+        {
+          "box": [
+            665,
+            684.99999875,
+            252,
+            262
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            694,
+            714.9999971499999,
+            252,
+            262
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            725,
+            773.00000537,
+            252,
+            262
+          ],
+          "relevant": false,
+          "word": "kamera"
+        },
+        {
+          "box": [
+            782,
+            793.999995656,
+            251.8,
+            262.8
+          ],
+          "relevant": false,
+          "word": "in"
+        },
+        {
+          "box": [
+            803,
+            826.000006964,
+            251.8,
+            262.8
+          ],
+          "relevant": false,
+          "word": "den"
+        },
+        {
+          "box": [
+            837,
+            881.1895883520001,
+            250.6,
+            262.6
+          ],
+          "relevant": false,
+          "word": "bergen"
+        },
+        {
+          "box": [
+            1066,
+            1111.00000306,
+            249,
+            264
+          ],
+          "relevant": false,
+          "word": "ringer"
+        },
+        {
+          "box": [
+            1125,
+            1207.37023886,
+            250.2,
+            264.2
+          ],
+          "relevant": false,
+          "word": "verzerrung"
+        },
+        {
+          "box": [
+            1227,
+            1254.999999118,
+            252.4,
+            265.4
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1270,
+            1312.0000007830001,
+            252.4,
+            265.4
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1326,
+            1382.00000744,
+            252.4,
+            265.4
+          ],
+          "relevant": false,
+          "word": "besteht"
+        },
+        {
+          "box": [
+            1395,
+            1422.00000056,
+            253,
+            263
+          ],
+          "relevant": false,
+          "word": "aus"
+        },
+        {
+          "box": [
+            1451,
+            1478.000006072,
+            252.4,
+            265.4
+          ],
+          "relevant": false,
+          "word": "den"
+        },
+        {
+          "box": [
+            1489,
+            1550.999979041,
+            253.4,
+            266.4
+          ],
+          "relevant": false,
+          "word": "verdient"
+        },
+        {
+          "box": [
+            1561,
+            1582.999991832,
+            253.4,
+            266.4
+          ],
+          "relevant": false,
+          "word": "die"
+        },
+        {
+          "box": [
+            1594,
+            1725.9999964,
+            250.8,
+            266.8
+          ],
+          "relevant": false,
+          "word": "höhenverstellung"
+        },
+        {
+          "box": [
+            1737,
+            1761.9999970200001,
+            255.6,
+            267.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1773,
+            1809.999998126,
+            255.4,
+            268.4
+          ],
+          "relevant": false,
+          "word": "lam-"
+        },
+        {
+          "box": [
+            180,
+            206.99999379,
+            229.8,
+            240.8
+          ],
+          "relevant": false,
+          "word": "eine"
+        },
+        {
+          "box": [
+            214,
+            308.000033148,
+            227.2,
+            241.2
+          ],
+          "relevant": false,
+          "word": "jugendgemäßs"
+        },
+        {
+          "box": [
+            316,
+            348.00001125,
+            231,
+            241
+          ],
+          "relevant": false,
+          "word": "form"
+        },
+        {
+          "box": [
+            356,
+            376.99999715,
+            231,
+            241
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            385,
+            472.998734746,
+            227.4,
+            240.4
+          ],
+          "relevant": false,
+          "word": "lehrerbildung"
+        },
+        {
+          "box": [
+            531,
+            546.1999969440001,
+            228.8,
+            239.8
+          ],
+          "relevant": false,
+          "word": "pu"
+        },
+        {
+          "box": [
+            563,
+            629.00001562,
+            233,
+            243
+          ],
+          "relevant": false,
+          "word": "zeitschrift"
+        },
+        {
+          "box": [
+            641,
+            658.99999472,
+            233,
+            243
+          ],
+          "relevant": false,
+          "word": "für"
+        },
+        {
+          "box": [
+            671,
+            773.000029066,
+            229.4,
+            242.4
+          ],
+          "relevant": false,
+          "word": "programmierten"
+        },
+        {
+          "box": [
+            786,
+            851.0000187979999,
+            232.8,
+            243.8
+          ],
+          "relevant": false,
+          "word": "unterricht"
+        },
+        {
+          "box": [
+            863,
+            886.000006964,
+            233.8,
+            244.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1066,
+            1110.9999875780002,
+            234.4,
+            247.4
+          ],
+          "relevant": false,
+          "word": "einem"
+        },
+        {
+          "box": [
+            1130,
+            1237.408334208,
+            231.8,
+            247.8
+          ],
+          "relevant": false,
+          "word": "metallgehäuse"
+        },
+        {
+          "box": [
+            1261,
+            1305.9999875780002,
+            235.4,
+            248.4
+          ],
+          "relevant": false,
+          "word": "einem"
+        },
+        {
+          "box": [
+            1326,
+            1376.9999857120001,
+            235.4,
+            248.4
+          ],
+          "relevant": false,
+          "word": "deckel"
+        },
+        {
+          "box": [
+            1399.14721852,
+            1421.9999944400001,
+            236,
+            246
+          ],
+          "relevant": false,
+          "word": "aus"
+        },
+        {
+          "box": [
+            1452,
+            1470.000004048,
+            232.4,
+            245.4
+          ],
+          "relevant": false,
+          "word": "pe"
+        },
+        {
+          "box": [
+            1480,
+            1523.9999859519999,
+            236.4,
+            249.4
+          ],
+          "relevant": false,
+          "word": "sowie"
+        },
+        {
+          "box": [
+            1534,
+            1558.9999970200001,
+            236.6,
+            248.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1570,
+            1634.0000115999999,
+            236.6,
+            248.6
+          ],
+          "relevant": false,
+          "word": "einfache"
+        },
+        {
+          "box": [
+            1646,
+            1766.33367232,
+            233.8,
+            249.8
+          ],
+          "relevant": false,
+          "word": "lampenwschsel"
+        },
+        {
+          "box": [
+            162,
+            176.2460659,
+            212.8,
+            223.8
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            188,
+            223.000005788,
+            212.8,
+            223.8
+          ],
+          "relevant": false,
+          "word": "franz"
+        },
+        {
+          "box": [
+            232,
+            284.054730112,
+            212.8,
+            223.8
+          ],
+          "relevant": false,
+          "word": "hubalek"
+        },
+        {
+          "box": [
+            297,
+            385.000026213,
+            213.8,
+            224.8
+          ],
+          "relevant": false,
+          "word": "revolutionäre"
+        },
+        {
+          "box": [
+            394,
+            472.000031395,
+            210.4,
+            223.4
+          ],
+          "relevant": false,
+          "word": "entwicklung"
+        },
+        {
+          "box": [
+            481,
+            500.99999935,
+            214,
+            224
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            549,
+            645.09221644,
+            214.8,
+            225.8
+          ],
+          "relevant": false,
+          "word": "lehrmaschlnen"
+        },
+        {
+          "box": [
+            1066,
+            1141.293144234,
+            216.2,
+            230.2
+          ],
+          "relevant": false,
+          "word": "kunststoff"
+        },
+        {
+          "box": [
+            1164,
+            1200.999996579,
+            218.4,
+            231.4
+          ],
+          "relevant": false,
+          "word": "einer"
+        },
+        {
+          "box": [
+            1218,
+            1346.34806192,
+            214.8,
+            230.8
+          ],
+          "relevant": false,
+          "word": "führungsschiene"
+        },
+        {
+          "box": [
+            1369,
+            1421.99998964,
+            218.4,
+            231.4
+          ],
+          "relevant": false,
+          "word": "welche"
+        },
+        {
+          "box": [
+            1468,
+            1496.000000896,
+            210.6,
+            222.6
+          ],
+          "relevant": false,
+          "word": "das"
+        },
+        {
+          "box": [
+            1513,
+            1555.0000007830001,
+            210.4,
+            223.4
+          ],
+          "relevant": false,
+          "word": "gerät"
+        },
+        {
+          "box": [
+            1571,
+            1588.000003328,
+            210.2,
+            224.2
+          ],
+          "relevant": false,
+          "word": "ist"
+        },
+        {
+          "box": [
+            1605,
+            1734.9999824200002,
+            210.2,
+            224.2
+          ],
+          "relevant": false,
+          "word": "servicefreundilch"
+        },
+        {
+          "box": [
+            1751,
+            1801.416683328,
+            208.8,
+            224.8
+          ],
+          "relevant": false,
+          "word": "gebaut"
+        },
+        {
+          "box": [
+            161,
+            258.00001465,
+            195.8,
+            206.8
+          ],
+          "relevant": false,
+          "word": "audio-visuelten"
+        },
+        {
+          "box": [
+            270,
+            333.0098456,
+            197,
+            207
+          ],
+          "relevant": false,
+          "word": "lehrmittel"
+        },
+        {
+          "box": [
+            548,
+            579.1932736159999,
+            196.6,
+            208.6
+          ],
+          "relevant": false,
+          "word": "wien"
+        },
+        {
+          "box": [
+            591,
+            616.99999444,
+            199,
+            209
+          ],
+          "relevant": false,
+          "word": "heft"
+        },
+        {
+          "box": [
+            623,
+            659.6666685814,
+            195.4,
+            208.4
+          ],
+          "relevant": false,
+          "word": "4/1868"
+        },
+        {
+          "box": [
+            1066,
+            1093.000002736,
+            200.6,
+            212.6
+          ],
+          "relevant": false,
+          "word": "den"
+        },
+        {
+          "box": [
+            1105,
+            1208.0000113,
+            198,
+            213
+          ],
+          "relevant": false,
+          "word": "projektorkopf"
+        },
+        {
+          "box": [
+            1219,
+            1242.0000018950002,
+            201.4,
+            214.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1253,
+            1308.0000196,
+            197.8,
+            213.8
+          ],
+          "relevant": false,
+          "word": "spiegel"
+        },
+        {
+          "box": [
+            1320,
+            1347.000002736,
+            201.6,
+            213.6
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1359,
+            1421.999983872,
+            197.8,
+            213.8
+          ],
+          "relevant": false,
+          "word": "objektiv"
+        },
+        {
+          "box": [
+            162,
+            176.2460659,
+            177.8,
+            188.8
+          ],
+          "relevant": false,
+          "word": "dr"
+        },
+        {
+          "box": [
+            188,
+            222.00000673300002,
+            178.8,
+            189.8
+          ],
+          "relevant": false,
+          "word": "adolf"
+        },
+        {
+          "box": [
+            230,
+            261.107993334,
+            178.8,
+            189.8
+          ],
+          "relevant": false,
+          "word": "märz"
+        },
+        {
+          "box": [
+            274,
+            401.97327868,
+            176.4,
+            189.4
+          ],
+          "relevant": false,
+          "word": "unterrichtsmitschau"
+        },
+        {
+          "box": [
+            415,
+            500.99999914,
+            178.8,
+            189.8
+          ],
+          "relevant": false,
+          "word": "schulinternes"
+        },
+        {
+          "box": [
+            549,
+            572.00000196,
+            181,
+            191
+          ],
+          "relevant": false,
+          "word": "leo"
+        },
+        {
+          "box": [
+            582,
+            642.14305305,
+            181,
+            191
+          ],
+          "relevant": false,
+          "word": "partmann"
+        },
+        {
+          "box": [
+            654,
+            784.000047125,
+            178.4,
+            191.4
+          ],
+          "relevant": false,
+          "word": "tonbandprogramme"
+        },
+        {
+          "box": [
+            812,
+            855.999984512,
+            179.6,
+            191.6
+          ],
+          "relevant": false,
+          "word": "fragen"
+        },
+        {
+          "box": [
+            865,
+            887.0000026,
+            183,
+            193
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1066,
+            1099.9999995039998,
+            179.8,
+            195.8
+          ],
+          "relevant": false,
+          "word": "trägt"
+        },
+        {
+          "box": [
+            1115.5907308728,
+            1276.9999999752001,
+            179.4,
+            197.4
+          ],
+          "relevant": false,
+          "word": "2-elementen-objektiv"
+        },
+        {
+          "box": [
+            1286,
+            1310.000006498,
+            184.4,
+            197.4
+          ],
+          "relevant": false,
+          "word": "mit"
+        },
+        {
+          "box": [
+            1319,
+            1420.999953072,
+            180.8,
+            196.8
+          ],
+          "relevant": false,
+          "word": "linsensystem"
+        },
+        {
+          "box": [
+            162,
+            184.999994094,
+            160.8,
+            171.8
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            192,
+            292.999966815,
+            161.8,
+            172.8
+          ],
+          "relevant": false,
+          "word": "klassenlnternes"
+        },
+        {
+          "box": [
+            300,
+            365.2076128,
+            161.8,
+            172.8
+          ],
+          "relevant": false,
+          "word": "fernsehen"
+        },
+        {
+          "box": [
+            550,
+            609.156695752,
+            163.8,
+            174.8
+          ],
+          "relevant": false,
+          "word": "probleme"
+        },
+        {
+          "box": [
+            741.759531062,
+            817.000022102,
+            161.4,
+            174.4
+          ],
+          "relevant": false,
+          "word": "fortsetzung"
+        },
+        {
+          "box": [
+            825,
+            857.000001913,
+            164.8,
+            175.8
+          ],
+          "relevant": false,
+          "word": "seite"
+        },
+        {
+          "box": [
+            864,
+            882.338831004,
+            162.4,
+            175.4
+          ],
+          "relevant": false,
+          "word": "123"
+        },
+        {
+          "box": [
+            1065,
+            1074.142855104,
+            162.8,
+            178.8
+          ],
+          "relevant": false,
+          "word": "3"
+        },
+        {
+          "box": [
+            1078.714282656,
+            1096.9999928640002,
+            162.8,
+            178.8
+          ],
+          "relevant": false,
+          "word": "91"
+        },
+        {
+          "box": [
+            1112.57821684,
+            1172.96824243,
+            164,
+            179
+          ],
+          "relevant": false,
+          "word": "355mm"
+        },
+        {
+          "box": [
+            1192,
+            1219.000002736,
+            167.6,
+            179.6
+          ],
+          "relevant": false,
+          "word": "und"
+        },
+        {
+          "box": [
+            1231,
+            1248.0000002400002,
+            168,
+            178
+          ],
+          "relevant": false,
+          "word": "an"
+        },
+        {
+          "box": [
+            1260,
+            1284.9999970200001,
+            167.6,
+            179.6
+          ],
+          "relevant": false,
+          "word": "der"
+        },
+        {
+          "box": [
+            1296,
+            1386.0000287999999,
+            167.6,
+            179.6
+          ],
+          "relevant": false,
+          "word": "außenkante"
+        },
+        {
+          "box": [
+            1398,
+            1422.0000049999999,
+            168,
+            178
+          ],
+          "relevant": false,
+          "word": "an-"
+        },
+        {
+          "box": [
+            1556,
+            1637.000032256,
+            164.8,
+            180.8
+          ],
+          "relevant": false,
+          "word": "schulpreis"
+        },
+        {
+          "box": [
+            1653.710987296,
+            1718.5212605440001,
+            164.8,
+            180.8
+          ],
+          "relevant": false,
+          "word": "komplett"
+        },
+        {
+          "box": [
+            1739,
+            1748.9999975,
+            169.6,
+            181.6
+          ],
+          "relevant": false,
+          "word": "s"
+        },
+        {
+          "box": [
+            1759,
+            1790.753297888,
+            169.4,
+            182.4
+          ],
+          "relevant": false,
+          "word": "4900"
+        },
+        {
+          "box": [
+            145,
+            169.999997344,
+            125.2,
+            139.2
+          ],
+          "relevant": false,
+          "word": "106"
+        },
+        {
+          "box": [
+            1783,
+            1807.999999012,
+            134,
+            149
+          ],
+          "relevant": false,
+          "word": "107"
+        }
+      ],
+      "height": 1333,
+      "image_path": "/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/page/18/image",
+      "image_scale": 2.7778947368421054,
+      "width": 1900
+    },
+    "download_path": "/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/download",
+    "hit": {
+      "fields": {
+        "collection": "import-test",
+        "documentid": "id:baseline:baseline::SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR_18",
+        "language": "de",
+        "page": 18,
+        "parent_doc": "SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR",
+        "sddocname": "baseline"
+      },
+      "id": "id:baseline:baseline::SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR_18",
+      "relevance": 2.708377436359014,
+      "source": "baseline_content"
+    },
+    "query_metadata": {
+      "translations": [
+        {
+          "flatTerms": [
+            "война",
+            "guerra",
+            "собак",
+            "psy",
+            "finie",
+            "civil",
+            "perros",
+            "krieg",
+            "cani",
+            "dogs",
+            "hunde",
+            "war",
+            "wojenne",
+            "chiens",
+            "krig",
+            "যুদ্ধ",
+            "gossos",
+            "কুকুর"
+          ],
+          "languages": [
+            "de",
+            "fr",
+            "ca",
+            "it",
+            "es",
+            "ru",
+            "pl",
+            "bn",
+            "da",
+            "en"
+          ],
+          "stemMap": {
+            "Guerra": "guerr",
+            "Hunde": "hund",
+            "Krieg": "krieg",
+            "cani": "can",
+            "chiens": "chien",
+            "civil": "civil",
+            "dogs": "dog",
+            "finie": "fin",
+            "gossos": "gosso",
+            "guerra": "guerra",
+            "hunde": "hund",
+            "krig": "krig",
+            "perros": "perr",
+            "psy": "psi",
+            "war": "war",
+            "wojenne": "wojenn",
+            "война": "войн",
+            "собак": "собак",
+            "কুকুর": "কুকুর",
+            "যুদ্ধ": "যুদ্ধ"
+          },
+          "stems": {
+            "can": {
+              "languages": [
+                "it"
+              ],
+              "terms": [
+                "cani"
+              ]
+            },
+            "chien": {
+              "languages": [
+                "fr"
+              ],
+              "terms": [
+                "chiens"
+              ]
+            },
+            "civil": {
+              "languages": [
+                "es"
+              ],
+              "terms": [
+                "civil"
+              ]
+            },
+            "dog": {
+              "languages": [
+                "un",
+                "en"
+              ],
+              "terms": [
+                "dogs"
+              ]
+            },
+            "fin": {
+              "languages": [
+                "fr"
+              ],
+              "terms": [
+                "finie"
+              ]
+            },
+            "gosso": {
+              "languages": [
+                "ca"
+              ],
+              "terms": [
+                "gossos"
+              ]
+            },
+            "guerr": {
+              "languages": [
+                "it"
+              ],
+              "terms": [
+                "Guerra"
+              ]
+            },
+            "guerra": {
+              "languages": [
+                "ca"
+              ],
+              "terms": [
+                "guerra"
+              ]
+            },
+            "hund": {
+              "languages": [
+                "de",
+                "da"
+              ],
+              "terms": [
+                "hunde",
+                "Hunde"
+              ]
+            },
+            "krieg": {
+              "languages": [
+                "de"
+              ],
+              "terms": [
+                "Krieg"
+              ]
+            },
+            "krig": {
+              "languages": [
+                "da"
+              ],
+              "terms": [
+                "krig"
+              ]
+            },
+            "perr": {
+              "languages": [
+                "es"
+              ],
+              "terms": [
+                "perros"
+              ]
+            },
+            "psi": {
+              "languages": [
+                "pl"
+              ],
+              "terms": [
+                "psy"
+              ]
+            },
+            "war": {
+              "languages": [
+                "un",
+                "en"
+              ],
+              "terms": [
+                "war"
+              ]
+            },
+            "wojenn": {
+              "languages": [
+                "pl"
+              ],
+              "terms": [
+                "wojenne"
+              ]
+            },
+            "войн": {
+              "languages": [
+                "ru"
+              ],
+              "terms": [
+                "война"
+              ]
+            },
+            "собак": {
+              "languages": [
+                "ru"
+              ],
+              "terms": [
+                "собак"
+              ]
+            },
+            "কুকুর": {
+              "languages": [
+                "bn"
+              ],
+              "terms": [
+                "কুকুর"
+              ]
+            },
+            "যুদ্ধ": {
+              "languages": [
+                "bn"
+              ],
+              "terms": [
+                "যুদ্ধ"
+              ]
+            }
+          },
+          "synonyms": [
+            {
+              "mainTerm": "dog",
+              "terms": [
+                "кер",
+                "canis familiaris domesticus",
+                "hund",
+                "ನಿಯತ್ತಿನ ಪ್ರಾಣಿ",
+                "gugug",
+                "vovse",
+                "pes",
+                "voffsing",
+                "собака",
+                "멍멍이",
+                "പട്ടി",
+                "zakur",
+                "aqjun",
+                "Hund",
+                "собака свійський",
+                "kirik",
+                "سگ اهلی",
+                "домашній собака",
+                "киска",
+                "🐕",
+                "kesykoira",
+                "C. lupus familiaris",
+                "狗",
+                "ꦱꦼꦒꦮꦺꦴꦤ꧀",
+                "домаћи пас",
+                "psyk",
+                "ಸಾಧು ಪ್ರಾಣಿ",
+                "perro doméstico",
+                "Canis lupus familiaris apta",
+                "собака домашній",
+                "tamhund",
+                "or",
+                "canis familiaris",
+                "ꦱꦺꦴꦤ",
+                "kjøter",
+                "ꦱꦒꦮꦺꦴꦤ꧀",
+                "ꦲꦱꦸ",
+                "sona",
+                "اسو",
+                "пес",
+                "Tósz",
+                "ca",
+                "สุนัขบ้าน",
+                "انجيڠ",
+                "цуко",
+                "segawon",
+                "pies domowy",
+                "собаки",
+                "Hoond",
+                "mannens beste venn",
+                "ꦄꦱꦸ",
+                "chas",
+                "🐶",
+                "ꦏꦶꦫꦶꦏ꧀",
+                "dogs",
+                "domaći pas",
+                "Cães",
+                "Cachorro",
+                "perru domésticu",
+                "can",
+                "犬",
+                "σκυλί",
+                "køter",
+                "ꦒꦸꦒꦸꦒ꧀",
+                "Canis Domesticus",
+                "свійський собака",
+                "Canis lupus familiaris",
+                "sagawon",
+                "vovhund",
+                "いぬ",
+                "pos",
+                "สุนัข",
+                "Canis familiaris",
+                "пёс",
+                "canis lupus familiaris",
+                "Cão",
+                "asu",
+                "cachorro",
+                "menneskets beste venn",
+                "madadh",
+                "canis canis",
+                "Haushond",
+                "domestic dog",
+                "собака обыкновенная",
+                "イエイヌ",
+                "Šou",
+                "κύων",
+                "gadhar",
+                "bikkje",
+                "peni",
+                "Kaú",
+                "Káu-á"
+              ]
+            }
+          ],
+          "translations": [
+            {
+              "content": [
+                "war",
+                "dogs"
+              ],
+              "languageCode": "un"
+            },
+            {
+              "content": [
+                "Krieg",
+                "Hunde"
+              ],
+              "languageCode": "de"
+            },
+            {
+              "content": [
+                "finie",
+                "chiens"
+              ],
+              "languageCode": "fr"
+            },
+            {
+              "content": [
+                "guerra",
+                "gossos"
+              ],
+              "languageCode": "ca"
+            },
+            {
+              "content": [
+                "Guerra",
+                "cani"
+              ],
+              "languageCode": "it"
+            },
+            {
+              "content": [
+                "civil",
+                "perros"
+              ],
+              "languageCode": "es"
+            },
+            {
+              "content": [
+                "война",
+                "собак"
+              ],
+              "languageCode": "ru"
+            },
+            {
+              "content": [
+                "wojenne",
+                "psy"
+              ],
+              "languageCode": "pl"
+            },
+            {
+              "content": [
+                "যুদ্ধ",
+                "কুকুর"
+              ],
+              "languageCode": "bn"
+            },
+            {
+              "content": [
+                "krig",
+                "hunde"
+              ],
+              "languageCode": "da"
+            },
+            {
+              "content": [
+                "war",
+                "dogs"
+              ],
+              "languageCode": "en"
+            }
+          ]
+        }
+      ]
+    }
+  }
