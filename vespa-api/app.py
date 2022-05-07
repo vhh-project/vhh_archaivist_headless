@@ -9,6 +9,7 @@ import pdf_import
 import vespa_util
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 20 * 1000 * 1000  # 20 MB
 CORS(app)
 ALLOWED_EXTENSIONS = ['pdf']
 
