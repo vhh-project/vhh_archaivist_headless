@@ -23,7 +23,7 @@ curl -F "file=@/path/to/ocr/document.pdf" -F "collection=Example Collection Name
 `200 OK`
 
 The response provides the uploaded document name (i.e. original name of the uploaded file), a download path for the source PDF, the amount of pages and the vespa-generated _ids_ and _pathIds_ for each page in order to be able to directly retrieve the page documents from the index.
-```json
+```jsonc
 {
     "document_name": "Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR",
     "download_path": "/document/Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR/download",
@@ -38,9 +38,9 @@ The response provides the uploaded document name (i.e. original name of the uplo
             "pathId": "/document/v1/baseline/baseline/docid/Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR_1"
         },
 
-        .
-        .
-        .
+        //.
+        //.
+        //.
 
         {
             "id": "id:baseline:baseline::Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR_48",
@@ -97,7 +97,7 @@ The response is served in JSON format. The top level has the vespa hits (`hits`)
 
 #### hits <a id="query_hits"/>
 Hits contains an array of relevant items from the vespa index fashioned after the [default JSON result format](https://docs.vespa.ai/en/reference/default-result-format.html). More specifially it contains data close to the **root.children** array in the default format (see [example JSON](https://docs.vespa.ai/en/query-api.html#result-examples) also). Additionally to the default data from the index, we extend each hit with the `snippets` array data structure. One snippet item could look as follows:
-```json
+```jsonc
 {
     "boxes": [
         {
@@ -140,7 +140,7 @@ Example: `curl hostname:5001/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/page/
 ### Success
 Example response: [document_search.json](examples/document_search.json)
 
-```json
+```jsonc
 {
     "bounding_data": {
         "boxes": [
