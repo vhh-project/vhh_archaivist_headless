@@ -5,6 +5,8 @@ ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=5001
 ENV GUNICORN_BIND=0.0.0.0:5001
+# 2 minutes worker timeout for longer files
+ENV GUNICORN_TIMEOUT=120
 RUN apt-get update && apt-get install -y \
 curl poppler-utils cron
 RUN pip install --upgrade pip
