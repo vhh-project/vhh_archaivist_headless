@@ -62,7 +62,7 @@ The JSON body:
 }
 ```
 - searchChain - this is required to trigger our custom multilingual searcher component
-- [yql](https://docs.vespa.ai/en/query-language.html) - vespa's own query language. Queries targeting the *body* field are multilingually expanded
+- [yql](https://docs.vespa.ai/en/query-language.html) - vespa's own query language. Queries targeting the *body* or *default* field are multilingually expanded
 - hits (optional; default: 10) - amount of relevant documents to return
 - offset (optional; default: 0) - offset to start from returning documents
 - presentation.format: The '**query-meta-json**' format is a custom-built extension of the default result format of vespa. It adds an additional '**query-metadata**' field to the result containing information about the internal query translation
@@ -75,7 +75,7 @@ The response with the above query setup mostly follows the [default JSON result 
 The output for each relevant document, i.e. which fields are displayed and in which manner, can be configured via attributes in the schema fields. For example, the body field currently has the 'summary' attribute set to 'dynamic', which returns a relevant text snippet from the document body with matching words highlighted accordingly. To return the full document body, this attribute has to be removed.
 
 #### Synonyms
-As an additional step in the translation process, we look for synonyms of specific (currently English) phrases and multilingual aliases contained in [word2word_api/wikidata-aliases.txt](../word2word_api/wikidata-aliases.txt). Any found synonyms also are returned in the response and consequently used for extenting the initial query. 
+As an additional step in the translation process, we look for synonyms of specific (currently English) phrases and multilingual aliases contained in [word2word_api/wikidata-aliases.txt](../word2word_api/wikidata-aliases.txt). Any found synonyms also are returned in the response and consequently used for extending the initial query. 
 
 File format for synonyms: main-phrase \<tab> synonym 1 \<tab> synonym 2 \<tab> synonym 3 \<tab> ...
 
