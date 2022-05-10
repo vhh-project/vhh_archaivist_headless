@@ -22,7 +22,7 @@ curl -F "file=@/path/to/ocr/document.pdf" -F "collection=Example Collection Name
 ### Success
 `200 OK`
 
-The response provides the uploaded document name (i.e. original name of the uploaded file), a download path for the source PDF, the amount of pages and the vespa-generated _ids_ and _pathIds_ for each page in order to be able to directly retrieve the page documents from the index.
+The response provides the uploaded document name (i.e. original name of the uploaded file), a download endpoint for the source PDF, the amount of pages and the vespa-generated _ids_ and _pathIds_ for each page in order to be able to directly retrieve the page documents from the index.
 ```jsonc
 {
     "document_name": "Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR",
@@ -38,9 +38,9 @@ The response provides the uploaded document name (i.e. original name of the uplo
             "pathId": "/document/v1/baseline/baseline/docid/Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR_1"
         },
 
-        //.
-        //.
-        //.
+        .
+        .
+        .
 
         {
             "id": "id:baseline:baseline::Chief-Signal-Officer_Annual-Report_1945_026-074_Chapter-2_Without-Images.pdf_OCR_48",
@@ -62,7 +62,8 @@ The response provides the uploaded document name (i.e. original name of the uplo
     - `MAX_CONTENT_LENGTH` can be configured at the top of [app.py](app.py)
 
 `500 Internal Server Error`  
-- Vespa index is blocking feed operation due to disk limits
+- Vespa index is blocking feed operation due to high disk load (see [services.xml](../baseline_vespa_app/src/main/application/services.xml) to configure max disk limits)
+- When in doubt, run `docker-compose logs vespa-api` inside the repository folder for a more comprehensive log output
 # GET /search
 Start multi-stage search process:
 - Construct and forward YQL query from request parameters to baseline vespa app
@@ -74,8 +75,8 @@ Start multi-stage search process:
 - `query` Required
     -  string (e.g. `'war zone'`) - applies a logical OR operator on all terms in query
     - array of strings (e.g. `['war', 'zone]`) - applies logical AND to each array item additionally to logical OR inside each string 
-- `page` Default: 0  
-- `hits` Default: 5
+- `page` Default: 0 - Page offset in result list
+- `hits` Default: 5 - Number of items per result list page
 - `language` - Optional
     - Filter results based on document language (detected during import)
     - two-letter ISO 639-1 codes (e.g. 'en' for English)
@@ -84,7 +85,7 @@ Start multi-stage search process:
 - `order_by` Default: ''  | 'alpha'  
     - Sort results either by rank from best to worst (Default '') or alphabetically ('alpha')
 - `direction` Default: 'desc' | 'asc'
-    - Determine sort direction when sorting alphabetically
+    - Determine sort direction when sorting alphabetically (**desc**ending or **asc**ending)
 
 ## Response
 
@@ -96,14 +97,14 @@ Example response: [search.json](examples/search.json)
 The response is served in JSON format. The top level has the vespa hits (`hits`), translation results in `query_metadata` and the `total` number of relevant items. 
 
 #### hits <a id="query_hits"/>
-Hits contains an array of relevant items from the vespa index fashioned after the [default JSON result format](https://docs.vespa.ai/en/reference/default-result-format.html). More specifially it contains data close to the **root.children** array in the default format (see [example JSON](https://docs.vespa.ai/en/query-api.html#result-examples) also). Additionally to the default data from the index, we extend each hit with the `snippets` array data structure. One snippet item could look as follows:
+Hits contains an array of relevant items from the vespa index fashioned after the [default JSON result format](https://docs.vespa.ai/en/reference/default-result-format.html). More specifially it contains data close to the **root.children** array in the default format (see [example JSON](https://docs.vespa.ai/en/query-api.html#result-examples) also). Additionally to the default data from the index, we extend each hit with the `snippets` array data structure. One snippet item inside `snippets` could look as follows:
 ```jsonc
 {
     "boxes": [
         {
-            "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2
+            "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2 coordinates
             "relevant": true, // boolean - is term relevant to query?
-            "word": "characteristicts"
+            "word": "characteristics"
         },
         .
         .
@@ -115,16 +116,16 @@ Hits contains an array of relevant items from the vespa index fashioned after th
     "image_scale": 2.7778662420382165 // ratio between source PDF and scaled-down image
 }
 ```
-The boxes contains all term bounding boxes of the original document, that are inside the snippet's confines and the relevant flag indicates wether or not the boxes should be highlighted as relevant to the query.
+The boxes contain all term bounding boxes of the original document, that are inside the snippet's confines and the relevant flag indicates wether or not the boxes should be highlighted as relevant to the query.
 
 ### Failure
 `504 Timeout`  
 Indicates that the vespa index timed out during the forwarded request.
-Can happen for complex queries (hint: tweak the `timeout` variable in [test](vespa_util.py)) or when the vespa index (i.e. baseline application) is unreachable.
+Can happen for complex queries (hint: tweak the `timeout` variable in [vespa_util.py](vespa_util.py)) or when the vespa index (i.e. baseline application) is unreachable.
 
 # GET /document/\<name\>/page/\<number\>
 Launch search at baseline vespa index (Filter single page).
-This endpoint represents a way to retrieve the full page metadata with relevant term bounding boxes marked.
+This endpoint represents a way to retrieve the full page metadata with relevant term bounding boxes marked. 
 
 ## Request
 Example: `curl hostname:5001/document/SEHEN-UND-HOEREN_1969-02_H40.pdf_OCR/page/18?query=war%20dogs`
@@ -145,7 +146,7 @@ Example response: [document_search.json](examples/document_search.json)
     "bounding_data": {
         "boxes": [
             {
-                "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2
+                "box": [119, 175.99, 150.59, 167.59], // x1, x2, y1, y2 coordinates
                 "relevant": true, // boolean - is term relevant to query?
                 "word": "characteristicts"
             },
@@ -207,7 +208,7 @@ Content-Type: image/jpeg
 ```
 ### Failure 
 `404 Not Found`  
-Document as a whole or specific page number not found in file system
+Snippet id invalid or outdated
 
 # GET /status
 General status check for API
