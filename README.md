@@ -39,7 +39,7 @@ Currently supported languages are:
 - Polish
 - Bengali
 
-To lower memory consumption and startup time this service does not directly translate between pairs but rather uses English as an intermediary language. However, additional languages can easily be added to [word2word_api/translate.py](word2word_api/translate.py).
+To lower memory consumption and startup time this service does not directly translate between pairs but rather uses English as an intermediary language. However, additional languages can easily be added to [translate.py](word2word_api/translate.py).
 
 #### vespa API (intermediate service)
 This container hosts a Python Flask server which simplifies all interactions with the underlying vespa application (see next container). The API supports the import of OCR-annotated PDFs and creates on-the-fly relevant image snippets (including text position metadata) of the source documents for search requests.
@@ -72,6 +72,10 @@ This container may take a while during first launch, since it downloads dictiona
 
 ### Intermediate API
 This container should be the quickest up, but of course requires the baseline index to be up and running for requests to properly work.
+
+#### Snippet creation & cleanup
+This container creates query-time image snippets and stores them in a tmp-folder on the container drive. This folder is scheduled to be cleaned up once a day. For higher search request loads, it might be advisable to increase the cleanup frequency or devise an 'expiration time' for files and clean up the folder more frequently based on that metric.  
+See [cron_container.txt](vespa-api/cron_container.txt) for the schedule and [snippet_cleanup.py](vespa-api/snippet_cleanup.py) for the cleanup logic.
 
 ## Usage
 Default port for vespa index applications: **8080**  
