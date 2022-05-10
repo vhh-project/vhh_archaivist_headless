@@ -1,3 +1,12 @@
+# Endpoints
+- [POST /document](#post-document)
+- [GET /search](#get-search)
+- [GET /document/\<name\>/page/\<number\>](#get-documentnamepagenumber)
+- [GET /document/\<name\>/download](#get-documentnamedownload)
+- [GET /document/\<name\>/page/\<number\>/image](#get-documentnamepagenumberimage)
+- [GET /snippet/\<id\>](#get-snippetid)
+- [GET /status](#get-status)
+
 # POST /document
 Upload & process OCR-annoted PDF  
 
