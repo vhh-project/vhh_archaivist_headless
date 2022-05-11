@@ -41,10 +41,16 @@ def main():
     if not os.path.isdir(config.metadata_path):
         os.mkdir(config.metadata_path)
 
+    if len(files) == 0:
+        return
+
     for (path, name) in progressBar(files, prefix="Importing", suffix="Completed", total=len(files)):
         path_parts = path.split(os.sep)
         collection = path_parts[1] if len(path_parts) > 2 else ''
-        import_file(collection=collection, name=name, path=path)
+        try:
+            import_file(collection=collection, name=name, path=path)
+        except PdfImportError as e:
+            print(e)
 
 
 def import_file(file=None, full_name=None, collection='', name=None, path=None):
@@ -105,7 +111,10 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 with open(json_path, 'w') as file:
                     json.dump(page_data, file)
                 pages.append(vespa_util.feed(page_id, name, page_no, collection, text))
-            except vespa_util.FeedException as e:
+            except (vespa_util.FeedException, vespa_util.UnhealthyException) as e:
+                __safe_remove(thumb_path)
+                __safe_remove(image_path)
+                __safe_remove(json_path)
                 raise e
             except Exception as e:
                 print(f'\033[KFailed to import file: {name} | page: {page_no} - Cleaning up file artifacts!')
@@ -117,7 +126,9 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
     except PdfImportError as e:
         raise e
     except vespa_util.FeedException as e:
-        raise PdfImportError(500, e)
+        raise PdfImportError(507, e)
+    except vespa_util.UnhealthyException as e:
+        raise PdfImportError(503, e)
     except Exception as e:
         print(f'\033[KFailed to import file: {name}')
         raise PdfImportError(400, f'Failed to import file: {name} - {str(e)}')

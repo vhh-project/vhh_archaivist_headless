@@ -35,6 +35,10 @@ class FeedException(Exception):
     pass
 
 
+class UnhealthyException(Exception):
+    pass
+
+
 def query(query, hits=5, page=0, language='', document=None, order_by='', direction='desc', stem_filter=''):
     """
     Launch a query at the vespa search index
@@ -401,6 +405,9 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
     :param collection: name of collection this document is part of
     :param content: string content intended for indexing
     """
+    if not health_check():
+        raise UnhealthyException()
+
     try:
         language = detect(content)
     except LangDetectException:
