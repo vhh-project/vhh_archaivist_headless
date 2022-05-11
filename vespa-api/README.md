@@ -17,7 +17,7 @@ This request processes each PDF page individually:
     - Store positional information (bounding boxes) and image in server file system
     - Feed text and other schema attributes (see [schema](../baseline_vespa_app/src/main/application/schemas/baseline.sd)) to vespa index
 
-### Disclaimer 
+## Disclaimer 
 This request can take a while for longer documents. PDF rendering and PDF-to-image conversion can cause a lot of momentary memory usage peaks. In order to keep memory usage as light as possible, each PDF page is processed sequentially. Hence, we decided to increase the default worker timeout in gunicorn from 30 seconds to 120 seconds. The GUNICORN_TIMEOUT parameter can be tweaked via the [Dockerfile](Dockerfile) if needed.
 
 ## Request
@@ -70,9 +70,15 @@ The response provides the uploaded document name (i.e. original name of the uplo
 - File exceeds 20MB size 
     - `MAX_CONTENT_LENGTH` can be configured at the top of [app.py](app.py)
 
-`500 Internal Server Error`  
+`503 Service Unavailable`
+- Baseline vespa application is not in a healthy state because ..
+    - .. something broke during runtime in the baseline container ([restart](../README.md#troubleshooting) could do the trick)
+    - .. the request was sent before all containers were up and running (docker container status: healthy)
+
+`507 Insufficient Storage`  
 - Vespa index is blocking feed operation due to high disk load (see [services.xml](../baseline_vespa_app/src/main/application/services.xml) to configure max disk limits)
-- When in doubt, run `docker-compose logs vespa-api` inside the repository folder for a more comprehensive log output
+ 
+When in doubt, run `docker-compose logs vespa-api` inside the repository folder for a more comprehensive log output
 # GET /search
 Start multi-stage search process:
 - Construct and forward YQL query from request parameters to baseline vespa app
