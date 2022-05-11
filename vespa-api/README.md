@@ -1,11 +1,15 @@
-# Endpoints
-- [POST /document](#post-document)
-- [GET /search](#get-search)
-- [GET /document/\<name\>/page/\<number\>](#get-documentnamepagenumber)
-- [GET /document/\<name\>/download](#get-documentnamedownload)
-- [GET /document/\<name\>/page/\<number\>/image](#get-documentnamepagenumberimage)
-- [GET /snippet/\<id\>](#get-snippetid)
-- [GET /status](#get-status)
+# Contents
+- Endpoints
+    - [POST /document](#post-document)
+    - [GET /search](#get-search)
+    - [GET /document/\<name\>/page/\<number\>](#get-documentnamepagenumber)
+    - [GET /document/\<name\>/download](#get-documentnamedownload)
+    - [GET /document/\<name\>/page/\<number\>/image](#get-documentnamepagenumberimage)
+    - [GET /snippet/\<id\>](#get-snippetid)
+    - [GET /status](#get-status)
+- [Configuration & Extras](#configuration--extras)
+    - [Snippet Creation & Cleanup](#snippet-creation--cleanup)   
+    - [Batch PDF Import](#batch-pdf-import)
 
 # POST /document
 Upload & process OCR-annoted PDF  
@@ -227,3 +231,28 @@ Snippet id invalid or outdated
 
 # GET /status
 General status check for API
+
+***
+
+# Configuration & Extras
+## Snippet Creation & Cleanup
+This container creates query-time image snippets and stores them in a tmp-folder on the container drive. This folder is scheduled to be cleaned up once a day. For higher search request loads, it might be advisable to increase the cleanup frequency or devise an 'expiration time' for files and clean up the folder more frequently based on that metric.  
+See [cron_container.txt](vespa-api/cron_container.txt) for the schedule and [snippet_cleanup.py](vespa-api/snippet_cleanup.py) for the cleanup logic.
+
+## Batch PDF Import
+Aside from the [PDF upload endpoint](#post-document) we offer an additional **(experimental)** method of batch importing PDF files directly inside the vespa-api container:
+
+```bash
+# 1. import files to running vespa-api container
+# from inside repository folders run
+docker-compose cp import-folder/ vespa-api:/data
+
+# 2. prepare folder structure
+# top level folder inside source folder gets imported as collection name
+# e.g. /data/collection-name/...
+# leave a flat hierarchy in order to not assign a collection
+
+# 3. start batch import and pass input folder
+cd /code # move to execution folder
+pipenv run python pdf_import.py /data # starts import with console output
+```
