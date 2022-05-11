@@ -62,7 +62,8 @@ This application was solely tested in a local network environment. Additional co
 ## Running
 After completing the setup steps, simply execute ```docker-compose up -d``` from the repo's root folder.
 
-This launches the vespa API, the baseline vespa app as well as the word2word translation container. Once all container's health checks return status 'healthy' the service is ready to go.
+This launches the vespa API, the baseline vespa app as well as the word2word translation container. Once all container's health checks return status 'healthy' the service is ready to go.  
+**Hint:** e.g. check container status with `docker ps`
 
 ### Baseline
 The baseline launch is already configured to wait for the internal vespa config server to launch, and subsequently launch the content server running the index and APIs. The container's health check queries a status endpoint of the content server.
@@ -73,9 +74,24 @@ This container may take a while during first launch, since it downloads dictiona
 ### Intermediate API
 This container should be the quickest up, but of course requires the baseline index to be up and running for requests to properly work.
 
-#### Snippet creation & cleanup
-This container creates query-time image snippets and stores them in a tmp-folder on the container drive. This folder is scheduled to be cleaned up once a day. For higher search request loads, it might be advisable to increase the cleanup frequency or devise an 'expiration time' for files and clean up the folder more frequently based on that metric.  
-See [cron_container.txt](vespa-api/cron_container.txt) for the schedule and [snippet_cleanup.py](vespa-api/snippet_cleanup.py) for the cleanup logic.
+### Troubleshooting
+If one of the containers changes to 'unhealthy' after starting up or while running, the easiest course of action is to either restart the full docker-compose:
+```bash 
+docker-compose down
+docker-compose up -d
+```
+or restart a specific container:
+```bash
+# stop
+docker-compose stop <container_name>
+
+# restart option 1
+docker-compose create <container_name> && docker-compose start <container_name>
+
+# restart option 2
+docker-compose up -d # automatically restarts inactive containers from docker-compose
+```
+Both options need to be executed from inside the repository folders
 
 ## Usage
 Default port for vespa index applications: **8080**  
