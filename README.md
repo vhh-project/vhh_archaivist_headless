@@ -83,10 +83,10 @@ docker-compose up -d
 or restart a specific container:
 ```bash
 # stop
-docker-compose stop <container_name>
+docker-compose stop container_name
 
 # restart option 1
-docker-compose create <container_name> && docker-compose start <container_name>
+docker-compose create container_name && docker-compose start container_name
 
 # restart option 2
 docker-compose up -d # automatically restarts inactive containers from docker-compose
