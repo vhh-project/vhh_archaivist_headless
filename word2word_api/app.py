@@ -26,7 +26,8 @@ def multi_translate():
                 terms = translate_util.get_translated_terms(translations, 'en')
 
             return {
-                "languages": translate_util.supported_languages,
+                "sourceLanguage": body['sourceLanguage'],
+                "languages": translate_util.get_supported_languages(),
                 "translations": translations,
                 "synonyms": synonyms_util.find_synonyms(terms)
             }

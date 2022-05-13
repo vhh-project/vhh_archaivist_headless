@@ -1,5 +1,6 @@
 import csv
 import configparser
+import re
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -28,7 +29,7 @@ def find_synonyms(term_list: list):
     result = []
 
     for main_term, synonyms in synonym_map.items():
-        if terms.__contains__(main_term):
+        if re.search(r'\b'+main_term, terms) is not None:
             result.append({
                 'mainTerm': main_term,
                 'terms': synonyms

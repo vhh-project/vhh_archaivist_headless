@@ -46,12 +46,30 @@ target_map = {
     'da': en2da,
 }
 
-supported_languages = list(source_map.keys()) + ['en']
+supported_languages = list(source_map.keys())
+
+stopwords = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves",
+                "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers",
+                "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom",
+                "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had",
+                "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while",
+                "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above",
+                "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there",
+                "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not",
+                "only", "own", "same", "so", "than", "too", "very", "can", "will", "just", "don", "should", "now"]
+
+
+class TranslationException(Exception):
+    pass
 
 
 def main():
     word_translate('de', 'es', 'Baum')
     text_translate('de', 'es', 'Das ist ein Baum'.split(' '))
+
+
+def get_supported_languages():
+    return supported_languages + ['en']
 
 
 def multilang_text_translate(source, words: [str]):
@@ -65,10 +83,29 @@ def multilang_text_translate(source, words: [str]):
     translations = [
         {"languageCode": source, "content": words}
     ]
+    english_words = []
+    english_words_filtered = []
+    for word in words:
+        try:
+            translated_word = to_english(source, word)
+            english_words.append(translated_word)
+            if translated_word not in stopwords:
+                # filter out stopwords before translating into other languages
+                english_words_filtered.append(translated_word)
+        except TranslationException:
+            # do not further translate words, that have no english translation
+            english_words_filtered.append('')
+    if source == 'en':
+        translations[0]['content'] = english_words_filtered
+        translations[0]['contentOrig'] = english_words
+    else:
+        translations.append(
+            {"languageCode": 'en', "content": english_words_filtered, "contentOrig": english_words}
+        )
 
     for language in [language for language in supported_languages if language != source]:
         translations.append(
-            {"languageCode": language, "content": text_translate(source, language, words)}
+            {"languageCode": language, "content": text_translate('en', language, english_words_filtered)}
         )
 
     return translations
@@ -104,13 +141,15 @@ def word_translate(source, target, word):
 
 
 def to_english(source, word):
-    try:
-        translations = source_map[source](word)
-    except KeyError:
-        # Fired when source language is non-existent,
-        # or there is no translation for the word
-        # Step also skipped for english
+    if source == 'en' or source == 'un':
         translations = [word]
+    else:
+        try:
+            translations = source_map[source](word)
+        except KeyError:
+            # Fired when source language is non-existent,
+            # or there is no translation for the word
+            raise TranslationException
 
     print(f"Intermediate translation for '{word}' from {source} to en: {translations}")
     translation = get_first_valid_translation(translations, word)
@@ -144,10 +183,13 @@ def only_letters(s):
     return True
 
 
-def get_translated_terms(translations, language):
-    for tranlation in translations:
-        if tranlation['languageCode'] == language:
-            return tranlation['content']
+def get_translated_terms(translations, language, unfiltered=True):
+    for translation in translations:
+        if translation['languageCode'] == language:
+            if unfiltered:
+                return translation['contentOrig']
+            else:
+                return translation['content']
 
 
 if __name__ == '__main__':
