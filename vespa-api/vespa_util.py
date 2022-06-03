@@ -5,6 +5,7 @@ import urllib3.exceptions
 from vespa.application import Vespa
 import json
 from langdetect import detect, LangDetectException
+import languagecodes
 import ast
 import bounding_boxes
 import image_processing
@@ -46,7 +47,7 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
     :param query: The JSON string query list or single query string (mandatory)
     :param hits: amount of entries to retrieve (default 5)
     :param page: page offset for the result list (default 0)
-    :param language: filter results by language (ISO 639-1 codes)
+    :param language: filter results by language (ISO 639-1 or ISO 639-3 codes supported)
     :param document: filter by a specific source document
     :param order_by: sort results alphabetically (alpha) or by ranking (default)
     :param direction: sort direction: asc | desc (default)
@@ -57,6 +58,12 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
 
     language_and = ''
     if language:
+        try:
+            language = languagecodes.iso_639_alpha2(language)
+            if language is None:
+                language = ''
+        except KeyError:
+            language = ''
         language_and = f'and language matches "{language}"'
 
     document_and = ''
@@ -409,7 +416,9 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
         raise UnhealthyException()
 
     try:
-        language = detect(content)
+        language = languagecodes.iso_639_alpha3(detect(content))
+        if language is None:
+            language = ''
     except LangDetectException:
         language = ''
     response = app.feed_data_point(

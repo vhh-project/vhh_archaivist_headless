@@ -98,7 +98,7 @@ Start multi-stage search process:
 - `hits` Default: 5 - Number of items per result list page
 - `language` - Optional
     - Filter results based on document language (detected during import)
-    - two-letter ISO 639-1 codes (e.g. 'en' for English)
+    - two-letter ISO 639-1 or three-letter ISO 639-3 codes (e.g. 'en' or 'eng' for English)
 - `document` Optional
     - Filter resulting pages on a single parent document
 - `order_by` Default: ''  | 'alpha'  
