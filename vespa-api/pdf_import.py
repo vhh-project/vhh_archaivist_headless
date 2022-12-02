@@ -31,11 +31,14 @@ class PdfImportError(Exception):
 
 
 def main():
-    wait_for_vespa()
-
     parser = argparse.ArgumentParser()
     parser.add_argument("folder", type=str, help="the folder containing PDFs to import", default="data")
+    parser.add_argument('-s', '--skip', action='store_true', help="skip already imported document pages")
     args = parser.parse_args()
+
+    print()
+    wait_for_vespa()
+
     files = find_files(args.folder)
 
     if not os.path.isdir(config.metadata_path):
@@ -48,12 +51,12 @@ def main():
         path_parts = path.split(os.sep)
         collection = path_parts[1] if len(path_parts) > 2 else ''
         try:
-            import_file(collection=collection, name=name, path=path)
+            import_file(collection=collection, name=name, path=path, skip=args.skip)
         except PdfImportError as e:
             print(e)
 
 
-def import_file(file=None, full_name=None, collection='', name=None, path=None):
+def import_file(file=None, full_name=None, collection='', name=None, path=None, skip=False):
     if file:
         name = '.'.join(full_name.rsplit('.')[:-1])
         path = f'{config.metadata_path}/{full_name}'
@@ -80,8 +83,15 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 if not os.path.isfile(image_path):
                     image.save(image_path, config.convert_type)
                 else:
-                    # Page already processed - Skip!
-                    continue
+                    # page already processed
+                    if skip:
+                        # skip import of existing page
+                        continue
+                    else:
+                        # force overwrite existing page
+                        image.save(image_path, config.convert_type)
+
+
 
                 thumb = image.copy()
                 if not os.path.isfile(thumb_path):
