@@ -1,12 +1,8 @@
-import socket
 import traceback
-
-import urllib3.exceptions
 from vespa.application import Vespa
 import json
 from langdetect import detect, LangDetectException
 import languagecodes
-import ast
 import bounding_boxes
 import image_processing
 import stemmer
@@ -251,13 +247,9 @@ def __mark_relevant_boxes(terms, synonyms, box_data, surrounding_box=None):
     if surrounding_box is not None:
         flat_relative_boxes = bounding_boxes \
             .flatten_snippet_bounding_boxes(boxes, surrounding_box)
-        width = surrounding_box[1] - surrounding_box[0]
-        height = surrounding_box[3] - surrounding_box[2]
     else:
         flat_relative_boxes = bounding_boxes \
             .flatten_bounding_boxes(boxes, dimensions['origWidth'], dimensions['origHeight'])
-        width = dimensions['origWidth']
-        height = dimensions['origHeight']
     synonym_positions = __find_relevant_synonym_positions([box['word'] for box in flat_relative_boxes],
                                                           synonyms, box_data['stems'])
     for i, box in enumerate(flat_relative_boxes):
@@ -437,6 +429,31 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
         print(response.status_code, response.json, end="\n")
         raise FeedException(response)
     return response.json
+
+
+def delete_document_pages(document):
+    document_page_ids = fetch_document_ids(document)
+    if not document_page_ids:
+        # empty
+        return []
+    try:
+        result = app.delete_batch(batch=document_page_ids, schema=schema)
+        return result
+    except ValueError:
+        # also most likely empty
+        return []
+
+
+def fetch_document_ids(document):
+    yql = f'select * from sources * where parent_doc matches \"^{document}$\";'
+
+    result = app.query(body={
+        "traceLevel": traceLevel,
+        "timeout": timeout,
+        "yql": yql,
+        "hits": 400
+    })
+    return [{'id': hit['id'].split('::')[-1]} for hit in result.hits]
 
 
 def health_check():
