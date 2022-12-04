@@ -1,11 +1,10 @@
-import os
-
-from flask import Flask, request, abort, send_from_directory, render_template, flash, redirect
+from flask import Flask, request, abort, send_from_directory, jsonify, flash, redirect
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 import config
 import pdf_import
+import request_processing
 import vespa_util
 
 app = Flask(__name__)
@@ -112,6 +111,15 @@ def search_page(doc_name, page_number):
 @app.route('/document/<doc_name>/page/<page_number>/image')
 def show_document_page_image(doc_name, page_number):
     return send_from_directory(config.metadata_path, doc_name + '/' + page_number + config.convert_suffix)
+
+
+@app.route('/document/<doc_name>', methods=['DELETE'])
+def delete_document(doc_name):
+    try:
+        result = request_processing.delete_document(doc_name)
+        return jsonify(result)
+    except FileNotFoundError:
+        abort(404, 'No pages found for document!')
 
 
 @app.route('/document/<doc_name>/download')
