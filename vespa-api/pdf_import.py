@@ -1,5 +1,5 @@
 from pdfminer.high_level import extract_pages
-from pdfminer.layout import LTPage, LTTextBox, LTTextLine, LTChar
+from pdfminer.layout import LTTextBox, LTTextLine, LTChar
 from pdf2image import convert_from_path
 import config
 import sys
@@ -11,8 +11,6 @@ import vespa_util
 import time
 import json
 from shutil import copyfile
-import traceback
-from datetime import datetime
 
 
 warnings = []

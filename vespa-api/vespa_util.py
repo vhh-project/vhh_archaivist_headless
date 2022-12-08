@@ -19,6 +19,7 @@ searchChain = "multilangchain"
 traceLevel = 0
 timeout = "5s"
 renderer = "query-meta-json"
+max_hits = 400
 
 order_fields = ['alpha']
 order_directions = ['desc', 'asc']
@@ -446,14 +447,26 @@ def delete_document_pages(document):
 
 def fetch_document_ids(document):
     yql = f'select * from sources * where parent_doc matches \"^{document}$\";'
+    hits = []
+    fetch_document_ids.offset_index = 0
 
-    result = app.query(body={
-        "traceLevel": traceLevel,
-        "timeout": timeout,
-        "yql": yql,
-        "hits": 400
-    })
-    return [{'id': hit['id'].split('::')[-1]} for hit in result.hits]
+    def get_result_hits():
+        result = app.query(body={
+            "traceLevel": traceLevel,
+            "timeout": timeout,
+            "yql": yql,
+            "offset": fetch_document_ids.offset_index * max_hits,
+            "hits": max_hits
+        })
+        fetch_document_ids.offset_index += 1
+        return [{'id': hit['id'].split('::')[-1]} for hit in result.hits]
+
+    while new_hits := get_result_hits():
+        hits.extend(new_hits)
+        if len(new_hits) < max_hits:
+            break
+
+    return hits
 
 
 def health_check():
