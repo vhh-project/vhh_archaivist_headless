@@ -10,5 +10,6 @@ def delete_document(document):
         raise FileNotFoundError
     return {
         'vespa_result': [result.__dict__ for result in vespa_delete_result],
-        'file_result': file_delete_result.__dict__
+        'file_result': file_delete_result.__dict__,
+        'total_pages': len(vespa_delete_result)
     }
