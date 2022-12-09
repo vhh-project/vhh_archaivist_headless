@@ -5,6 +5,7 @@
     - [GET /document/\<name\>/page/\<number\>](#get-documentnamepagenumber)
     - [GET /document/\<name\>/download](#get-documentnamedownload)
     - [GET /document/\<name\>/page/\<number\>/image](#get-documentnamepagenumberimage)
+    - [DELETE /document/\<name\>](#delete-documentname)
     - [GET /snippet/\<id\>](#get-snippetid)
     - [GET /status](#get-status)
 - [Configuration & Extras](#configuration--extras)
@@ -215,6 +216,69 @@ Content-Type: image/jpeg
 ### Failure 
 `404 Not Found`  
 Document as a whole or specific page number not found in file system
+
+# DELETE /document/\<name\>
+Delete all pages and metadata associated with a specific document `<name>`
+
+## Response
+### Success 
+Example response: [document_delete.json](examples/document_delete.json)  
+The response contains separate results for the vespa index deletion (`vespa_result`) and the metadata deletion 
+(`file_result`) and the number of deleted pages in `total_pages`. Errors during metadata deletion are passed silently in
+the success result, since even leftover metadata is never accessed, as long as the index entries were successfully 
+deleted. 
+
+```jsonc
+{
+  "file_result": {
+    "errors": [],
+    "paths": [
+      "/output/document_delete_test",
+      "/output/document_delete_test.pdf"
+    ],
+    "status_code": 200 | 404 | 500
+  },
+  "total_pages": 5,
+  "vespa_result": [
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_0",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_0"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_0"
+    },
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_1",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_1"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_1"
+    },
+    .
+    .
+    .
+  ]
+}
+```
+### Failure 
+`404 Not Found`  
+No associated document pages found in search index
+
+`503 Service Unavailable`  
+- Baseline vespa application is not in a healthy state because ..
+  - .. something broke during runtime in the baseline container ([restart](../README.md#troubleshooting) could do the trick)
+  - .. the request was sent before all containers were up and running (docker container status: healthy)
+
+`504 Timeout`
+Indicates that the vespa index timed out during fetching the indexed document batches or during the batch deletion. 
+Could possibly only happen for very large document (pages in the high hundreds or thousands - 
+hint: tweak the `timeout` variable in [vespa_util.py](vespa_util.py)) or in some cases when the vespa index 
+(i.e. baseline application) is unreachable.
+
 
 # GET /snippet/\<id\>
 Fetch snippet image via `<id>`. Request path most likely retrieved ready to use from `image_path` field in each [query response JSON](#query_hits) hit.
