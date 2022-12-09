@@ -206,7 +206,7 @@ def __build_query_snippets(result):
     for hit in hits:
         hit_lang = hit['fields']['language']
         hit_stems = [stem for stem, value in stems.items()
-                         if stem != '' and (hit_lang not in languages or hit_lang in value['languages'])]
+                     if stem != '' and (hit_lang not in languages or hit_lang in value['languages'])]
         hit['snippets'] = __build_hit_snippets(hit, hit_stems, synonyms)
 
 
@@ -238,7 +238,7 @@ def __build_hit_snippets(hit, stems, synonyms):
     for snippet in snippet_data:
         snippet['boxes'] = __mark_relevant_boxes(relevant_stem_terms, synonyms, box_data, snippet['bounds'])
         del snippet['bounds']
-    
+
     return snippet_data
 
 
@@ -433,16 +433,21 @@ def feed(id: str, parent_doc: str, page: str, collection: str, content: str):
 
 
 def delete_document_pages(document):
-    document_page_ids = fetch_document_ids(document)
-    if not document_page_ids:
-        # empty
-        return []
     try:
-        result = app.delete_batch(batch=document_page_ids, schema=schema)
-        return result
-    except ValueError:
-        # also most likely empty
-        return []
+        document_page_ids = fetch_document_ids(document)
+        if not document_page_ids:
+            # empty
+            return []
+        try:
+            result = app.delete_batch(batch=document_page_ids, schema=schema)
+            return result
+        except ValueError:
+            # also most likely empty
+            return []
+    except requests.ConnectionError as e:
+        raise UnhealthyException(e)
+    except requests.exceptions.RetryError as e:
+        raise VespaTimeoutException(e)
 
 
 def fetch_document_ids(document):

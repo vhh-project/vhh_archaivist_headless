@@ -120,6 +120,10 @@ def delete_document(doc_name):
         return jsonify(result)
     except FileNotFoundError:
         abort(404, 'No pages found for document!')
+    except vespa_util.UnhealthyException:
+        abort(503)
+    except vespa_util.VespaTimeoutException:
+        abort(504)
 
 
 @app.route('/document/<doc_name>/download')
