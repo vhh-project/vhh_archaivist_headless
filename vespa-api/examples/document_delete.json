@@ -1,0 +1,58 @@
+{
+  "file_result": {
+    "errors": [],
+    "paths": [
+      "/output/document_delete_test",
+      "/output/document_delete_test.pdf"
+    ],
+    "status_code": 200
+  },
+  "total_pages": 5,
+  "vespa_result": [
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_0",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_0"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_0"
+    },
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_1",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_1"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_1"
+    },
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_2",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_2"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_2"
+    },
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_3",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_3"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_3"
+    },
+    {
+      "json": {
+        "id": "id:baseline:baseline::document_delete_test_4",
+        "pathId": "/document/v1/baseline/baseline/docid/document_delete_test_4"
+      },
+      "operation_type": "delete",
+      "status_code": 200,
+      "url": "http://localhost:8080/document/v1/baseline/baseline/docid/document_delete_test_4"
+    }
+  ]
+}
