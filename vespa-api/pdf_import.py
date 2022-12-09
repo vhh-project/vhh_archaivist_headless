@@ -29,11 +29,14 @@ class PdfImportError(Exception):
 
 
 def main():
-    wait_for_vespa()
-
     parser = argparse.ArgumentParser()
     parser.add_argument("folder", type=str, help="the folder containing PDFs to import", default="data")
+    parser.add_argument('-s', '--skip', action='store_true', help="skip already imported document pages")
     args = parser.parse_args()
+    wait_for_vespa()
+    log(f'Import is set to {"skip" if args.skip else "overwrite"} already existing pages.')
+    log(f'Searching folder \'{args.folder}\' for files to import.')
+
     files = find_files(args.folder)
 
     if not os.path.isdir(config.metadata_path):
@@ -42,29 +45,27 @@ def main():
     if len(files) == 0:
         return
 
-    for (path, name) in progressBar(files, prefix="Importing", suffix="Completed", total=len(files)):
+    for (path, name) in progress_bar(files, prefix="Importing", suffix="Completed", total=len(files)):
         path_parts = path.split(os.sep)
         collection = path_parts[1] if len(path_parts) > 2 else ''
         try:
-            import_file(collection=collection, name=name, path=path)
+            import_file(collection=collection, name=name, path=path, skip=args.skip)
         except PdfImportError as e:
             print(e)
 
 
-def import_file(file=None, full_name=None, collection='', name=None, path=None):
+class SkipException(Exception):
+    """Used for indicating skipping a page"""
+    pass
+
+
+def import_file(file=None, full_name=None, collection='', name=None, path=None, skip=False):
     if file:
         name = '.'.join(full_name.rsplit('.')[:-1])
         path = f'{config.metadata_path}/{full_name}'
 
     doc_dir = f'{config.metadata_path}/{name}'
-    if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
-        if file:
-            file.save(path)
-        else:
-            copyfile(path, f'{config.metadata_path}/{name}.pdf')
-
-    if not os.path.isdir(doc_dir):
-        os.mkdir(doc_dir)
+    generate_output_folder(doc_dir, file, name, path)
 
     try:
         pages = []
@@ -74,27 +75,14 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 thumb_path = f'{doc_dir}/{page_no}_thumb{config.convert_suffix}'
                 json_path = f'{doc_dir}/{page_no}.json'
 
-                image = convert_from_path(path, first_page=page_no + 1, last_page=page_no + 1)[0]
-                if not os.path.isfile(image_path):
-                    image.save(image_path, config.convert_type)
-                else:
-                    # Page already processed - Skip!
-                    continue
-
-                thumb = image.copy()
-                if not os.path.isfile(thumb_path):
-                    thumb.thumbnail((max(1500, page_layout.width), max(1500, page_layout.height)))
-                    thumb.save(thumb_path, config.convert_type)
+                image = extract_page_image(path, page_no, image_path, skip)
+                thumb = create_thumb(image, page_layout, thumb_path)
 
                 text = page_layout.groups[0].get_text() if page_layout.groups else ''
                 page_id = f'{name}_{page_no}'
                 boxes = {}
                 extract_page_word_boxes(page_layout, boxes)
-                try:
-                    stems = {stem: body['terms']
-                             for stem, body in stemmer.map_stems_to_words(boxes.keys(), detect(text)).items()}
-                except LangDetectException:
-                    stems = {}
+                stems = get_stems(boxes, text)
                 page_data = {
                     'boxes': boxes,
                     'stems': stems,
@@ -109,16 +97,18 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
                 with open(json_path, 'w') as file:
                     json.dump(page_data, file)
                 pages.append(vespa_util.feed(page_id, name, page_no, collection, text))
+            except SkipException:
+                continue
             except (vespa_util.FeedException, vespa_util.UnhealthyException) as e:
-                __safe_remove(thumb_path)
-                __safe_remove(image_path)
-                __safe_remove(json_path)
+                safe_remove(thumb_path)
+                safe_remove(image_path)
+                safe_remove(json_path)
                 raise e
             except Exception as e:
                 print(f'\033[KFailed to import file: {name} | page: {page_no} - Cleaning up file artifacts!')
-                __safe_remove(thumb_path)
-                __safe_remove(image_path)
-                __safe_remove(json_path)
+                safe_remove(thumb_path)
+                safe_remove(image_path)
+                safe_remove(json_path)
                 raise PdfImportError(400, f'Failed to import file: {name} | page: {page_no} - {str(e)}')
         return name, pages
     except PdfImportError as e:
@@ -132,18 +122,59 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None):
         raise PdfImportError(400, f'Failed to import file: {name} - {str(e)}')
 
 
-def __safe_remove(path):
+def get_stems(boxes, text):
+    try:
+        stems = {stem: body['terms']
+                 for stem, body in stemmer.map_stems_to_words(boxes.keys(), detect(text)).items()}
+    except LangDetectException:
+        stems = {}
+    return stems
+
+
+def create_thumb(image, page_layout, thumb_path):
+    thumb = image.copy()
+    if not os.path.isfile(thumb_path):
+        thumb.thumbnail((max(1500, page_layout.width), max(1500, page_layout.height)))
+        thumb.save(thumb_path, config.convert_type)
+    return thumb
+
+
+def generate_output_folder(doc_dir, file, name, path):
+    if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
+        if file:
+            file.save(path)
+        else:
+            copyfile(path, f'{config.metadata_path}/{name}.pdf')
+    if not os.path.isdir(doc_dir):
+        os.mkdir(doc_dir)
+
+
+def extract_page_image(path, page_no, image_path, skip):
+    if not os.path.isfile(image_path) or not skip:
+        image = convert_from_path(path, first_page=page_no + 1, last_page=page_no + 1)[0]
+        # new page or default of overwriting existing document pages
+        image.save(image_path, config.convert_type)
+    else:
+        raise SkipException
+    return image
+
+
+def safe_remove(path):
     try:
         os.remove(path)
     except OSError:
         pass
 
 
+def log(message):
+    print(f'PDF Import - {message}')
+
+
 def wait_for_vespa():
-    print('PDF Import - Waiting for vespa application to be up')
+    log('Waiting for vespa application to be up.')
     while not vespa_util.health_check():
         time.sleep(0.5)
-    print('PDF Import - vespa application is running - starting data import!')
+    log('vespa application is running - starting data import!')
 
 
 def extract_page_word_boxes(layout_elem, boxes: dict):
@@ -221,17 +252,16 @@ def find_files(folder, suffix=".pdf"):
     """
     matching_files = []
     for root, dirs, files in os.walk(folder):
-        path = root.split(os.sep)
         # print((len(path) - 1) * '---', os.path.basename(root))
         for file in files:
             # print(len(path) * '---', file)
-            name, type = os.path.splitext(file)
-            if type == suffix:
+            name, file_type = os.path.splitext(file)
+            if file_type == suffix:
                 matching_files += [(root + '/' + file, name)]
     return matching_files
 
 
-def progressBar(iterable, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
+def progress_bar(iterable, total, prefix ='', suffix ='', decimals = 1, length = 100, fill ='█', print_end ="\r"):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -245,20 +275,18 @@ def progressBar(iterable, total, prefix = '', suffix = '', decimals = 1, length 
         printEnd    - Optional  : end character (e.g. "\r", "\r\n") (Str)
     """
     # Progress Bar Printing Function
-    def printProgressBar (iteration):
+    def print_progress_bar (iteration):
         percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
-        filledLength = int(length * iteration // total)
-        bar = fill * filledLength + '-' * (length - filledLength)
         if iteration != len(iterable):
-            print(f'\033[K{prefix} (Current file: {iterable[iteration][1]}) | {iteration}/{total} ({percent}%) {suffix}\r', end = printEnd)
+            print(f'\033[K{prefix} (Current file: {iterable[iteration][1]}) | {iteration}/{total} ({percent}%) {suffix}\r', end = print_end)
         else:
-            print(f'\033[K{prefix} DONE | {iteration}/{total} ({percent}%) {suffix}\r', end = printEnd)
+            print(f'\033[K{prefix} DONE | {iteration}/{total} ({percent}%) {suffix}\r', end = print_end)
     # Initial Call
-    printProgressBar(0)
+    print_progress_bar(0)
     # Update Progress Bar
     for i, item in enumerate(iterable):
         yield item
-        printProgressBar(i + 1)
+        print_progress_bar(i + 1)
     # Print New Line on Complete
     print()
 
