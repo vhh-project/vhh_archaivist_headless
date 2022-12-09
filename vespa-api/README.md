@@ -320,3 +320,22 @@ docker-compose cp import-folder/ vespa-api:/data
 cd /code # move to execution folder
 pipenv run python pdf_import.py /data # starts import with console output
 ```
+
+### Usage
+```
+usage: pdf_import.py [-h] [-s] folder
+
+positional arguments:
+  folder      the folder containing PDFs to import
+
+options:
+  -h, --help  show this help message and exit
+  -s, --skip  skip already imported document pages
+```
+
+#### Disclaimer (Overwrite & Skip)
+Currently, the default behaviour (i.e. without _-s_ or _--skip_ flag set) is to overwrite existing document pages.
+This means that reimported documents, which are uniquely identified by their file name, get updated by overwriting the 
+separately stored positional metadata and pages stored in the search index. Keep in mind, that reimporting documents 
+that have fewer pages than their previous version will **NOT** remove excess pages from the older version.
+
