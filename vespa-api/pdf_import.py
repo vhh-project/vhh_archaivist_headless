@@ -65,7 +65,7 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None, 
         path = f'{config.metadata_path}/{full_name}'
 
     doc_dir = f'{config.metadata_path}/{name}'
-    generate_output_folder(doc_dir, file, name, path)
+    generate_output_folder(doc_dir, file, name, path, skip)
 
     try:
         pages = []
@@ -139,8 +139,8 @@ def create_thumb(image, page_layout, thumb_path):
     return thumb
 
 
-def generate_output_folder(doc_dir, file, name, path):
-    if not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
+def generate_output_folder(doc_dir, file, name, path, skip):
+    if not skip or not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
         if file:
             file.save(path)
         else:
@@ -150,7 +150,7 @@ def generate_output_folder(doc_dir, file, name, path):
 
 
 def extract_page_image(path, page_no, image_path, skip):
-    if not os.path.isfile(image_path) or not skip:
+    if not skip or not os.path.isfile(image_path):
         image = convert_from_path(path, first_page=page_no + 1, last_page=page_no + 1)[0]
         # new page or default of overwriting existing document pages
         image.save(image_path, config.convert_type)
