@@ -275,7 +275,7 @@ No associated document pages found in search index
 
 `504 Timeout`
 Indicates that the vespa index timed out during fetching the indexed document batches or during the batch deletion. 
-Could possibly only happen for very large document (pages in the high hundreds or thousands - 
+Could possibly only happen for very large document (i.e. pages in the high hundreds or thousands - 
 hint: tweak the `timeout` variable in [vespa_util.py](vespa_util.py)) or in some cases when the vespa index 
 (i.e. baseline application) is unreachable.
 
