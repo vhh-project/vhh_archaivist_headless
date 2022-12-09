@@ -25,7 +25,7 @@ order_fields = ['alpha']
 order_directions = ['desc', 'asc']
 
 
-class VespaTimeoutException(Exception):
+class TimeoutException(Exception):
     pass
 
 
@@ -87,7 +87,7 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
         })
     except requests.exceptions.RetryError as e:
         print(''.join(traceback.format_exception(None, e, e.__traceback__)))
-        raise VespaTimeoutException(e)
+        raise TimeoutException(e)
 
     __extend_query_metadata(result)
     try:
@@ -96,7 +96,7 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
                __get_bounding_box_data(result.hits), result.number_documents_retrieved
     except KeyError as e:
         print(''.join(traceback.format_exception(None, e, e.__traceback__)))
-        raise VespaTimeoutException(e)
+        raise TimeoutException(e)
 
 
 def __extend_query_metadata(result):
@@ -447,7 +447,7 @@ def delete_document_pages(document):
     except requests.ConnectionError as e:
         raise UnhealthyException(e)
     except requests.exceptions.RetryError as e:
-        raise VespaTimeoutException(e)
+        raise TimeoutException(e)
 
 
 def fetch_document_ids(document):

@@ -6,6 +6,8 @@ import sys
 import argparse
 import os
 from langdetect import detect, LangDetectException
+
+import file_processing
 import stemmer
 import vespa_util
 import time
@@ -59,6 +61,11 @@ class SkipException(Exception):
     pass
 
 
+def cleanup_vespa(document_name, skip):
+    if not skip:
+        vespa_util.delete_document_pages(document_name)
+
+
 def import_file(file=None, full_name=None, collection='', name=None, path=None, skip=False):
     if file:
         name = '.'.join(full_name.rsplit('.')[:-1])
@@ -66,6 +73,7 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None, 
 
     doc_dir = f'{config.metadata_path}/{name}'
     generate_output_folder(doc_dir, file, name, path, skip)
+    cleanup_vespa(name, skip)
 
     try:
         pages = []
@@ -117,6 +125,8 @@ def import_file(file=None, full_name=None, collection='', name=None, path=None, 
         raise PdfImportError(507, e)
     except vespa_util.UnhealthyException as e:
         raise PdfImportError(503, e)
+    except vespa_util.TimeoutException as e:
+        raise PdfImportError(504, e)
     except Exception as e:
         print(f'\033[KFailed to import file: {name}')
         raise PdfImportError(400, f'Failed to import file: {name} - {str(e)}')
@@ -140,17 +150,21 @@ def create_thumb(image, page_layout, thumb_path):
 
 
 def generate_output_folder(doc_dir, file, name, path, skip):
-    if not skip or not os.path.isfile(f'{config.metadata_path}/{name}.pdf'):
+    if not os.path.isdir(doc_dir):
+        os.mkdir(doc_dir)
+    elif not skip:
+        file_processing.remove_document_metadata(name)
+        os.mkdir(doc_dir)
+
+    if not os.path.isfile(f'{config.metadata_path}/{name}.pdf') or not skip:
         if file:
             file.save(path)
         else:
             copyfile(path, f'{config.metadata_path}/{name}.pdf')
-    if not os.path.isdir(doc_dir):
-        os.mkdir(doc_dir)
 
 
 def extract_page_image(path, page_no, image_path, skip):
-    if not skip or not os.path.isfile(image_path):
+    if not os.path.isfile(image_path) or not skip:
         image = convert_from_path(path, first_page=page_no + 1, last_page=page_no + 1)[0]
         # new page or default of overwriting existing document pages
         image.save(image_path, config.convert_type)

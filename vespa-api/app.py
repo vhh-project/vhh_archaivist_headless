@@ -75,7 +75,7 @@ def search():
                 order_by=order_by,
                 direction=direction,
                 stem_filter=stem_filter)
-    except vespa_util.VespaTimeoutException:
+    except vespa_util.TimeoutException:
         abort(504)
 
     return {
@@ -122,7 +122,7 @@ def delete_document(doc_name):
         abort(404, 'No pages found for document!')
     except vespa_util.UnhealthyException:
         abort(503)
-    except vespa_util.VespaTimeoutException:
+    except vespa_util.TimeoutException:
         abort(504)
 
 

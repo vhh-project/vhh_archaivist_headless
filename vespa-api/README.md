@@ -80,6 +80,9 @@ The response provides the uploaded document name (i.e. original name of the uplo
     - .. something broke during runtime in the baseline container ([restart](../README.md#troubleshooting) could do the trick)
     - .. the request was sent before all containers were up and running (docker container status: healthy)
 
+`504 Timeout`  
+Could potentially happen, if the batch delete for reimporting files times out, but is highly unlikely
+
 `507 Insufficient Storage`  
 - Vespa index is blocking feed operation due to high disk load (see [services.xml](../baseline_vespa_app/src/main/application/services.xml) to configure max disk limits)
  
@@ -333,9 +336,7 @@ options:
   -s, --skip  skip already imported document pages
 ```
 
-#### Disclaimer (Overwrite & Skip)
-Currently, the default behaviour (i.e. without _-s_ or _--skip_ flag set) is to overwrite existing document pages.
-This means that reimported documents, which are uniquely identified by their file name, get updated by overwriting the 
-separately stored positional metadata and pages stored in the search index. Keep in mind, that reimporting documents 
-that have fewer pages than their previous version will **NOT** remove excess pages from the older version.
+#### Overwrite & Skip
+Currently, the default behaviour (i.e. without _-s_ or _--skip_ flag set) is to remove and reimport existing document 
+pages and the associated metadata.
 
