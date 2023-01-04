@@ -23,7 +23,7 @@ This request processes each PDF page individually:
     - Feed text and other schema attributes (see [schema](../baseline_vespa_app/src/main/application/schemas/baseline.sd)) to vespa index
 
 ## Disclaimer 
-This request can take a while for longer documents. PDF rendering and PDF-to-image conversion can cause a lot of momentary memory usage peaks. In order to keep memory usage as light as possible, each PDF page is processed sequentially. Hence, we decided to increase the default worker timeout in gunicorn from 30 seconds to 120 seconds. The GUNICORN_TIMEOUT parameter can be tweaked via the [Dockerfile](Dockerfile) if needed.
+This request overwrites pre-existing documents with a duplicate names. Also, this request can take a while for longer documents. PDF rendering and PDF-to-image conversion can cause a lot of momentary memory usage peaks. In order to keep memory usage as light as possible, each PDF page is processed sequentially. Hence, we decided to increase the default worker timeout in gunicorn from 30 seconds to 120 seconds. The GUNICORN_TIMEOUT parameter can be tweaked via the [Dockerfile](Dockerfile) if needed.
 
 ## Request
 Content Type: `multipart/form-data`  
