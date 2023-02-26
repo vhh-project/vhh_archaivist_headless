@@ -64,6 +64,7 @@ def search():
     order_by = request.args.get('order_by', default='')
     direction = request.args.get('direction', default='desc')
     stem_filter = request.args.get('stem_filter', default='')
+    use_synonyms = 1 if request.args.get('synonyms', 1, type=int) == 1 else 0
     try:
         hits, query_metadata, bounding_boxes, total = \
             vespa_util.query(
@@ -74,7 +75,8 @@ def search():
                 document=document,
                 order_by=order_by,
                 direction=direction,
-                stem_filter=stem_filter)
+                stem_filter=stem_filter,
+                use_synonyms=use_synonyms)
     except vespa_util.TimeoutException:
         abort(504)
 
@@ -101,9 +103,9 @@ def search_page(doc_name, page_number):
     try:
         result, query_metadata, bounding_data = vespa_util.query_doc_page(doc_name, page_number, query)
         return {
-            'hit': result,
-            'query_metadata': query_metadata,
-        } | bounding_data
+                   'hit': result,
+                   'query_metadata': query_metadata,
+               } | bounding_data
     except FileNotFoundError:
         abort(404, 'Document page could not be found!')
 

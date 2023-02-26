@@ -161,27 +161,10 @@ public class MultilangSearcher extends Searcher {
                     }
                     weakAndItem.addItem(languageOrItem);
 
-                    // Extend weakAnd clause with phrases found in query text and their respective synonyms
-                    for (Synonyms synonyms : multiTranslation.getSynonyms()) {
-                        var mainTermStems = getBestStems(detections, synonyms.getMainTerm(), Language.ENGLISH);
-                        EquivItem equivalentSynonyms;
-                        if (mainTermStems.length > 1) {
-                            equivalentSynonyms = new EquivItem(new PhraseItem(mainTermStems));
-                        } else {
-                            equivalentSynonyms = new EquivItem(new WordItem(mainTermStems[0]));
-                        }
-
-                        for (String term : synonyms.getTerms()) {
-                            var termList = getBestStems(detections, term, null);
-                            if (termList.length == 0) {
-                                equivalentSynonyms.addItem(new WordItem(term));
-                            } else if (termList.length > 1) {
-                                equivalentSynonyms.addItem(new PhraseItem(termList));
-                            } else {
-                                equivalentSynonyms.addItem(new WordItem(termList[0]));
-                            }
-                        }
-                        weakAndItem.addItem(equivalentSynonyms);
+                    if (shouldUseSynonyms(query)) {
+                        addSynonymClauses(detections, multiTranslation, weakAndItem);
+                    } else {
+                        multiTranslation.getSynonyms().clear();
                     }
 
                     if (root instanceof AndItem) {
@@ -203,6 +186,31 @@ public class MultilangSearcher extends Searcher {
         query.getModel().getQueryTree().setRoot(root);
         query.trace("MultilangSearcher was called in chain", true, 2);
         return execution.search(query);
+    }
+
+    private void addSynonymClauses(Map<Language, List<String>> detections, MultiTranslation multiTranslation, WeakAndItem weakAndItem) {
+        // Extend weakAnd clause with phrases found in query text and their respective synonyms
+        for (Synonyms synonyms : multiTranslation.getSynonyms()) {
+            var mainTermStems = getBestStems(detections, synonyms.getMainTerm(), Language.ENGLISH);
+            EquivItem equivalentSynonyms;
+            if (mainTermStems.length > 1) {
+                equivalentSynonyms = new EquivItem(new PhraseItem(mainTermStems));
+            } else {
+                equivalentSynonyms = new EquivItem(new WordItem(mainTermStems[0]));
+            }
+
+            for (String term : synonyms.getTerms()) {
+                var termList = getBestStems(detections, term, null);
+                if (termList.length == 0) {
+                    equivalentSynonyms.addItem(new WordItem(term));
+                } else if (termList.length > 1) {
+                    equivalentSynonyms.addItem(new PhraseItem(termList));
+                } else {
+                    equivalentSynonyms.addItem(new WordItem(termList[0]));
+                }
+            }
+            weakAndItem.addItem(equivalentSynonyms);
+        }
     }
 
     private Item getLanguageElse(MultiTranslation multiTranslation, List<String> words) {
@@ -254,5 +262,9 @@ public class MultilangSearcher extends Searcher {
                 .map(item -> ((RegExpItem) item).getRegexp().toString())
                 .findFirst()
                 .orElse(null);
+    }
+
+    private boolean shouldUseSynonyms(Query query) {
+        return Integer.parseInt((String) query.properties().get(Constants.USE_SYNONYMS_PROP)) == 1;
     }
 }

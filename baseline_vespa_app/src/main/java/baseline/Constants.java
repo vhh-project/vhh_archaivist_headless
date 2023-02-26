@@ -8,5 +8,6 @@ public class Constants {
             TRANSLATIONS
     };
 
+    public static final String USE_SYNONYMS_PROP = "useSynonyms";
     public static final String LANGUAGE_FIELD = "language";
 }
