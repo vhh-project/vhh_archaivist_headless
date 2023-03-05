@@ -265,6 +265,6 @@ public class MultilangSearcher extends Searcher {
     }
 
     private boolean shouldUseSynonyms(Query query) {
-        return Integer.parseInt((String) query.properties().get(Constants.USE_SYNONYMS_PROP)) == 1;
+        return Integer.parseInt((String) query.properties().get(Constants.USE_SYNONYMS_PROP, "1")) == 1;
     }
 }
