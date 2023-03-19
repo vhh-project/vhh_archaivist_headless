@@ -127,15 +127,31 @@ public class StemFilterSearcher extends Searcher {
                 compositeItem.removeItem(i);
                 compositeItem.addItem(i, newItem);
             } else if (item instanceof AndItem) {
-                modifyIfLanguageMatch(stemFilter, item);
-                updateIfSynonymExclusion(stemFilter, compositeItem, (AndItem) item);
+                if (modifyIfLanguageMatch(stemFilter, item) && isSingleLangRegex((AndItem) item)) {
+                    compositeItem.removeItem(i);
+                    i--;
+                } else {
+                    updateIfSynonymExclusion(stemFilter, compositeItem, (AndItem) item);
+                }
             } else if (item instanceof  CompositeItem) {
                 filterStems((CompositeItem) item, stemFilter);
+                if (((CompositeItem) item).getItemCount() == 0) {
+                    compositeItem.removeItem(i);
+                    i --;
+                }
             } else if (isWordItemMatch(item, stemFilter)) {
                 compositeItem.removeItem(i);
                 i--;
             }
         }
+    }
+
+    private boolean isSingleLangRegex(AndItem item) {
+        if (item.getItemCount() == 1) {
+            Item subItem = item.getItem(0);
+            return subItem instanceof RegExpItem && ((RegExpItem) subItem).getIndexName().equals(Constants.LANGUAGE_FIELD);
+        }
+        return false;
     }
 
     private void updateIfSynonymExclusion(StemFilter stemFilter, CompositeItem parent, AndItem item) {
@@ -160,11 +176,13 @@ public class StemFilterSearcher extends Searcher {
         }
     }
 
-    private void modifyIfLanguageMatch(StemFilter stemFilter, Item item) {
+    private boolean modifyIfLanguageMatch(StemFilter stemFilter, Item item) {
         String language = getFilterLanguage((AndItem) item);
         if (language != null && language.equals(stemFilter.getLanguage())) {
             filterStems((CompositeItem) item, stemFilter);
+            return true;
         }
+        return false;
     }
 
     private boolean isWordItemMatch(Item item, StemFilter stemFilter) {
