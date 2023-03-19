@@ -2,7 +2,6 @@ package baseline;
 
 import baseline.model.StemFilter;
 import com.google.gson.Gson;
-import com.yahoo.container.QrSearchersConfig;
 import com.yahoo.prelude.query.*;
 import com.yahoo.search.Query;
 import com.yahoo.search.Result;
@@ -12,11 +11,12 @@ import com.yahoo.search.searchchain.Execution;
 import com.yahoo.yolean.chain.After;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @After("MultilangSearcher")
 public class StemFilterSearcher extends Searcher {
-
     @Override
     public Result search(Query query, Execution execution) {
             QueryTree tree = query.getModel().getQueryTree();
@@ -64,16 +64,8 @@ public class StemFilterSearcher extends Searcher {
         orItem.addItem(baseItem);
 
         for (StemFilter filter: stemFilters) {
-            AndItem filterAndItem = new AndItem();
-            RegExpItem regExpItem = new RegExpItem(Constants.LANGUAGE_FIELD, true, filter.getLanguage());
-            CompositeItem filterRankItem = rootItem.clone();
-            filterStems(filterRankItem, filter);
-            filterAndItem.addItem(filterRankItem);
-            filterAndItem.addItem(regExpItem);
-            orItem.addItem(filterAndItem);
+            filterStems(rootItem, filter);
         }
-
-        query.getModel().getQueryTree().setRoot(orItem);
         query.trace(String.format("Filtering done: %s", Arrays.toString(stemFilters)), true, 2);
         return execution.search(query);
     }
@@ -97,6 +89,15 @@ public class StemFilterSearcher extends Searcher {
     }
 
     private OrItem buildSynonymFilters(EquivItem synonymItem, StemFilter stemFilter) {
+        int unfilteredItemCount = synonymItem.getItemCount();
+
+        EquivItem filteredSynonyms = (EquivItem) synonymItem.clone();
+        filterStems(filteredSynonyms, stemFilter);
+        int filteredItemCount = filteredSynonyms.getItemCount();
+
+        if (filteredItemCount == unfilteredItemCount)
+            return null;
+
         //normal version
         NotItem filterLangExclude = buildLanguageExclude(stemFilter);
         AndItem unfilteredSynonymsAnd = new AndItem();
@@ -104,8 +105,6 @@ public class StemFilterSearcher extends Searcher {
         unfilteredSynonymsAnd.addItem(synonymItem);
 
         //filtered version
-        EquivItem filteredSynonyms = (EquivItem) synonymItem.clone();
-        filterStems(filteredSynonyms, stemFilter);
         AndItem filteredSynonymsAnd = new AndItem();
         RegExpItem regExpItem = new RegExpItem(Constants.LANGUAGE_FIELD, true, stemFilter.getLanguage());
         filteredSynonymsAnd.addItem(filteredSynonyms);
@@ -123,19 +122,48 @@ public class StemFilterSearcher extends Searcher {
             Item item = compositeItem.getItem(i);
             if (item instanceof EquivItem) {
                 OrItem newItem = buildSynonymFilters((EquivItem) item, stemFilter);
+                if (newItem == null)
+                    continue;
                 compositeItem.removeItem(i);
                 compositeItem.addItem(i, newItem);
             } else if (item instanceof AndItem) {
-                String language = getFilterLanguage((AndItem) item);
-                if (language != null) {
-                    filterStems((CompositeItem) item, stemFilter);
-                }
+                modifyIfLanguageMatch(stemFilter, item);
+                updateIfSynonymExclusion(stemFilter, compositeItem, (AndItem) item);
             } else if (item instanceof  CompositeItem) {
                 filterStems((CompositeItem) item, stemFilter);
             } else if (isWordItemMatch(item, stemFilter)) {
                 compositeItem.removeItem(i);
                 i--;
             }
+        }
+    }
+
+    private void updateIfSynonymExclusion(StemFilter stemFilter, CompositeItem parent, AndItem item) {
+        if (updateNotFilterLanguages(item, stemFilter)) {
+            EquivItem synonymItem = (EquivItem) item.items()
+                    .stream()
+                    .filter(child -> child instanceof EquivItem)
+                    .findFirst()
+                    .orElse(null);
+            if (synonymItem == null) {
+                // should not happen if we managed to update the NotItem before - do nothing else
+                return;
+            }
+            EquivItem filteredSynonyms = (EquivItem) synonymItem.clone();
+            filterStems(filteredSynonyms, stemFilter);
+            AndItem filteredSynonymsAnd = new AndItem();
+            RegExpItem regExpItem = new RegExpItem(Constants.LANGUAGE_FIELD, true, stemFilter.getLanguage());
+            filteredSynonymsAnd.addItem(filteredSynonyms);
+            filteredSynonymsAnd.addItem(regExpItem);
+
+            parent.addItem(filteredSynonymsAnd);
+        }
+    }
+
+    private void modifyIfLanguageMatch(StemFilter stemFilter, Item item) {
+        String language = getFilterLanguage((AndItem) item);
+        if (language != null && language.equals(stemFilter.getLanguage())) {
+            filterStems((CompositeItem) item, stemFilter);
         }
     }
 
@@ -155,12 +183,42 @@ public class StemFilterSearcher extends Searcher {
                 .orElse(null);
     }
 
-    private String getFilterLanguage(AndItem andItem) {
-        return andItem.items()
+    private String getFilterLanguage(CompositeItem compositeItem) {
+        return compositeItem.items()
                 .stream()
                 .filter(item -> item instanceof RegExpItem && ((RegExpItem) item).getIndexName().equals(Constants.LANGUAGE_FIELD))
                 .map(item -> ((RegExpItem) item).getRegexp().toString())
                 .findFirst()
                 .orElse(null);
+    }
+
+    private boolean updateNotFilterLanguages(AndItem andItem, StemFilter stemFilter) {
+        final int MAX_LANG_COUNT = 11;
+
+        RegExpItem regExpItem = (RegExpItem) andItem.items()
+                .stream()
+                .filter(item -> item instanceof NotItem)
+                .map(item -> ((NotItem) item).items())
+                .flatMap(Collection::stream)
+                .filter(item -> item instanceof RegExpItem && ((RegExpItem) item).getIndexName().equals(Constants.LANGUAGE_FIELD))
+                .findFirst()
+                .orElse(null);
+
+        if (regExpItem == null)
+            return false;
+
+
+        List<String> languages = new java.util.ArrayList<>(List.of(regExpItem.getRegexp().pattern().split("\\(|\\)|\\|")));
+        if (languages.size() == MAX_LANG_COUNT)
+            return false;
+
+        languages.add(stemFilter.getLanguage());
+        String newRegex = languages
+                .stream()
+                .filter(language -> language != "")
+                .collect(Collectors.joining("|", "(", ")"));
+        regExpItem.setValue(newRegex);
+
+        return true;
     }
 }
