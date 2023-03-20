@@ -80,3 +80,5 @@ As an additional step in the translation process, we look for synonyms of specif
 File format for synonyms: main-phrase \<tab> synonym 1 \<tab> synonym 2 \<tab> synonym 3 \<tab> ...
 
 In order to disable synonym detection or change the file path, take a look at [word2word_api/config.ini](../word2word_api/config.ini).
+
+To disable synonym detection for single queries, see the **synonyms** parameter for [GET /search](../vespa-api/README.md#get-search).

@@ -109,6 +109,24 @@ Start multi-stage search process:
     - Sort results either by rank from best to worst (Default '') or alphabetically ('alpha')
 - `direction` Default: 'desc' | 'asc'
     - Determine sort direction when sorting alphabetically (**desc**ending or **asc**ending)
+- `synonyms` Default: 1 | 0
+    - Toggles the use of synonyms for enhancing retrieval results
+- `stem_filter` Optional
+    - JSON string containing a list of word stems that should be filtered for a given language
+    
+### stem_filter explained
+Example of **stem_filter** JSON object:
+```jsonc
+[
+    {"language": "en", "stems": ["can", "or"]},
+    {"language": "de", "stems": ["example", "text", "for", "filtering"]}
+]
+```
+The provided word stems are processed together with the query and offer a way to filter unwanted words created during query extension.  
+For example, the stems **can** and **or** both represent synonyms for the search term **dog** and can obviously lead to noisy search results in English documents. Passing them along with the *stem_filter* parameter excludes them from being used in the query extension with the other synonyms for **dog**.  
+
+Stem filtering does not only work for synonyms, but can for instance also be used for removing faulty or unsatisfying query term translations from the search.
+
 
 ## Response
 
