@@ -8,5 +8,7 @@ public class Constants {
             TRANSLATIONS
     };
 
+    public static final String STEM_FILTER_PROP = "stemFilter";
+    public static final String USE_SYNONYMS_PROP = "useSynonyms";
     public static final String LANGUAGE_FIELD = "language";
 }

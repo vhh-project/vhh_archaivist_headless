@@ -5,6 +5,8 @@
             <chain id="multilangchain" inherits="vespa">
                 <searcher id="baseline.MultilangSearcher" bundle="baseline" after="MinimalQueryInserter">
                 </searcher>
+                <searcher id="baseline.StemFilterSearcher" bundle="baseline" after="MultilangSearcher">
+                </searcher>
             </chain>
             <renderer id="query-meta-json" class="baseline.QueryMetadataJsonRenderer" bundle="baseline" />
     	</search>

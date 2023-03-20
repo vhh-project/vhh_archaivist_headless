@@ -37,7 +37,7 @@ class UnhealthyException(Exception):
     pass
 
 
-def query(query, hits=5, page=0, language='', document=None, order_by='', direction='desc', stem_filter=''):
+def query(query, hits=5, page=0, language='', document=None, order_by='', direction='desc', stem_filter='', use_synonyms=1):
     """
     Launch a query at the vespa search index
 
@@ -49,6 +49,7 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
     :param order_by: sort results alphabetically (alpha) or by ranking (default)
     :param direction: sort direction: asc | desc (default)
     :param stem_filter: JSON string of data structure describing language specific stems to be filtered
+    :param use_synonyms: toggles the use of synonyms for retrieval
     :return: result page of vespa hits enhanced with runtime-generated snippets of the original image
     """
     phrases = __build_query_phrases(query)
@@ -83,7 +84,8 @@ def query(query, hits=5, page=0, language='', document=None, order_by='', direct
             "timeout": timeout,
             "yql": yql,
             "presentation.format": renderer,
-            "stemFilter": stem_filter  # custom non-vespa searchChain-specific param
+            "stemFilter": stem_filter,  # custom non-vespa searchChain-specific param
+            "useSynonyms": use_synonyms # custom non-vespa searchChain-specific param
         })
     except requests.exceptions.RetryError as e:
         print(''.join(traceback.format_exception(None, e, e.__traceback__)))
